@@ -237,10 +237,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openModal() {
     writeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     writeModal.classList.remove('active');
+    document.body.style.overflow = '';
   }
 
   function showToast(msg) {
