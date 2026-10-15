@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무사히 - 군 복무 전역일 계산기 & 피드백 | BlueField Atelier</title>
+  <meta name="description" content="오늘도 건강하게, 전역하는 그날까지! 군 복무 중인 장병과 곰신, 가족을 위한 전역일 계산 및 D-Day 위젯 서비스 무사히(Musahi) 사용 설명서와 피드백 공간입니다.">
+  <link rel="icon" type="image/png" href="../assets/musahi_icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-wrapper">
+        <img src="../assets/musahi_icon.png" alt="무사히 아이콘" class="brand-icon-img">
+        <div>
+          <div class="brand-title">무사히 <span>Musahi</span></div>
+          <div class="brand-sub">BlueField Atelier</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#video" class="nav-item">소개 영상</a>
+        <a href="#screenshots" class="nav-item">스크린샷</a>
+        <a href="#features" class="nav-item">주요 기능</a>
+        <a href="#manual" class="nav-item">사용 설명서</a>
+        <a href="#faq" class="nav-item">FAQ</a>
+        <a href="#feedback" class="nav-item">피드백 게시판</a>
+        <a href="../index.html" class="nav-item" style="color: #94a3b8;">← 메인 허브</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-playstore">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+          </svg>
+          <span>Google Play</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span>🎖️ 군인 & 곰신 필수 일상 케어 앱</span>
+      </div>
+      <h1 class="hero-title">오늘도 건강하게,<br>전역하는 그날까지 무사히</h1>
+      <p class="hero-subtitle">
+        복무 일수, 잔여 퍼센트, D-Day 계산부터 진급일 및 휴가 마일스톤까지.<br>
+        군 복무 중인 장병과 곰신, 가족의 소중한 기다림을 함께합니다.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 12px 28px; font-size: 1rem;">
+          <span>Google Play에서 무료 다운로드 ↗</span>
+        </a>
+        <button id="heroBtnFeedback" class="btn btn-playstore" style="padding: 12px 24px; font-size: 1rem;">
+          <span>💬 피드백 / 개선 제안 남기기</span>
+        </button>
+      </div>
+
+      <!-- App Promo Video Showcase -->
+      <section id="video" class="video-showcase-box">
+        <video class="app-promo-video" controls autoplay loop muted playsinline poster="resources/001_concept.jpg">
+          <source src="resources/musahi.mp4" type="video/mp4">
+          브라우저가 동영상 재생을 지원하지 않습니다.
+        </video>
+      </section>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section id="screenshots" class="screenshots-section">
+      <div class="section-head">
+        <div class="section-tag">Screenshots</div>
+        <h2 class="section-title">무사히 미리보기</h2>
+        <p class="section-subtitle">이미지를 클릭하면 큰 화면으로 감상할 수 있습니다.</p>
+      </div>
+
+      <div class="screenshots-scroll-container">
+        <div class="screenshot-item" data-full="resources/001_concept.jpg">
+          <img src="resources/001_concept.jpg" alt="무사히 스크린샷 1" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/002_concept.jpg">
+          <img src="resources/002_concept.jpg" alt="무사히 스크린샷 2" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/003_concept.jpg">
+          <img src="resources/003_concept.jpg" alt="무사히 스크린샷 3" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/004_concept.jpg">
+          <img src="resources/004_concept.jpg" alt="무사히 스크린샷 4" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/005_concept.jpg">
+          <img src="resources/005_concept.jpg" alt="무사히 스크린샷 5" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/006_promo.jpg">
+          <img src="resources/006_promo.jpg" alt="무사히 프로모 6" class="screenshot-img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="features-section">
+      <div class="section-head">
+        <div class="section-tag">Key Features</div>
+        <h2 class="section-title">무사히의 핵심 기능 3가지</h2>
+      </div>
+
+      <div class="feature-cards-grid">
+        <div class="f-card">
+          <div class="f-icon-box">⏱️</div>
+          <h3>실시간 D-Day & 복무율 계산</h3>
+          <p>입대일과 군종만 입력하면 총 복무일, 지난 복무일, 남은 날짜와 소수점 퍼센트 게이지가 실시간으로 정밀하게 계산됩니다.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">📱</div>
+          <h3>감각적인 홈 화면 위젯</h3>
+          <p>앱을 매번 켜지 않아도 홈 화면에서 바로 D-Day와 퍼센트를 확인할 수 있는 정갈하고 깔끔한 위젯 테마를 지원합니다.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">🎖️</div>
+          <h3>계급별 진급일 자동 마일스톤</h3>
+          <p>일병, 상병, 병장 진급일과 다음 계급까지 남은 날짜를 자동으로 챙겨주어 군 생활의 소소한 성취감을 더해줍니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Manual / How-To Guide -->
+    <section id="manual" class="manual-section">
+      <div class="section-head">
+        <div class="section-tag">User Manual</div>
+        <h2 class="section-title">무사히 알차게 활용하기</h2>
+      </div>
+
+      <div class="manual-grid">
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 01</span>
+          <h4>입대일 및 군종 선택하기</h4>
+          <p>앱을 처음 실행한 후 입대 날짜와 군종(육군, 해군, 공군, 해병대, 사회복무요원 등)을 선택하면 복무 기간이 자동으로 적용됩니다.</p>
+          <div class="tip-box">💡 팁: 군종별 단축 규정이 정확히 반영되어 있습니다.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 02</span>
+          <h4>실시간 퍼센트 게이지 확인</h4>
+          <p>매일매일 차오르는 복무율 게이지와 남은 일수를 확인하며 전역하는 날을 향해 힘을 내보세요!</p>
+          <div class="tip-box">💡 팁: 자정이 지나면 자동으로 다음 날의 D-Day가 갱신됩니다.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 03</span>
+          <h4>홈 화면에 위젯 꺼내두기</h4>
+          <p>스마트폰 바탕화면을 길게 누른 뒤 [위젯] → [무사히]를 선택하여 원하는 크기(2x2, 4x2)의 위젯을 바탕화면에 추가하세요.</p>
+          <div class="tip-box">💡 팁: 배터리 최적화 예외로 등록해두면 정시에 위젯이 부드럽게 갱신됩니다.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 04</span>
+          <h4>진급일 & 휴가 D-Day 챙기기</h4>
+          <p>일병, 상병, 병장 진급 디데이와 함께 기다려지는 다음 휴가 D-Day를 등록하여 소중한 순간들을 카운트다운하세요.</p>
+          <div class="tip-box">💡 팁: 곰신 분들도 함께 앱을 설치해 동일한 일정으로 카운트다운을 즐기실 수 있습니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="section-head">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. 군종별 복무기간과 단축일수 계산이 정확한가요?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            네! 대한민국 국방부의 복무기간 단축 규정을 완전히 준수하여 육군/해병대(18개월), 해군(20개월), 공군(21개월), 사회복무요원(21개월)의 정밀 계산식을 적용하고 있습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. 홈 위젯에서 자정이 지나도 날짜가 바로 안 바뀔 때는 어떻게 하나요?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            안드로이드 제조사의 배터리 절전 정책(배터리 최적화)으로 인해 백그라운드 위젯 갱신이 지연될 수 있습니다. 스마트폰 [설정] → [애플리케이션] → [무사히] → [배터리] 메뉴에서 '제한 없음'으로 설정해 주시면 정시에 정확히 갱신됩니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. 곰신이나 가족도 사용할 수 있나요?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            물론입니다! 많은 곰신(군화의 연인) 및 부모님, 가족분들께서 장병의 입대일을 등록해두고 함께 전역일을 기다리며 응원하는 용도로 애용하고 계십니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback-section">
+      <div class="feedback-header-row">
+        <div>
+          <div class="section-tag">Community & Roadmap</div>
+          <h2 class="section-title" style="margin-bottom: 6px;">무사히 피드백 게시판</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">복무 계산 오류, 위젯 개선 요청, 필요한 기능을 자유롭게 남겨주세요!</p>
+        </div>
+        <button id="btnOpenWrite" class="btn btn-primary">
+          <span>+ 무사히 피드백 남기기</span>
+        </button>
+      </div>
+
+      <!-- Feedbacks Grid -->
+      <div class="feedback-grid" id="feedbackGrid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Write Modal -->
+  <div class="modal-overlay" id="writeModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; font-weight: 700;">무사히 피드백 남기기</h3>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="writeForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>분류</label>
+            <div class="category-radio-group">
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="feature" checked>
+                <span>💡 기능 제안</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="bug">
+                <span>🐛 버그 제보</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="inquiry">
+                <span>💬 사용 문의</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="praise">
+                <span>✨ 응원/칭찬</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAuthor">작성자 / 닉네임</label>
+            <input type="text" id="formAuthor" class="form-control" placeholder="예: 일병곰신" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">이메일 (선택, 답변 알림용)</label>
+            <input type="email" id="formEmail" class="form-control" placeholder="user@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="formTitle">제목</label>
+            <input type="text" id="formTitle" class="form-control" placeholder="한 줄로 요약해주세요" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formContent">내용</label>
+            <textarea id="formContent" class="form-control" placeholder="자세한 내용이나 바라는 점을 편하게 적어주세요." required></textarea>
+          </div>
+
+          <input type="hidden" id="formAppVersion" value="2.0.1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-playstore" data-close-modal>취소</button>
+          <button type="submit" class="btn btn-primary">전송하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <img src="" alt="확대 이미지" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin-bottom: 8px;">BlueField Atelier • Safe & Sound Military Care</p>
+      <p><a href="../index.html" style="color: #34d399; text-decoration: none;">블루필드 아틀리에 메인 허브로 이동 →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
