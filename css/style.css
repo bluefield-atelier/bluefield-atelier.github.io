@@ -689,7 +689,9 @@ body {
 
 .status-received { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
 .status-reviewing { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
+.status-in_progress { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
 .status-resolved { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+.status-answered { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; }
 
 .card-title {
   font-size: 1.05rem;

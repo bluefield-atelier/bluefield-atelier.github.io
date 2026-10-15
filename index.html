@@ -322,6 +322,7 @@
           내용
         </div>
 
+        <!-- Official Admin Response Display -->
         <div class="detail-admin-section" id="detailAdminSection" style="display: none;">
           <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">
             <span>🛡️</span>
@@ -332,10 +333,52 @@
             답변 내용
           </div>
         </div>
+
+        <!-- Admin Edit Form (Protected by PIN) -->
+        <div id="adminEditorSection" style="display: none; margin-top: 20px; padding: 18px; background: rgba(30, 41, 59, 0.7); border: 1px dashed rgba(99, 102, 241, 0.4); border-radius: var(--radius-md);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: #a5b4fc;">🛡️ 관리자 답변 및 상태 관리</span>
+            <select id="adminStatusSelect" class="custom-select" style="padding: 4px 10px; font-size: 0.8rem;">
+              <option value="received">● 접수됨</option>
+              <option value="reviewing">● 검토 중</option>
+              <option value="in_progress">● 수정 중</option>
+              <option value="resolved">● 반영 완료</option>
+              <option value="answered">● 답변 완료</option>
+            </select>
+          </div>
+          <textarea id="adminReplyInput" class="form-control" style="min-height: 90px; margin-bottom: 10px; font-size: 0.88rem;" placeholder="개발팀 공식 답변을 입력하세요..."></textarea>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button type="button" class="btn btn-secondary" id="btnCancelAdminReply" style="padding: 6px 14px; font-size: 0.8rem;">취소</button>
+            <button type="button" class="btn btn-primary" id="btnSaveAdminReply" style="padding: 6px 14px; font-size: 0.8rem;">답변 등록/저장</button>
+          </div>
+        </div>
       </div>
 
-      <div class="modal-footer">
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" id="btnOpenAdminAuth" style="background: none; border: none; color: var(--text-dim); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+          🛡️ 관리자 모드
+        </button>
         <button type="button" class="btn btn-secondary" data-close-modal>닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIN Authentication Modal -->
+  <div class="modal-overlay" id="pinModal">
+    <div class="modal-container" style="max-width: 360px; text-align: center;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.1rem; font-weight: 700;">관리자 인증</h3>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 16px;">
+          답변을 등록하거나 수정하려면 관리자 PIN을 입력하세요.
+        </p>
+        <input type="password" id="pinInput" class="form-control" maxlength="6" placeholder="PIN 입력 (기본: 1209)" style="text-align: center; font-size: 1.2rem; letter-spacing: 0.3em; margin-bottom: 16px;">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-secondary" data-close-modal style="flex: 1;">취소</button>
+          <button type="button" class="btn btn-primary" id="btnSubmitPin" style="flex: 1;">확인</button>
+        </div>
       </div>
     </div>
   </div>

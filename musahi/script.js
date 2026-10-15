@@ -116,6 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMusahiFeedbacks();
   });
 
+  const ADMIN_PIN = "1209";
+
+  function getStatusBadge(status) {
+    switch (status) {
+      case 'resolved':
+        return `<span style="font-size:0.72rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.12); padding:2px 7px; border-radius:999px;">● 반영 완료</span>`;
+      case 'in_progress':
+        return `<span style="font-size:0.72rem; font-weight:700; color:#93c5fd; background:rgba(59,130,246,0.15); padding:2px 7px; border-radius:999px;">● 수정 중</span>`;
+      case 'reviewing':
+        return `<span style="font-size:0.72rem; font-weight:700; color:#fcd34d; background:rgba(245,158,11,0.15); padding:2px 7px; border-radius:999px;">● 검토 중</span>`;
+      case 'answered':
+        return `<span style="font-size:0.72rem; font-weight:700; color:#d8b4fe; background:rgba(168,85,247,0.15); padding:2px 7px; border-radius:999px;">● 답변 완료</span>`;
+      default:
+        return `<span style="font-size:0.72rem; font-weight:700; color:#94a3b8; background:rgba(148,163,184,0.12); padding:2px 7px; border-radius:999px;">● 접수됨</span>`;
+    }
+  }
+
   function loadMusahiFeedbacks() {
     let list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     let items = list.filter(item => item.appId === APP_ID);
@@ -143,7 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <span style="font-size: 0.75rem; font-weight: 700; color: #34d399; background: rgba(16,185,129,0.12); padding: 3px 8px; border-radius: var(--radius-full);">${cat.icon} ${cat.label}</span>
+              <div style="display:flex; gap:6px; align-items:center;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #34d399; background: rgba(16,185,129,0.12); padding: 3px 8px; border-radius: var(--radius-full);">${cat.icon} ${cat.label}</span>
+                ${getStatusBadge(item.status)}
+              </div>
               <span style="font-size: 0.75rem; color: var(--text-dim);">${item.createdAt ? item.createdAt.split(' ')[0] : ''}</span>
             </div>
             <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">${escapeHtml(item.title)}</h4>
@@ -152,12 +172,16 @@ document.addEventListener('DOMContentLoaded', () => {
             ${item.adminReply ? `
               <div style="margin-top: 12px; padding: 10px 12px; background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.82rem; color: #a7f3d0;">
                 <strong>🛡️ 개발팀 답변:</strong> ${escapeHtml(item.adminReply)}
+                ${item.replyDate ? `<span style="font-size:0.72rem; color:var(--text-dim); margin-left:6px;">(${item.replyDate})</span>` : ''}
               </div>
             ` : ''}
           </div>
 
           <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; font-size: 0.8rem; color: var(--text-dim);">
-            <span>작성자: <strong style="color: var(--text-main);">${escapeHtml(item.author)}</strong></span>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span>작성자: <strong style="color: var(--text-main);">${escapeHtml(item.author)}</strong></span>
+              <button style="background:none; border:none; color:#64748b; font-size:0.75rem; cursor:pointer; text-decoration:underline;" onclick="adminEditMusahi('${item.id}')">🛡️ 관리자</button>
+            </div>
             <button style="background:none; border:none; color: var(--text-dim); cursor: pointer; display: flex; align-items: center; gap: 4px;" onclick="likeMusahiItem('${item.id}', this)">
               <span>❤️</span> <span>${item.likes || 0}</span>
             </button>
@@ -166,6 +190,39 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
   }
+
+  window.adminEditMusahi = function(id) {
+    if (sessionStorage.getItem('bf_admin_auth') !== 'true') {
+      const pin = prompt('관리자 PIN 번호를 입력하세요: (기본: 1209)');
+      if (pin !== ADMIN_PIN) {
+        alert('PIN 번호가 일치하지 않습니다.');
+        return;
+      }
+      sessionStorage.setItem('bf_admin_auth', 'true');
+    }
+
+    const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const target = list.find(i => i.id === id);
+    if (!target) return;
+
+    const defaultChoice = target.status === 'resolved' ? '4' : (target.status === 'in_progress' ? '3' : (target.status === 'reviewing' ? '2' : (target.status === 'answered' ? '5' : '1')));
+    const statusChoice = prompt('상태를 선택하세요:\n1: 접수됨\n2: 검토 중\n3: 수정 중\n4: 반영 완료\n5: 답변 완료', defaultChoice);
+    if (statusChoice === '1') target.status = 'received';
+    else if (statusChoice === '2') target.status = 'reviewing';
+    else if (statusChoice === '3') target.status = 'in_progress';
+    else if (statusChoice === '4') target.status = 'resolved';
+    else if (statusChoice === '5') target.status = 'answered';
+
+    const newReply = prompt('개발팀 공식 답변을 입력하세요:', target.adminReply || '');
+    if (newReply !== null) {
+      target.adminReply = newReply.trim() || null;
+      target.replyDate = newReply.trim() ? new Date().toISOString().split('T')[0] : null;
+    }
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    showToast('피드백 상태 및 답변이 저장되었습니다! 🛡️');
+    loadMusahiFeedbacks();
+  };
 
   window.likeMusahiItem = function(id, btn) {
     const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');

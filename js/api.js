@@ -235,6 +235,39 @@ class FeedbackApi {
     return null;
   }
 
+  // 관리자 답변 등록 및 상태 갱신
+  async updateAdminReply(feedbackId, replyText, status = 'resolved') {
+    const backendOk = await this.checkBackend();
+    const todayStr = new Date().toISOString().split('T')[0];
+
+    if (backendOk) {
+      try {
+        const res = await fetch(`${this.apiBase}/feedbacks/${feedbackId}/reply`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reply: replyText, status: status })
+        });
+        if (res.ok) {
+          return await res.json();
+        }
+      } catch (err) {
+        console.warn('Backend reply update failed:', err);
+      }
+    }
+
+    // LocalStorage 처리
+    const list = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    const target = list.find(item => item.id === feedbackId);
+    if (target) {
+      target.adminReply = replyText.trim() || null;
+      target.replyDate = replyText.trim() ? todayStr : null;
+      if (status) target.status = status;
+      localStorage.setItem(this.storageKey, JSON.stringify(list));
+      return target;
+    }
+    return null;
+  }
+
   getAppNameById(appId) {
     const app = APPS_METADATA.find(a => a.id === appId);
     return app ? app.name : '기타 앱';

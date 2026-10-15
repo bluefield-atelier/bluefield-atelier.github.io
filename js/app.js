@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modals
   const writeModal = document.getElementById('writeModal');
   const detailModal = document.getElementById('detailModal');
+  const pinModal = document.getElementById('pinModal');
   const writeForm = document.getElementById('writeForm');
   const formAppSelect = document.getElementById('formAppSelect');
   const formTitle = document.getElementById('formTitle');
@@ -37,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const formDeviceInfo = document.getElementById('formDeviceInfo');
   const charCounter = document.getElementById('charCounter');
   const submitBtn = document.getElementById('btnSubmitFeedback');
+
+  // Admin PIN & Reply Elements
+  const ADMIN_PIN = "1209";
+  const btnOpenAdminAuth = document.getElementById('btnOpenAdminAuth');
+  const btnSubmitPin = document.getElementById('btnSubmitPin');
+  const pinInput = document.getElementById('pinInput');
+  const adminEditorSection = document.getElementById('adminEditorSection');
+  const adminReplyInput = document.getElementById('adminReplyInput');
+  const adminStatusSelect = document.getElementById('adminStatusSelect');
+  const btnSaveAdminReply = document.getElementById('btnSaveAdminReply');
+  const btnCancelAdminReply = document.getElementById('btnCancelAdminReply');
 
   // Toast container
   const toastContainer = document.getElementById('toastContainer');
@@ -248,8 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     switch (status) {
       case 'resolved':
         return `<span class="status-indicator status-resolved">● 반영 완료</span>`;
+      case 'in_progress':
+        return `<span class="status-indicator status-in_progress">● 수정 중</span>`;
       case 'reviewing':
         return `<span class="status-indicator status-reviewing">● 검토 중</span>`;
+      case 'answered':
+        return `<span class="status-indicator status-answered">● 답변 완료</span>`;
       default:
         return `<span class="status-indicator status-received">● 접수됨</span>`;
     }
@@ -281,6 +297,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('detailAdminDate').textContent = item.replyDate ? `(${item.replyDate})` : '';
     } else {
       replySection.style.display = 'none';
+    }
+
+    // Reset Admin Editor Form
+    if (adminEditorSection) {
+      adminEditorSection.style.display = 'none';
+      if (adminReplyInput) adminReplyInput.value = item.adminReply || '';
+      if (adminStatusSelect) adminStatusSelect.value = item.status || 'received';
     }
 
     openModal(detailModal);
@@ -374,6 +397,86 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Admin PIN Auth Button
+    if (btnOpenAdminAuth) {
+      btnOpenAdminAuth.addEventListener('click', () => {
+        if (sessionStorage.getItem('bf_admin_auth') === 'true') {
+          // Already authenticated: toggle editor
+          if (adminEditorSection) {
+            adminEditorSection.style.display = adminEditorSection.style.display === 'none' ? 'block' : 'none';
+          }
+        } else {
+          // Open PIN modal
+          if (pinInput) pinInput.value = '';
+          openModal(pinModal);
+          setTimeout(() => pinInput && pinInput.focus(), 100);
+        }
+      });
+    }
+
+    // Submit PIN
+    if (btnSubmitPin) {
+      btnSubmitPin.addEventListener('click', handlePinVerification);
+    }
+    if (pinInput) {
+      pinInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handlePinVerification();
+      });
+    }
+
+    function handlePinVerification() {
+      const entered = pinInput.value.trim();
+      if (entered === ADMIN_PIN) {
+        sessionStorage.setItem('bf_admin_auth', 'true');
+        closeModal(pinModal);
+        if (adminEditorSection) adminEditorSection.style.display = 'block';
+        showToast('관리자 인증 완료 🛡️');
+      } else {
+        showToast('PIN 번호가 일치하지 않습니다.', 'error');
+        pinInput.value = '';
+        pinInput.focus();
+      }
+    }
+
+    // Cancel Admin Reply
+    if (btnCancelAdminReply) {
+      btnCancelAdminReply.addEventListener('click', () => {
+        if (adminEditorSection) adminEditorSection.style.display = 'none';
+      });
+    }
+
+    // Save Admin Reply
+    if (btnSaveAdminReply) {
+      btnSaveAdminReply.addEventListener('click', async () => {
+        if (!state.currentDetail) return;
+        const replyText = adminReplyInput.value;
+        const statusVal = adminStatusSelect.value;
+
+        btnSaveAdminReply.disabled = true;
+        btnSaveAdminReply.textContent = '저장 중...';
+
+        try {
+          const updated = await window.feedbackApi.updateAdminReply(state.currentDetail.id, replyText, statusVal);
+          showToast('관리자 답변이 저장되었습니다! 🛡️');
+          if (adminEditorSection) adminEditorSection.style.display = 'none';
+
+          // Refresh current item detail & reload list
+          state.currentDetail.adminReply = replyText.trim() || null;
+          state.currentDetail.replyDate = replyText.trim() ? new Date().toISOString().split('T')[0] : null;
+          state.currentDetail.status = statusVal;
+
+          openDetailModal(state.currentDetail.id);
+          await loadFeedbacks();
+        } catch (err) {
+          console.error(err);
+          showToast('답변 저장 중 오류가 발생했습니다.', 'error');
+        } finally {
+          btnSaveAdminReply.disabled = false;
+          btnSaveAdminReply.textContent = '답변 등록/저장';
+        }
+      });
+    }
+
     // Close Modals
     document.querySelectorAll('[data-close-modal]').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -383,7 +486,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close on background click
-    [writeModal, detailModal].forEach(modal => {
+    [writeModal, detailModal, pinModal].forEach(modal => {
+      if (!modal) return;
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal(modal);
       });
@@ -394,6 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') {
         closeModal(writeModal);
         closeModal(detailModal);
+        closeModal(pinModal);
       }
     });
   }
