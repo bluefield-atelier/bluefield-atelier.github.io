@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const APP_ID = 'hojumeoni';
   const APP_NAME = '호주머니';
-  const STORAGE_KEY = 'bluefield_feedbacks_db';
+  const STORAGE_KEY = 'bluefield_feedbacks_db_v2';
 
   // DOM
   const writeModal = document.getElementById('writeModal');
