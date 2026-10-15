@@ -503,17 +503,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  let savedScrollY = 0;
   function openModal(modalEl) {
     if (!modalEl) return;
-    modalEl.classList.add('active');
+    savedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
+    modalEl.classList.add('active');
   }
 
   function closeModal(modalEl) {
     if (!modalEl) return;
     modalEl.classList.remove('active');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
     document.body.style.overflow = '';
+    window.scrollTo(0, savedScrollY);
   }
+
+  [writeModal, detailModal, pinModal].forEach(modal => {
+    if (modal) {
+      modal.addEventListener('touchmove', (e) => {
+        if (!e.target.closest('.modal-body') && !e.target.closest('.detail-body-text')) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
+  });
 
   function showToast(message, type = 'success') {
     const toast = document.createElement('div');

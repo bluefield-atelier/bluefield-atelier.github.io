@@ -793,6 +793,8 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-normal);
+  overscroll-behavior: contain;
+  touch-action: none;
 }
 
 .modal-overlay.active {
@@ -857,6 +859,7 @@ body {
   flex: 1;
   overflow-y: auto;
   overscroll-behavior: contain;
+  touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
 }
 

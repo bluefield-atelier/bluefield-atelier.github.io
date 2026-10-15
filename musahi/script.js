@@ -235,15 +235,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  let savedScrollY = 0;
   function openModal() {
-    writeModal.classList.add('active');
+    savedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
+    writeModal.classList.add('active');
   }
 
   function closeModal() {
     writeModal.classList.remove('active');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
     document.body.style.overflow = '';
+    window.scrollTo(0, savedScrollY);
   }
+
+  writeModal.addEventListener('touchmove', (e) => {
+    if (!e.target.closest('.modal-body')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 
   function showToast(msg) {
     const toast = document.createElement('div');
