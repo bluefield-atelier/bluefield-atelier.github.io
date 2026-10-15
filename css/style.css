@@ -42,6 +42,11 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
   background-color: var(--bg-dark);
@@ -49,6 +54,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
@@ -592,6 +598,8 @@ body {
   gap: 8px;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .category-chip {
@@ -604,6 +612,8 @@ body {
   color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .category-chip:hover {
@@ -1121,19 +1131,27 @@ textarea.form-control {
   /* Control Bar: Compact & Touch-friendly */
   .control-bar {
     padding: 14px 12px;
-    gap: 10px;
+    gap: 12px;
     border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .control-row-top {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   .app-filter-tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
     width: 100%;
+    min-width: 0;
   }
   .app-tab-btn {
     justify-content: center;
@@ -1145,6 +1163,7 @@ textarea.form-control {
     max-width: 100%;
     width: 100%;
     gap: 8px;
+    min-width: 0;
   }
   .search-input {
     font-size: 0.84rem;
@@ -1156,20 +1175,36 @@ textarea.form-control {
     flex-shrink: 0;
   }
   .category-chips {
+    display: flex;
     gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0; /* 중요: 부모 및 페이지가 가로로 늘어나지 않도록 방지하고 자체 스크롤 활성화 */
     overflow-x: auto;
-    padding-bottom: 4px;
+    overflow-y: hidden;
+    padding: 2px 2px 8px 2px;
     flex-wrap: nowrap;
-    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 130, 246, 0.4) rgba(255, 255, 255, 0.04);
   }
   .category-chips::-webkit-scrollbar {
-    display: none;
+    height: 4px;
+    display: block;
+  }
+  .category-chips::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 9999px;
+  }
+  .category-chips::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.45);
+    border-radius: 9999px;
   }
   .category-chip {
+    flex-shrink: 0;
     white-space: nowrap;
-    font-size: 0.76rem;
-    padding: 5px 11px;
+    font-size: 0.78rem;
+    padding: 6px 12px;
     border-radius: var(--radius-full);
   }
 
