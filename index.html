@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueField Atelier | 모바일 앱 스튜디오 & 커뮤니티 포털</title>
+  <meta name="description" content="소소하지만 필요한 가치를 정성껏 빚어내는 개인 개발 스튜디오 BlueField Atelier. 호주머니, 무사히, 오늘 등 대표 모바일 앱 소개와 사용 설명서, 열린 피드백 공간입니다.">
+  <link rel="icon" type="image/png" href="assets/atelier_logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier 로고" class="brand-logo-img">
+        <div class="brand-info">
+          <h1>BlueField Atelier</h1>
+          <p>Mobile App Studio & Community</p>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#about" class="nav-link">스튜디오 소개</a>
+        <a href="#apps" class="nav-link">앱 라인업</a>
+        <a href="hojumeoni/index.html" class="nav-link" style="color: #60a5fa;">📖 호주머니 설명서</a>
+        <a href="#feedback" class="nav-link">피드백 게시판</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://play.google.com/store/apps/dev?id=9074324001499723435" target="_blank" rel="noopener" class="btn btn-playstore">
+          <span>Google Play ↗</span>
+        </a>
+        <button id="btnOpenWriteModal" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          <span>피드백 남기기</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Hero / About Section -->
+    <section id="about" class="hero-section">
+      <div class="hero-banner-container">
+        <img src="assets/hero_bg.jpg" alt="BlueField Atelier 시그니처 배너" class="hero-banner-img">
+      </div>
+
+      <div class="hero-badge">
+        <span>✨ BlueField Atelier Studio</span>
+      </div>
+      <h2 class="hero-title">
+        소소하지만 필요한 가치를<br>
+        정성껏 빚어냅니다.
+      </h2>
+      <p class="hero-subtitle">
+        블루필드 아틀리에는 일상에 유용한 모바일 애플리케이션과 안정적인 소프트웨어를 제작하는 개인 개발 스튜디오입니다.<br>
+        사용자 여러분의 목소리를 귀담아듣고 함께 앱을 발전시켜 나가고 있습니다.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#apps" class="btn btn-primary" style="padding: 11px 24px;">앱 라인업 둘러보기 ↓</a>
+        <a href="#feedback" class="btn btn-secondary" style="padding: 11px 24px;">커뮤니티 피드백 참여하기</a>
+      </div>
+    </section>
+
+    <!-- App Lineup & Manuals Section -->
+    <section id="apps" class="section">
+      <div class="section-head">
+        <div class="section-tag">Applications</div>
+        <h2 class="section-title">스튜디오 대표 모바일 앱</h2>
+        <p class="section-subtitle">각 앱별 상세 소개와 사용 설명서, 전용 건의 게시판을 만나보세요.</p>
+      </div>
+
+      <!-- Flagship App: Hojumeoni -->
+      <div class="flagship-card">
+        <div class="flagship-visual">
+          <img src="assets/banner_hojumeoni.png" alt="호주머니 앱 대표 배너">
+        </div>
+        <div class="flagship-content">
+          <div>
+            <div class="flagship-header">
+              <img src="assets/hojumeoni_icon.png" alt="호주머니 아이콘" class="flagship-icon">
+              <div>
+                <span class="flagship-badge">FLAGSHIP APP</span>
+                <h3 class="flagship-title">호주머니</h3>
+              </div>
+            </div>
+            <p class="flagship-desc">
+              <strong>어떤 앱에서든 1초 만에 쏙! 링크·사진·문서 스마트 보관함</strong><br>
+              브라우저, 유튜브, 인스타그램 등 어디서든 공유 버튼 한 번으로 자료를 간편 보관하고, 태그 및 초성 검색과 구글 드라이브 백업으로 언제든 꺼내볼 수 있는 스마트 아카이빙 앱입니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag-pill">#스마트보관함</span>
+              <span class="tag-pill">#링크스크랩</span>
+              <span class="tag-pill">#초성검색</span>
+              <span class="tag-pill">#구글드라이브</span>
+              <span class="tag-pill">#Android</span>
+            </div>
+          </div>
+
+          <div class="flagship-actions">
+            <a href="hojumeoni/index.html" class="btn btn-primary">
+              <span>📖 사용 설명서 & 시연 영상 & 전용 피드백 →</span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-playstore">
+              <span>Google Play ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Apps Grid -->
+      <div class="sub-apps-grid">
+        <!-- Musahi -->
+        <div class="sub-app-card">
+          <div>
+            <div class="sub-app-head">
+              <img src="assets/musahi_icon.png" alt="무사히 아이콘" class="sub-app-icon">
+              <div>
+                <h4 class="sub-app-title">무사히 (Musahi)</h4>
+                <span style="font-size: 0.75rem; color: #60a5fa;">군인 & 곰신 필수 앱</span>
+              </div>
+            </div>
+            <p class="sub-app-desc">
+              오늘도 건강하게, 전역하는 그날까지! 복무 일수, 잔여 퍼센트, D-Day 계산 및 복무 기간 동안의 일상을 돕는 전역일 계산기 서비스입니다.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-secondary" style="flex: 1;">
+              <span>Google Play ↗</span>
+            </a>
+            <button class="btn btn-playstore" onclick="openFeedbackForApp('musahi')">💬 피드백</button>
+          </div>
+        </div>
+
+        <!-- Oneul -->
+        <div class="sub-app-card">
+          <div>
+            <div class="sub-app-head">
+              <img src="assets/oneul_icon.png" alt="오늘 아이콘" class="sub-app-icon">
+              <div>
+                <h4 class="sub-app-title">오늘 (Oneul)</h4>
+                <span style="font-size: 0.75rem; color: #10b981;">스마트 일정 & 디데이</span>
+              </div>
+            </div>
+            <p class="sub-app-desc">
+              복잡한 기능 없이 오늘 하루 일정과 소중한 D-Day를 정갈하고 감각적인 위젯으로 관리하는 미니멀 일정 플래너입니다.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.oneul" target="_blank" rel="noopener" class="btn btn-secondary" style="flex: 1;">
+              <span>Google Play ↗</span>
+            </a>
+            <button class="btn btn-playstore" onclick="openFeedbackForApp('oneul')">💬 피드백</button>
+          </div>
+        </div>
+
+        <!-- Waku Japanese -->
+        <div class="sub-app-card">
+          <div>
+            <div class="sub-app-head">
+              <img src="assets/waku_jpn.webp" alt="Waku 일본어 아이콘" class="sub-app-icon">
+              <div>
+                <h4 class="sub-app-title">Waku 일본어</h4>
+                <span style="font-size: 0.75rem; color: #f59e0b;">🚀 출시 예정</span>
+              </div>
+            </div>
+            <p class="sub-app-desc">
+              JLPT N5~N1 필수 단어, 한자, 일상·여행 회화를 3단계 카드 학습과 퀴즈로 마스터하는 오프라인 스마트 플래시카드 앱입니다.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary" style="flex: 1;" disabled>출시 준비 중</button>
+            <button class="btn btn-playstore" onclick="openFeedbackForApp('waku_jpn')">💡 의견 남기기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Feedback Section -->
+    <section id="feedback" class="section">
+      <div class="section-head">
+        <div class="section-tag">Community & Roadmap</div>
+        <h2 class="section-title">열린 소통 피드백 게시판</h2>
+        <p class="section-subtitle">BlueField Atelier의 모든 앱에 대한 건의사항, 버그 제보, 응원의 한마디를 남겨주세요.</p>
+      </div>
+
+      <!-- Controls: Filter & Search -->
+      <div class="control-bar">
+        <!-- App Tabs -->
+        <div class="app-filter-tabs" id="appTabs">
+          <!-- Rendered by js/app.js -->
+        </div>
+
+        <!-- Search & Sort Row -->
+        <div class="control-row-top">
+          <!-- Category Filter Chips -->
+          <div class="category-chips" id="categoryChips">
+            <button class="category-chip active" data-category="all">전체 카테고리</button>
+            <button class="category-chip" data-category="feature">💡 기능 제안</button>
+            <button class="category-chip" data-category="bug">🐛 버그 제보</button>
+            <button class="category-chip" data-category="inquiry">💬 사용 문의</button>
+            <button class="category-chip" data-category="praise">✨ 응원/칭찬</button>
+          </div>
+
+          <div class="search-sort-group">
+            <div class="search-box">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <input type="text" id="searchInput" class="search-input" placeholder="제목, 내용, 작성자 검색...">
+            </div>
+
+            <select id="sortSelect" class="custom-select">
+              <option value="latest">최신순</option>
+              <option value="likes">공감 많은 순</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Cards Grid -->
+      <div class="feedback-grid" id="feedbackGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Write Feedback Modal -->
+  <div class="modal-overlay" id="writeModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>새 피드백 작성</h2>
+        <button class="modal-close-btn" data-close-modal title="닫기">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form id="writeForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="formAppSelect">대상 앱 <span class="req" style="color:var(--accent-rose);">*</span></label>
+            <select id="formAppSelect" class="form-control">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>분류 <span class="req" style="color:var(--accent-rose);">*</span></label>
+            <div class="category-radio-group">
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="feature" checked>
+                <span>💡 기능 제안</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="bug">
+                <span>🐛 버그 제보</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="inquiry">
+                <span>💬 사용 문의</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="praise">
+                <span>✨ 응원/칭찬</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAuthor">작성자 / 닉네임 <span class="req" style="color:var(--accent-rose);">*</span></label>
+            <input type="text" id="formAuthor" class="form-control" placeholder="예: 호주머니팬" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">이메일 <span style="font-size:0.75rem; color:var(--text-dim);">(선택, 답변 알림용)</span></label>
+            <input type="email" id="formEmail" class="form-control" placeholder="user@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="formTitle">제목 <span class="req" style="color:var(--accent-rose);">*</span></label>
+            <input type="text" id="formTitle" class="form-control" placeholder="핵심 내용을 한 줄로 적어주세요" required maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="formContent">내용 <span class="req" style="color:var(--accent-rose);">*</span></label>
+            <textarea id="formContent" class="form-control" placeholder="자세한 내용이나 바라는 점을 자유롭게 적어주세요." required maxlength="1000"></textarea>
+            <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 6px; display: flex; justify-content: space-between;">
+              <span>비방 및 부적절한 내용은 제한될 수 있습니다.</span>
+              <span id="charCounter">0 / 1000</span>
+            </div>
+          </div>
+
+          <input type="hidden" id="formAppVersion" value="">
+          <input type="hidden" id="formDeviceInfo" value="">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>취소</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmitFeedback">
+            <span>피드백 전송하기</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="detailTitle" style="font-size: 1.15rem; line-height: 1.4;">제목</h2>
+        <button class="modal-close-btn" data-close-modal title="닫기">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="detail-meta-box">
+          <div class="badge-group">
+            <span class="badge badge-app" id="detailAppBadge">앱이름</span>
+            <span class="badge badge-cat-feature" id="detailCategoryBadge">기능제안</span>
+          </div>
+          <div id="detailStatusBadge"></div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+          <span style="color: var(--text-main); font-weight: 600;" id="detailAuthor">작성자</span>
+          <span>•</span>
+          <span id="detailDate">작성일시</span>
+        </div>
+
+        <div class="detail-body-text" id="detailContent">
+          내용
+        </div>
+
+        <div class="detail-admin-section" id="detailAdminSection" style="display: none;">
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">
+            <span>🛡️</span>
+            <span>BlueField Atelier 개발팀 공식 답변</span>
+            <span style="font-size: 0.75rem; color: var(--text-dim); margin-left: auto;" id="detailAdminDate"></span>
+          </div>
+          <div style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1;" id="detailAdminText">
+            답변 내용
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close-modal>닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px;">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier" style="width: 24px; height: 24px; border-radius: 4px;">
+        <span style="font-weight: 700; color: #fff;">BlueField Atelier</span>
+      </div>
+      <p style="margin-bottom: 8px;">소소하지만 필요한 가치를 정성껏 빚어내는 개인 개발 스튜디오</p>
+      <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function openFeedbackForApp(appId) {
+      const select = document.getElementById('formAppSelect');
+      if (select) select.value = appId;
+      const modal = document.getElementById('writeModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  </script>
+</body>
+</html>
