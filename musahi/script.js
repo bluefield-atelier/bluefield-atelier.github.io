@@ -2,7 +2,7 @@
  * Musahi App Page - Interactive Logic
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initMusahi() {
   const APP_ID = 'musahi';
   const APP_NAME = '무사히';
   const STORAGE_KEY = 'bluefield_feedbacks_db_v2';
@@ -55,13 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === writeModal) closeModal();
   });
 
-  // Check URL query parameters (App Deep Link)
+  // Check URL query parameters or hash (App Deep Link)
   const params = new URLSearchParams(window.location.search);
-  if (params.get('mode') === 'write') {
-    openModal();
+  const hash = window.location.hash;
+  const href = window.location.href;
+  if (params.get('mode') === 'write' || hash === '#write' || href.includes('mode=write')) {
+    setTimeout(() => {
+      openModal();
+    }, 100);
   }
-  if (params.get('version')) {
-    document.getElementById('formAppVersion').value = params.get('version');
+  const versionParam = params.get('version');
+  if (versionParam) {
+    const vEl = document.getElementById('formAppVersion');
+    if (vEl) vEl.value = versionParam;
   }
 
   // Load Feedbacks for Musahi
@@ -235,27 +241,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  let savedScrollY = 0;
   function openModal() {
-    savedScrollY = window.scrollY || window.pageYOffset || 0;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${savedScrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
-    document.body.style.overflow = 'hidden';
     writeModal.classList.add('active');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
   }
 
   function closeModal() {
     writeModal.classList.remove('active');
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    document.body.style.overflow = '';
-    window.scrollTo(0, savedScrollY);
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
   }
 
   writeModal.addEventListener('touchmove', (e) => {
@@ -263,6 +258,20 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     }
   }, { passive: false });
+
+  const modalBody = writeModal.querySelector('.modal-body');
+  if (modalBody) {
+    modalBody.addEventListener('touchstart', () => {
+      const top = modalBody.scrollTop;
+      const totalScroll = modalBody.scrollHeight;
+      const currentScroll = top + modalBody.offsetHeight;
+      if (top === 0) {
+        modalBody.scrollTop = 1;
+      } else if (currentScroll === totalScroll) {
+        modalBody.scrollTop = top - 1;
+      }
+    }, { passive: true });
+  }
 
   function showToast(msg) {
     const toast = document.createElement('div');
@@ -276,4 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!str) return '';
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
-});
+}
+
+// Ensure execution whether DOMContentLoaded has already fired or not
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMusahi);
+} else {
+  initMusahi();
+}
