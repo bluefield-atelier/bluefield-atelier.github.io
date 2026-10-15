@@ -6,13 +6,7 @@
 const APPS_METADATA = [
   { id: 'all', name: '전체 앱', icon: '🌐' },
   { id: 'hojumeoni', name: '호주머니', icon: '📁', pkg: 'com.bluefield.atelier.hojumeoni' },
-  { id: 'musahi', name: '무사히', icon: '🎖️', pkg: 'com.bluefield.atelier.musahi' },
-  { id: 'oneul', name: '오늘', icon: '📅', pkg: 'com.bluefield.atelier.oneul' },
-  { id: 'waku_jpn', name: '와쿠와쿠 일본어', icon: '🌸', pkg: 'com.bluefield.atelier.waku_jpn' },
-  { id: 'waku_chn', name: '와쿠와쿠 중국어', icon: '🎋', pkg: 'com.bluefield.atelier.waku_chn' },
-  { id: 'jlpt', name: 'JLPT 모의시험', icon: '📝', pkg: 'com.bluefield.atelier.jlpt' },
-  { id: 'maze', name: '미로 탈출', icon: '🧩', pkg: 'com.bluefield.atelier.maze' },
-  { id: 'other', name: '기타/공통', icon: '💡', pkg: 'com.bluefield.atelier.general' }
+  { id: 'musahi', name: '무사히', icon: '🎖️', pkg: 'com.bluefield.atelier.musahi' }
 ];
 
 const CATEGORIES = {
@@ -28,13 +22,13 @@ const DEFAULT_MOCK_FEEDBACKS = [
     appId: 'hojumeoni',
     appName: '호주머니',
     category: 'feature',
-    title: '폴더별로 비밀번호나 생체인증 잠금 기능이 추가되면 좋겠어요!',
+    title: '폴더별로 생체인증(지문) 잠금 기능이 추가되면 좋겠어요!',
     content: '호주머니 앱 정말 유용하게 매일 쓰고 있습니다. 특히 웹서핑하다가 공유버튼으로 1초만에 보관하는 기능이 최고예요!\n\n혹시 개인적인 메모나 중요한 영수증 사진을 보관하는 폴더에 생체인식(지문) 잠금 기능이 들어가면 더 안심하고 쓸 수 있을 것 같습니다. 검토 부탁드립니다!',
     author: '스마트수집가',
     email: 'user1@example.com',
     deviceInfo: 'Galaxy S24 / Android 14',
     appVersion: '1.2.4',
-    status: 'resolved', // received, reviewing, resolved
+    status: 'resolved',
     adminReply: '안녕하세요 스마트수집가님! 따뜻한 피드백 감사합니다. 폴더별 생체인증 잠금 기능은 다음 1.3.0 업데이트 로드맵에 반영되어 현재 개발 및 테스트 중입니다. 곧 선보여 드리겠습니다!',
     replyDate: '2026-10-14',
     likes: 24,
@@ -59,35 +53,36 @@ const DEFAULT_MOCK_FEEDBACKS = [
   },
   {
     id: 'fb-1003',
-    appId: 'oneul',
-    appName: '오늘',
+    appId: 'hojumeoni',
+    appName: '호주머니',
     category: 'praise',
-    title: '디자인도 깔끔하고 위젯도 너무 예쁩니다 ❤️',
-    content: '하루 일정과 디데이를 한눈에 볼 수 있어서 다른 일정관리 앱 다 지우고 이것만 씁니다. 광고도 거슬리지 않고 UI가 너무 정갈해요. 오래오래 업데이트 해주세요!',
-    author: '오늘도화이팅',
+    title: '공유하기 버튼 1초 저장은 진짜 신의 한 수입니다 👍',
+    content: '유튜브나 기사 읽다가 나중에 보려고 카톡 나에게 보내기 쓰던 습관이 있었는데 호주머니 쓰고 나서는 싹 정리됐습니다. 검색도 초성으로 바로 찾아서 너무 편해요!',
+    author: '호주머니애용자',
     email: '',
-    deviceInfo: 'Pixel 8 / Android 14',
-    appVersion: '1.1.0',
+    deviceInfo: 'Galaxy S23 / Android 14',
+    appVersion: '1.2.0',
     status: 'resolved',
-    adminReply: '기분 좋은 응원 말씀에 큰 힘을 얻습니다! 앞으로도 더욱 쾌적하고 편리한 앱이 되도록 정성껏 발전시켜 나가겠습니다. 감사합니다 :)',
+    adminReply: '소중한 사용 후기 감사합니다! 앞으로도 군더더기 없이 가장 빠르고 쾌적한 보관함이 되도록 계속 다듬어가겠습니다 :)',
     replyDate: '2026-10-13',
-    likes: 35,
-    createdAt: '2026-10-11 18:42'
+    likes: 31,
+    createdAt: '2026-10-13 16:40'
   },
   {
     id: 'fb-1004',
-    appId: 'waku_jpn',
-    appName: '와쿠와쿠 일본어',
+    appId: 'musahi',
+    appName: '무사히',
     category: 'feature',
-    title: '단어장 발음 연속 재생(듣기 모드) 지원 요청',
-    content: '출퇴근길에 화면을 보지 않고 이어폰으로 단어와 예문 발음을 쭉 연속해서 들을 수 있는 백그라운드 오디오 재생 모드가 있으면 출퇴근 학습에 정말 큰 도움이 될 것 같습니다!',
-    author: 'JLPT_N2도전',
-    email: 'jlpt_pass@gmail.com',
-    deviceInfo: 'Galaxy S23 / Android 14',
-    appVersion: '1.0.5',
+    title: '진급일 D-Day 디데이 알림 기능도 함께 볼 수 있으면 좋겠습니다',
+    content: '전역일 뿐만 아니라 일병, 상병, 병장 진급일도 디데이 위젯으로 한눈에 보고 싶어요! 군 생활의 소소한 낙이라 추가해주시면 너무 감사하겠습니다.',
+    author: '곰신_예비꽃신',
+    email: 'gomshin@gmail.com',
+    deviceInfo: 'iPhone 15 / Web',
+    appVersion: '2.0.0',
     status: 'received',
     adminReply: null,
-    likes: 12,
+    replyDate: null,
+    likes: 15,
     createdAt: '2026-10-15 11:30'
   }
 ];
@@ -95,7 +90,7 @@ const DEFAULT_MOCK_FEEDBACKS = [
 class FeedbackApi {
   constructor() {
     this.apiBase = '/api';
-    this.storageKey = 'bluefield_feedbacks_db';
+    this.storageKey = 'bluefield_feedbacks_db_v2';
     this.isBackendAvailable = null;
     this.initStorage();
   }
