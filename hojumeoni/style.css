@@ -727,3 +727,111 @@ textarea.form-control {
   .category-radio-group { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .site-header {
+    padding: 10px 0;
+  }
+  .brand-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-text h1 {
+    font-size: 1.05rem;
+  }
+  .brand-text p {
+    display: none;
+  }
+  .header-actions .btn-playstore {
+    display: none; /* 히어로에 다운로드 버튼이 이미 있으므로 헤더 간소화 */
+  }
+
+  .hero-section {
+    padding: 24px 0 16px;
+  }
+  .hero-badge {
+    font-size: 0.74rem;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    padding: 0 4px;
+    word-break: keep-all;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px !important;
+    font-size: 0.88rem;
+  }
+
+  .screenshots-section {
+    padding: 20px 0;
+  }
+  .screenshots-scroll-container {
+    padding: 10px 0 16px;
+    gap: 12px;
+  }
+  .screenshot-item {
+    flex: 0 0 160px;
+  }
+
+  .section {
+    padding: 28px 0;
+  }
+  .section-title {
+    font-size: 1.35rem;
+  }
+  .section-subtitle {
+    font-size: 0.84rem;
+    word-break: keep-all;
+  }
+
+  .manual-grid, .feature-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .manual-card, .f-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .feedback-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+  .modal-container {
+    max-height: 92vh;
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+  }
+}

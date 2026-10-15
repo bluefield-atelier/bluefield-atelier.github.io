@@ -957,7 +957,7 @@ textarea.form-control {
   color: var(--text-dim);
 }
 
-/* Responsive */
+/* Responsive - Mobile Optimized & Simple Layout */
 @media (max-width: 860px) {
   .hero-title { font-size: 1.85rem; }
   .hero-banner-container { height: 160px; }
@@ -968,4 +968,255 @@ textarea.form-control {
   .category-radio-group { grid-template-columns: repeat(2, 1fr); }
   .control-row-top { flex-direction: column; align-items: stretch; }
   .search-sort-group { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header: Slim & Clean */
+  .site-header {
+    padding: 10px 0;
+  }
+  .brand-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-info h1 {
+    font-size: 1.05rem;
+  }
+  .brand-info p {
+    display: none;
+  }
+  .header-actions .btn-playstore {
+    display: none; /* 상단바 PlayStore 버튼 숨김으로 공간 확보 */
+  }
+  #btnOpenWriteModal {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+  #btnOpenWriteModal svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Hero Section: Compact & Punchy */
+  .hero-section {
+    padding: 24px 0 16px;
+  }
+  .hero-banner-container {
+    display: none !important; /* 모바일에서는 무거운 가로 배너 숨겨 즉각적인 콘텐츠 접근 */
+  }
+  .hero-badge {
+    font-size: 0.74rem;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    padding: 0 4px;
+    word-break: keep-all;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px !important;
+    font-size: 0.88rem;
+  }
+
+  /* Section Title */
+  .section {
+    padding: 30px 0;
+  }
+  .section-head {
+    margin-bottom: 20px;
+  }
+  .section-tag {
+    font-size: 0.72rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .section-subtitle {
+    font-size: 0.84rem;
+    word-break: keep-all;
+  }
+
+  /* Flagship App Cards: Slim App-Store Style */
+  .flagship-card {
+    grid-template-columns: 1fr;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+    background: rgba(18, 24, 38, 0.92);
+  }
+  .flagship-visual {
+    display: none !important; /* 모바일에서 거대한 배너 이미지 숨김 -> 앱스토어형 슬림 카드 */
+  }
+  .flagship-content {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .flagship-header {
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .flagship-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .flagship-badge {
+    font-size: 0.68rem;
+    padding: 2px 7px;
+  }
+  .flagship-title {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+  }
+  .flagship-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    word-break: keep-all;
+  }
+  .tag-list {
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .tag-pill {
+    font-size: 0.72rem;
+    padding: 3px 7px;
+  }
+  .flagship-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .flagship-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+
+  /* Control Bar: Compact & Touch-friendly */
+  .control-bar {
+    padding: 14px 12px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+  }
+  .control-row-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .app-filter-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+  .app-tab-btn {
+    justify-content: center;
+    padding: 8px 4px;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+  }
+  .search-sort-group {
+    max-width: 100%;
+    width: 100%;
+    gap: 8px;
+  }
+  .search-input {
+    font-size: 0.84rem;
+    padding: 8px 12px 8px 36px;
+  }
+  .custom-select {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    flex-shrink: 0;
+  }
+  .category-chips {
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-chips::-webkit-scrollbar {
+    display: none;
+  }
+  .category-chip {
+    white-space: nowrap;
+    font-size: 0.76rem;
+    padding: 5px 11px;
+    border-radius: var(--radius-full);
+  }
+
+  /* Feedback Grid & Cards */
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .feedback-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+    gap: 10px;
+  }
+  .fb-title {
+    font-size: 0.96rem;
+    line-height: 1.4;
+  }
+  .fb-body-preview {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  /* Modal Mobile Bottom-Sheet Feel */
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+  .modal-container {
+    max-height: 92vh;
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+  }
+  .modal-header {
+    padding: 16px 18px 12px;
+  }
+  .modal-header h2 {
+    font-size: 1.1rem;
+  }
+  .modal-body {
+    padding: 16px 18px;
+  }
+  .modal-footer {
+    padding: 12px 18px 18px;
+  }
+  .category-radio-group {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
 }
