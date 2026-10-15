@@ -962,6 +962,8 @@ textarea.form-control {
   .hero-title { font-size: 1.85rem; }
   .hero-banner-container { height: 160px; }
   .flagship-card { grid-template-columns: 1fr; }
+  .flagship-content { padding: 24px 20px; }
+  .flagship-title { font-size: 1.25rem; }
   .nav-menu { display: none; }
   .category-radio-group { grid-template-columns: repeat(2, 1fr); }
   .control-row-top { flex-direction: column; align-items: stretch; }

@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.adminEditHojumeoni = function(id) {
     if (sessionStorage.getItem('bf_admin_auth') !== 'true') {
-      const pin = prompt('관리자 PIN 번호를 입력하세요: (기본: 1209)');
+      const pin = prompt('관리자 PIN 번호를 입력하세요:');
       if (pin !== ADMIN_PIN) {
         alert('PIN 번호가 일치하지 않습니다.');
         return;
