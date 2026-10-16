@@ -7,92 +7,21 @@ function initHojumeoni() {
   const APP_NAME = '호주머니';
   const STORAGE_KEY = 'bluefield_feedbacks_db_v2';
 
-  const DEFAULT_MOCK_FEEDBACKS = [
-    {
-      id: 'fb-1001',
-      appId: 'hojumeoni',
-      appName: '호주머니',
-      category: 'feature',
-      title: '폴더별로 생체인증(지문) 잠금 기능이 추가되면 좋겠어요!',
-      content: '호주머니 앱 정말 유용하게 매일 쓰고 있습니다. 특히 웹서핑하다가 공유버튼으로 1초만에 보관하는 기능이 최고예요!\n\n혹시 개인적인 메모나 중요한 영수증 사진을 보관하는 폴더에 생체인식(지문) 잠금 기능이 들어가면 더 안심하고 쓸 수 있을 것 같습니다. 검토 부탁드립니다!',
-      author: '스마트수집가',
-      email: 'user1@example.com',
-      deviceInfo: 'Galaxy S24 / Android 14',
-      appVersion: '1.2.4',
-      status: 'resolved',
-      adminReply: '안녕하세요 스마트수집가님! 따뜻한 피드백 감사합니다. v1.1 업데이트를 통해 프라이버시 보호를 위한 앱 잠금 기능(4자리 PIN & 지문/생체인식)이 정식 지원되었습니다! 설정 메뉴에서 잠금을 활성화하여 더욱 안심하고 사용해 보세요 :)',
-      replyDate: '2026-10-16',
-      likes: 24,
-      createdAt: '2026-10-12 14:20'
-    },
-    {
-      id: 'fb-1002',
-      appId: 'musahi',
-      appName: '무사히',
-      category: 'bug',
-      title: '홈 위젯에서 D-Day 퍼센트 갱신이 간혹 늦어지는 현상',
-      content: '항상 무사히 앱으로 남은 복무일 확인하면서 힘내고 있습니다.\n홈 화면에 2x2 위젯을 꺼내두었는데, 자정이 지나도 퍼센트가 바로 안 바뀌고 앱을 한번 실행해야 갱신되는 경우가 종종 있습니다. 확인 부탁드려요!',
-      author: '일병_김철수',
-      email: '',
-      deviceInfo: 'Galaxy A54 / Android 13',
-      appVersion: '2.0.1',
-      status: 'reviewing',
-      adminReply: '충성! 소중한 제보 감사합니다. 안드로이드 백그라운드 배터리 최적화 정책으로 인해 위젯 알람 갱신 주기가 지연되는 현상을 확인하였으며, 정확한 정시 갱신 로직을 보완 중입니다.',
-      replyDate: '2026-10-15',
-      likes: 18,
-      createdAt: '2026-10-14 09:15'
-    },
-    {
-      id: 'fb-1003',
-      appId: 'hojumeoni',
-      appName: '호주머니',
-      category: 'praise',
-      title: '공유하기 버튼 1초 저장은 진짜 신의 한 수입니다 👍',
-      content: '유튜브나 기사 읽다가 나중에 보려고 카톡 나에게 보내기 쓰던 습관이 있었는데 호주머니 쓰고 나서는 싹 정리됐습니다. 검색도 초성으로 바로 찾아서 너무 편해요!',
-      author: '호주머니애용자',
-      email: '',
-      deviceInfo: 'Galaxy S23 / Android 14',
-      appVersion: '1.2.0',
-      status: 'resolved',
-      adminReply: '소중한 사용 후기 감사합니다! 앞으로도 군더더기 없이 가장 빠르고 쾌적한 보관함이 되도록 계속 다듬어가겠습니다 :)',
-      replyDate: '2026-10-13',
-      likes: 31,
-      createdAt: '2026-10-13 16:40'
-    },
-    {
-      id: 'fb-1004',
-      appId: 'musahi',
-      appName: '무사히',
-      category: 'feature',
-      title: '진급일 D-Day 디데이 알림 기능도 함께 볼 수 있으면 좋겠습니다',
-      content: '전역일 뿐만 아니라 일병, 상병, 병장 진급일도 디데이 위젯으로 한눈에 보고 싶어요! 군 생활의 소소한 낙이라 추가해주시면 너무 감사하겠습니다.',
-      author: '곰신_예비꽃신',
-      email: 'gomshin@gmail.com',
-      deviceInfo: 'iPhone 15 / Web',
-      appVersion: '2.0.0',
-      status: 'received',
-      adminReply: null,
-      replyDate: null,
-      likes: 15,
-      createdAt: '2026-10-15 11:30'
-    }
-  ];
+  const DEFAULT_MOCK_FEEDBACKS = [];
 
   function getFeedbackList() {
     let raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_MOCK_FEEDBACKS));
-      return [...DEFAULT_MOCK_FEEDBACKS];
-    }
+    if (!raw) return [];
     try {
       let parsed = JSON.parse(raw);
-      if (!Array.isArray(parsed) || parsed.length === 0) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_MOCK_FEEDBACKS));
-        return [...DEFAULT_MOCK_FEEDBACKS];
+      // Clean up mock data if any exists
+      if (Array.isArray(parsed) && parsed.some(item => item.id && item.id.startsWith('fb-100'))) {
+        localStorage.removeItem(STORAGE_KEY);
+        return [];
       }
-      return parsed;
+      return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
-      return [...DEFAULT_MOCK_FEEDBACKS];
+      return [];
     }
   }
 
@@ -170,7 +99,7 @@ function initHojumeoni() {
   // Load Feedbacks for Hojumeoni
   loadHojumeoniFeedbacks();
 
-  // Form Submit
+  // Form Submit (Direct Developer Email Submission via FormSubmit)
   writeForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -180,48 +109,65 @@ function initHojumeoni() {
     const email = document.getElementById('formEmail').value.trim();
     const catInput = document.querySelector('input[name="category"]:checked');
     const category = catInput ? catInput.value : 'feature';
-    const appVersion = document.getElementById('formAppVersion').value;
+    const appVersion = document.getElementById('formAppVersion') ? document.getElementById('formAppVersion').value : '1.2.4';
 
     if (!title || !content) {
       showToast('제목과 내용을 모두 입력해주세요.');
       return;
     }
 
-    const newRecord = {
-      id: 'fb-' + Date.now(),
-      appId: APP_ID,
-      appName: APP_NAME,
-      category: category,
-      title: title,
-      content: content,
-      author: author,
-      email: email,
-      deviceInfo: 'Android / Hojumeoni User',
-      appVersion: appVersion || '1.2.0',
-      status: 'received',
-      adminReply: null,
-      replyDate: null,
-      likes: 0,
-      createdAt: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    const categoryNames = {
+      feature: '💡 기능 제안',
+      bug: '🐛 버그 제보',
+      inquiry: '💬 사용 문의',
+      praise: '✨ 응원/칭찬'
     };
 
-    // Save to LocalStorage (or API if server is up)
-    try {
-      if (window.parent && window.parent.feedbackApi) {
-        await window.parent.feedbackApi.createFeedback(newRecord);
-      } else {
-        const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        list.unshift(newRecord);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-      }
-    } catch (err) {
-      console.warn('Storage save fallback', err);
+    const submitBtn = document.getElementById('btnSubmitFeedback') || writeForm.querySelector('button[type="submit"]');
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>개발팀으로 전달하기 ✉️</span>';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>메일 전달 중... ⏳</span>';
     }
 
-    showToast('소중한 피드백이 등록되었습니다! 감사합니다 ❤️');
-    closeModal();
-    writeForm.reset();
-    loadHojumeoniFeedbacks();
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/tedd.devteam@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[${APP_NAME} 피드백 전달] ${title}`,
+          _cc: "bluefield.works@gmail.com",
+          _template: "table",
+          "앱 이름": APP_NAME,
+          "앱 버전": appVersion || '1.2.4',
+          "분류": categoryNames[category] || category,
+          "작성자": author,
+          "회신 받을 이메일": email || '미입력 (이메일 없음)',
+          "제목": title,
+          "피드백 / 개선 제안 내용": content,
+          "전송 일시": new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+        })
+      });
+
+      if (response.ok) {
+        showToast('소중한 피드백이 개발팀 메일로 안전하게 전달되었습니다! 감사합니다 ❤️');
+        closeModal();
+        writeForm.reset();
+      } else {
+        throw new Error('전송 응답 오류: ' + response.status);
+      }
+    } catch (err) {
+      console.error('Feedback submit error:', err);
+      showToast('전송 중 일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
   });
 
   // Admin PIN & Authentication
@@ -503,6 +449,7 @@ function initHojumeoni() {
   }
 
   function loadHojumeoniFeedbacks() {
+    if (!feedbackGrid) return;
     let list = getFeedbackList();
     let items = list.filter(item => item.appId === APP_ID);
 
