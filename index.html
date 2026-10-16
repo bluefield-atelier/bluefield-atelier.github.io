@@ -160,51 +160,40 @@
       </div>
     </section>
 
-    <!-- Community Feedback Section -->
-    <section id="feedback" class="section">
-      <div class="section-head">
-        <div class="section-tag">Community & Roadmap</div>
-        <h2 class="section-title">열린 소통 피드백 게시판</h2>
-        <p class="section-subtitle">BlueField Atelier의 모든 앱에 대한 건의사항, 버그 제보, 응원의 한마디를 남겨주세요.</p>
-      </div>
-
-      <!-- Controls: Filter & Search -->
-      <div class="control-bar">
-        <!-- App Tabs -->
-        <div class="app-filter-tabs" id="appTabs">
-          <!-- Rendered by js/app.js -->
+    <!-- Direct Feedback & Contact Section -->
+    <section id="feedback" class="section" style="padding-top: 20px;">
+      <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); padding: 48px 32px; backdrop-filter: blur(16px); text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-glass);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 50%; font-size: 2.2rem; margin-bottom: 20px;">
+          ✉️
         </div>
+        <div class="section-tag" style="margin-bottom: 8px;">Direct Developer Contact</div>
+        <h2 class="section-title" style="margin-bottom: 12px; font-size: 1.85rem;">개발팀에 직접 피드백 & 개선 제안 전달하기</h2>
+        <p class="section-subtitle" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 28px;">
+          호주머니, 무사히 등 BlueField Atelier의 모든 앱에 대한 건의사항, 버그 제보, 응원의 메시지를 남겨주시면<br>
+          <strong>개발팀(tedd.devteam@gmail.com / bluefield.works@gmail.com)</strong>으로 즉시 안전하게 전달됩니다.
+        </p>
 
-        <!-- Search & Sort Row -->
-        <div class="control-row-top">
-          <!-- Category Filter Chips -->
-          <div class="category-chips" id="categoryChips">
-            <button class="category-chip active" data-category="all">전체 카테고리</button>
-            <button class="category-chip" data-category="feature">💡 기능 제안</button>
-            <button class="category-chip" data-category="bug">🐛 버그 제보</button>
-            <button class="category-chip" data-category="inquiry">💬 사용 문의</button>
-            <button class="category-chip" data-category="praise">✨ 응원/칭찬</button>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 32px; text-align: left;">
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">💡</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">기능 제안 & 아이디어</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">앱을 쓰시면서 "이런 기능이 있으면 좋겠다" 하는 아이디어를 자유롭게 들려주세요.</div>
           </div>
-
-          <div class="search-sort-group">
-            <div class="search-box">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-              <input type="text" id="searchInput" class="search-input" placeholder="제목, 내용, 작성자 검색...">
-            </div>
-
-            <select id="sortSelect" class="custom-select">
-              <option value="latest">최신순</option>
-              <option value="likes">공감 많은 순</option>
-            </select>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">🐛</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">버그 및 오류 제보</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">사용 중 불편하신 점이나 오류 현상을 기기 기종과 함께 알려주시면 빠르게 조치합니다.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">📬</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">개발진 1:1 직접 전달</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">작성하신 소중한 의견은 개발팀 이메일로 즉시 안전하게 전달되어 다음 업데이트에 반영됩니다.</div>
           </div>
         </div>
-      </div>
 
-      <!-- Feedback Cards Grid -->
-      <div class="feedback-grid" id="feedbackGrid">
-        <!-- Rendered dynamically by js/app.js -->
+        <button id="btnOpenWriteSection" class="btn btn-primary" style="padding: 14px 38px; font-size: 1.05rem; box-shadow: 0 4px 24px rgba(99, 102, 241, 0.4);">
+          <span>💬 피드백 / 개선 제안 전달하기</span>
+        </button>
       </div>
     </section>
 

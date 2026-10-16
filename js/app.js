@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resolvedCountEl = document.getElementById('resolvedCount');
   const writeModalBtn = document.getElementById('btnOpenWriteModal');
   const heroWriteBtn = document.getElementById('heroWriteBtn');
+  const btnOpenWriteSection = document.getElementById('btnOpenWriteSection');
 
   // Modals
   const writeModal = document.getElementById('writeModal');
@@ -57,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initApp();
 
   async function initApp() {
-    renderAppTabs();
+    if (appTabsContainer) renderAppTabs();
     populateFormAppSelect();
     setupEventListeners();
     parseUrlParams();
-    await loadFeedbacks();
+    if (feedbackGrid) await loadFeedbacks();
   }
 
   // URL Query Parameters Handling (App Deep Linking)
@@ -349,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open Write Modal
     if (writeModalBtn) writeModalBtn.addEventListener('click', () => openModal(writeModal));
     if (heroWriteBtn) heroWriteBtn.addEventListener('click', () => openModal(writeModal));
+    if (btnOpenWriteSection) btnOpenWriteSection.addEventListener('click', () => openModal(writeModal));
 
     // Content Length Counter
     formContent.addEventListener('input', () => {
@@ -379,21 +381,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>전송 중...</span>`;
+      submitBtn.innerHTML = `<span>메일 전달 중... ⏳</span>`;
 
       try {
         await window.feedbackApi.createFeedback(feedbackPayload);
-        showToast('소중한 피드백이 성공적으로 등록되었습니다! ✨');
+        showToast('소중한 피드백이 개발팀 메일로 안전하게 전달되었습니다! 감사합니다 ❤️');
         closeModal(writeModal);
         writeForm.reset();
         charCounter.textContent = '0 / 1000';
-        await loadFeedbacks();
+        if (feedbackGrid) await loadFeedbacks();
       } catch (err) {
         console.error(err);
         showToast('피드백 전송에 실패했습니다. 다시 시도해 주세요.', 'error');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = `<span>피드백 전송하기</span>`;
+        submitBtn.innerHTML = `<span>개발팀으로 전달하기 ✉️</span>`;
       }
     });
 
