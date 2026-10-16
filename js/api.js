@@ -29,8 +29,8 @@ const DEFAULT_MOCK_FEEDBACKS = [
     deviceInfo: 'Galaxy S24 / Android 14',
     appVersion: '1.2.4',
     status: 'resolved',
-    adminReply: '안녕하세요 스마트수집가님! 따뜻한 피드백 감사합니다. 폴더별 생체인증 잠금 기능은 다음 1.3.0 업데이트 로드맵에 반영되어 현재 개발 및 테스트 중입니다. 곧 선보여 드리겠습니다!',
-    replyDate: '2026-10-14',
+    adminReply: '안녕하세요 스마트수집가님! 따뜻한 피드백 감사합니다. v1.1 업데이트를 통해 프라이버시 보호를 위한 앱 잠금 기능(4자리 PIN & 지문/생체인식)이 정식 지원되었습니다! 설정 메뉴에서 잠금을 활성화하여 더욱 안심하고 사용해 보세요 :)',
+    replyDate: '2026-10-16',
     likes: 24,
     createdAt: '2026-10-12 14:20'
   },
