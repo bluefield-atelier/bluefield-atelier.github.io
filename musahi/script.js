@@ -550,7 +550,7 @@ function initMusahi() {
               <span>작성자: <strong style="color: var(--text-main);">${escapeHtml(item.author)}</strong></span>
               ${isAdm ? `
                 <button style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.35); color:#6ee7b7; font-size:0.75rem; font-weight:700; padding:3px 10px; border-radius:4px; cursor:pointer; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;" onclick="adminOpenReplyModal('${item.id}')">
-                  <span>🛡️</span> <span>답변 & 상태 관리</span>
+                  <span>🛡️</span> <span>관리하기</span>
                 </button>
               ` : ''}
             </div>
