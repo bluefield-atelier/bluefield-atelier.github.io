@@ -31,19 +31,12 @@
       <nav class="nav-menu">
         <a href="#about" class="nav-link">스튜디오 소개</a>
         <a href="#apps" class="nav-link">앱 라인업</a>
-        <a href="#feedback" class="nav-link">피드백 전달</a>
       </nav>
 
       <div class="header-actions">
         <a href="https://play.google.com/store/apps/dev?id=9074324001499723435" target="_blank" rel="noopener" class="btn btn-playstore">
           <span>Google Play ↗</span>
         </a>
-        <button id="btnOpenWriteModal" class="btn btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-          <span>피드백 전달하기</span>
-        </button>
       </div>
     </div>
   </header>
@@ -70,8 +63,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#apps" class="btn btn-primary" style="padding: 11px 24px;">앱 라인업 둘러보기 ↓</a>
-        <a href="#feedback" class="btn btn-secondary" style="padding: 11px 24px;">개발팀에 피드백 전달하기</a>
+        <a href="#apps" class="btn btn-primary" style="padding: 12px 32px; font-size: 1rem;">앱 라인업 둘러보기 ↓</a>
       </div>
     </section>
 
@@ -160,225 +152,8 @@
       </div>
     </section>
 
-    <!-- Direct Feedback & Contact Section -->
-    <section id="feedback" class="section" style="padding-top: 20px;">
-      <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); padding: 48px 32px; backdrop-filter: blur(16px); text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-glass);">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 50%; font-size: 2.2rem; margin-bottom: 20px;">
-          ✉️
-        </div>
-        <div class="section-tag" style="margin-bottom: 8px;">Direct Developer Contact</div>
-        <h2 class="section-title" style="margin-bottom: 12px; font-size: 1.85rem;">개발팀에 직접 피드백 & 개선 제안 전달하기</h2>
-        <p class="section-subtitle" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 28px;">
-          호주머니, 무사히 등 BlueField Atelier의 모든 앱에 대한 건의사항, 버그 제보, 응원의 메시지를 남겨주시면<br>
-          <strong>개발팀(tedd.devteam@gmail.com / bluefield.works@gmail.com)</strong>으로 즉시 안전하게 전달됩니다.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 32px; text-align: left;">
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
-            <div style="font-size: 1.4rem; margin-bottom: 8px;">💡</div>
-            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">기능 제안 & 아이디어</div>
-            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">앱을 쓰시면서 "이런 기능이 있으면 좋겠다" 하는 아이디어를 자유롭게 들려주세요.</div>
-          </div>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
-            <div style="font-size: 1.4rem; margin-bottom: 8px;">🐛</div>
-            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">버그 및 오류 제보</div>
-            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">사용 중 불편하신 점이나 오류 현상을 기기 기종과 함께 알려주시면 빠르게 조치합니다.</div>
-          </div>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
-            <div style="font-size: 1.4rem; margin-bottom: 8px;">📬</div>
-            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">개발진 1:1 직접 전달</div>
-            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">작성하신 소중한 의견은 개발팀 이메일로 즉시 안전하게 전달되어 다음 업데이트에 반영됩니다.</div>
-          </div>
-        </div>
-
-        <button id="btnOpenWriteSection" class="btn btn-primary" style="padding: 14px 38px; font-size: 1.05rem; box-shadow: 0 4px 24px rgba(99, 102, 241, 0.4);">
-          <span>💬 피드백 / 개선 제안 전달하기</span>
-        </button>
-      </div>
-    </section>
 
   </main>
-
-  <!-- Write Feedback Modal -->
-  <div class="modal-overlay" id="writeModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <h2>개발팀에 피드백 전달하기</h2>
-        <button class="modal-close-btn" data-close-modal title="닫기">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <form id="writeForm">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="formAppSelect">대상 앱 <span class="req" style="color:var(--accent-rose);">*</span></label>
-            <select id="formAppSelect" class="form-control">
-              <!-- Dynamically populated -->
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>분류 <span class="req" style="color:var(--accent-rose);">*</span></label>
-            <div class="category-radio-group">
-              <label class="category-radio-label">
-                <input type="radio" name="category" value="feature" checked>
-                <span>💡 기능 제안</span>
-              </label>
-              <label class="category-radio-label">
-                <input type="radio" name="category" value="bug">
-                <span>🐛 버그 제보</span>
-              </label>
-              <label class="category-radio-label">
-                <input type="radio" name="category" value="inquiry">
-                <span>💬 사용 문의</span>
-              </label>
-              <label class="category-radio-label">
-                <input type="radio" name="category" value="praise">
-                <span>✨ 응원/칭찬</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="formAuthor">작성자 / 닉네임 <span class="req" style="color:var(--accent-rose);">*</span></label>
-            <input type="text" id="formAuthor" class="form-control" placeholder="예: 호주머니팬" required>
-          </div>
-
-          <div class="form-group">
-            <label for="formEmail">이메일 <span style="font-size:0.75rem; color:var(--text-dim);">(선택, 답변 알림용)</span></label>
-            <input type="email" id="formEmail" class="form-control" placeholder="user@example.com">
-          </div>
-
-          <div class="form-group">
-            <label for="formTitle">제목 <span class="req" style="color:var(--accent-rose);">*</span></label>
-            <input type="text" id="formTitle" class="form-control" placeholder="핵심 내용을 한 줄로 적어주세요" required maxlength="100">
-          </div>
-
-          <div class="form-group">
-            <label for="formContent">내용 <span class="req" style="color:var(--accent-rose);">*</span></label>
-            <textarea id="formContent" class="form-control" placeholder="자세한 내용이나 바라는 점을 자유롭게 적어주세요." required maxlength="1000"></textarea>
-            <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 6px; display: flex; justify-content: space-between;">
-              <span>비방 및 부적절한 내용은 제한될 수 있습니다.</span>
-              <span id="charCounter">0 / 1000</span>
-            </div>
-          </div>
-
-          <input type="hidden" id="formAppVersion" value="">
-          <input type="hidden" id="formDeviceInfo" value="">
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-close-modal>취소</button>
-          <button type="submit" class="btn btn-primary" id="btnSubmitFeedback">
-            <span>개발팀으로 전달하기 ✉️</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Detail Modal -->
-  <div class="modal-overlay" id="detailModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <h2 id="detailTitle" style="font-size: 1.15rem; line-height: 1.4;">제목</h2>
-        <button class="modal-close-btn" data-close-modal title="닫기">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <div class="detail-meta-box">
-          <div class="badge-group">
-            <span class="badge badge-app" id="detailAppBadge">앱이름</span>
-            <span class="badge badge-cat-feature" id="detailCategoryBadge">기능제안</span>
-          </div>
-          <div id="detailStatusBadge"></div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
-          <span style="color: var(--text-main); font-weight: 600;" id="detailAuthor">작성자</span>
-          <span>•</span>
-          <span id="detailDate">작성일시</span>
-        </div>
-
-        <div class="detail-body-text" id="detailContent">
-          내용
-        </div>
-
-        <!-- Official Admin Response Display -->
-        <div class="detail-admin-section" id="detailAdminSection" style="display: none;">
-          <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">
-            <span>🛡️</span>
-            <span>BlueField Atelier 개발팀 공식 답변</span>
-            <span style="font-size: 0.75rem; color: var(--text-dim); margin-left: auto;" id="detailAdminDate"></span>
-          </div>
-          <div style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1;" id="detailAdminText">
-            답변 내용
-          </div>
-        </div>
-
-        <!-- Admin Edit Form (Protected by PIN) -->
-        <div id="adminEditorSection" style="display: none; margin-top: 20px; padding: 18px; background: rgba(30, 41, 59, 0.7); border: 1px dashed rgba(99, 102, 241, 0.4); border-radius: var(--radius-md);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span style="font-size: 0.85rem; font-weight: 700; color: #a5b4fc;">🛡️ 관리자 답변 및 상태 관리</span>
-            <select id="adminStatusSelect" class="custom-select" style="padding: 4px 10px; font-size: 0.8rem;">
-              <option value="received">● 접수됨</option>
-              <option value="reviewing">● 검토 중</option>
-              <option value="in_progress">● 수정 중</option>
-              <option value="resolved">● 반영 완료</option>
-              <option value="answered">● 답변 완료</option>
-            </select>
-          </div>
-          <textarea id="adminReplyInput" class="form-control" style="min-height: 90px; margin-bottom: 10px; font-size: 0.88rem;" placeholder="개발팀 공식 답변을 입력하세요..."></textarea>
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
-            <button type="button" class="btn" id="btnAdminDeleteMain" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; font-size: 0.8rem; padding: 6px 14px; cursor: pointer;" title="이 피드백을 영구 삭제합니다">
-              <span>🗑️ 피드백 삭제</span>
-            </button>
-            <div style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary" id="btnCancelAdminReply" style="padding: 6px 14px; font-size: 0.8rem;">취소</button>
-              <button type="button" class="btn btn-primary" id="btnSaveAdminReply" style="padding: 6px 14px; font-size: 0.8rem;">답변 등록/저장</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-footer" style="justify-content: space-between;">
-        <button type="button" id="btnOpenAdminAuth" style="background: none; border: none; color: var(--text-dim); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
-          🛡️ 관리자 모드
-        </button>
-        <button type="button" class="btn btn-secondary" data-close-modal>닫기</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- PIN Authentication Modal -->
-  <div class="modal-overlay" id="pinModal">
-    <div class="modal-container" style="max-width: 360px; text-align: center;">
-      <div class="modal-header">
-        <h3 style="font-size: 1.1rem; font-weight: 700;">관리자 인증</h3>
-        <button class="modal-close-btn" data-close-modal>✕</button>
-      </div>
-      <div class="modal-body" style="padding: 24px;">
-        <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 16px;">
-          답변을 등록하거나 수정하려면 관리자 PIN을 입력하세요.
-        </p>
-        <input type="password" id="pinInput" class="form-control" maxlength="6" placeholder="PIN 번호 입력" style="text-align: center; font-size: 1.2rem; letter-spacing: 0.3em; margin-bottom: 16px;">
-        <div style="display: flex; gap: 8px;">
-          <button type="button" class="btn btn-secondary" data-close-modal style="flex: 1;">취소</button>
-          <button type="button" class="btn btn-primary" id="btnSubmitPin" style="flex: 1;">확인</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast-container" id="toastContainer"></div>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -390,19 +165,5 @@
       <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="js/api.js?v=20261016_2115"></script>
-  <script src="js/app.js?v=20261016_2115"></script>
-  <script>
-    function openFeedbackForApp(appId) {
-      const select = document.getElementById('formAppSelect');
-      if (select) select.value = appId;
-      const modal = document.getElementById('writeModal');
-      if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-  </script>
 </body>
 </html>
