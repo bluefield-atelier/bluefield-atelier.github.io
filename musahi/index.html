@@ -389,11 +389,16 @@
           </div>
 
         </div>
-        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
-          <button type="button" class="btn btn-secondary" data-close-modal>취소</button>
-          <button type="submit" class="btn btn-primary" style="padding: 10px 22px;">
-            <span>💾 답변 및 상태 저장하기</span>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+          <button type="button" class="btn" id="btnAdminDeleteFeedback" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; font-size: 0.85rem; padding: 10px 16px; cursor: pointer; transition: all 0.2s;" title="이 피드백을 영구 삭제합니다">
+            <span>🗑️ 피드백 삭제</span>
           </button>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn btn-secondary" data-close-modal>취소</button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 22px;">
+              <span>💾 답변 및 상태 저장하기</span>
+            </button>
+          </div>
         </div>
       </form>
     </div>
@@ -414,6 +419,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261016_2045"></script>
+  <script src="script.js?v=20261016_2115"></script>
 </body>
 </html>

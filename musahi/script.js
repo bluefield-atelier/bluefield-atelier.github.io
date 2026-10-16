@@ -437,6 +437,26 @@ function initMusahi() {
     });
   }
 
+  const btnAdminDeleteFeedback = document.getElementById('btnAdminDeleteFeedback');
+  if (btnAdminDeleteFeedback) {
+    btnAdminDeleteFeedback.addEventListener('click', () => {
+      const targetId = document.getElementById('adminTargetFeedbackId').value;
+      if (!targetId) return;
+
+      const list = getFeedbackList();
+      const target = list.find(i => i.id === targetId);
+      const targetTitle = target ? `"${target.title}"` : '이 피드백';
+
+      if (confirm(`${targetTitle}을(를) 정말 삭제하시겠습니까?\n\n삭제된 피드백은 영구적으로 제거되며 복구할 수 없습니다.`)) {
+        const updatedList = list.filter(i => i.id !== targetId);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
+        showToast('피드백이 삭제되었습니다. 🗑️');
+        closeAdminReplyModal();
+        loadMusahiFeedbacks();
+      }
+    });
+  }
+
   if (adminReplyModal) {
     adminReplyModal.addEventListener('click', (e) => {
       if (e.target === adminReplyModal) closeAdminReplyModal();

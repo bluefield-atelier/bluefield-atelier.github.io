@@ -268,6 +268,30 @@ class FeedbackApi {
     return null;
   }
 
+  // 관리자 피드백 삭제
+  async deleteFeedback(feedbackId) {
+    const backendOk = await this.checkBackend();
+
+    if (backendOk) {
+      try {
+        const res = await fetch(`${this.apiBase}/feedbacks/${feedbackId}`, {
+          method: 'DELETE'
+        });
+        if (res.ok) {
+          return true;
+        }
+      } catch (err) {
+        console.warn('Backend delete failed:', err);
+      }
+    }
+
+    // LocalStorage 처리
+    let list = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    list = list.filter(item => item.id !== feedbackId);
+    localStorage.setItem(this.storageKey, JSON.stringify(list));
+    return true;
+  }
+
   getAppNameById(appId) {
     const app = APPS_METADATA.find(a => a.id === appId);
     return app ? app.name : '기타 앱';

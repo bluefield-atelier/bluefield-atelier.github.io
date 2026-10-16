@@ -477,6 +477,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Delete Feedback (Admin)
+    const btnAdminDeleteMain = document.getElementById('btnAdminDeleteMain');
+    if (btnAdminDeleteMain) {
+      btnAdminDeleteMain.addEventListener('click', async () => {
+        if (!state.currentDetail) return;
+        const targetTitle = state.currentDetail.title ? `"${state.currentDetail.title}"` : '이 피드백';
+
+        if (confirm(`${targetTitle}을(를) 정말 삭제하시겠습니까?\n\n삭제된 피드백은 영구적으로 제거되며 복구할 수 없습니다.`)) {
+          btnAdminDeleteMain.disabled = true;
+          try {
+            await window.feedbackApi.deleteFeedback(state.currentDetail.id);
+            showToast('피드백이 삭제되었습니다. 🗑️');
+            closeModal(detailModal);
+            await loadFeedbacks();
+          } catch (err) {
+            console.error(err);
+            showToast('삭제 중 오류가 발생했습니다.', 'error');
+          } finally {
+            btnAdminDeleteMain.disabled = false;
+          }
+        }
+      });
+    }
+
     // Close Modals
     document.querySelectorAll('[data-close-modal]').forEach(btn => {
       btn.addEventListener('click', (e) => {
