@@ -176,30 +176,43 @@ function initMusahi() {
     }
   }
 
-  // Hidden 5-tap gesture on Brand Logo
-  const brandLogoIcon = document.getElementById('brandLogoIcon') || document.querySelector('.brand-wrapper');
-  if (brandLogoIcon) {
+  // Brand Logo Click: 1 click = Refresh page, 5 fast clicks = Hidden Admin PIN Modal
+  const brandWrapper = document.getElementById('brandWrapper') || document.querySelector('.brand-wrapper');
+  if (brandWrapper) {
     let tapCount = 0;
     let tapTimer = null;
+    let singleClickTimer = null;
 
-    brandLogoIcon.addEventListener('click', (e) => {
+    brandWrapper.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       tapCount++;
+
       if (tapTimer) clearTimeout(tapTimer);
       tapTimer = setTimeout(() => {
         tapCount = 0;
-      }, 3000);
+      }, 2500);
 
       if (tapCount >= 5) {
         tapCount = 0;
         clearTimeout(tapTimer);
-        e.preventDefault();
-        e.stopPropagation();
+        if (singleClickTimer) clearTimeout(singleClickTimer);
 
         if (isAdminAuthenticated()) {
           showToast('🛡️ 이미 관리자 모드로 활성화되어 있습니다.');
         } else {
           openAdminPinModal();
         }
+        return;
+      }
+
+      if (tapCount === 1) {
+        singleClickTimer = setTimeout(() => {
+          if (tapCount === 1) {
+            tapCount = 0;
+            window.location.reload();
+          }
+        }, 350);
       }
     });
   }
