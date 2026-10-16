@@ -6,7 +6,7 @@
   <title>호주머니 - 사용 설명서 & 피드백 | BlueField Atelier</title>
   <meta name="description" content="어떤 앱에서든 1초 만에 쏙! 링크, 사진, 문서 스마트 보관함 호주머니(Hojumeoni) 앱의 사용 설명서, 시연 영상 및 사용자 의견 게시판입니다.">
   <link rel="icon" type="image/png" href="resources/app_icon.png">
-  <link rel="stylesheet" href="style.css?v=20261015_2310">
+  <link rel="stylesheet" href="style.css?v=20261016_2020">
 </head>
 <body>
 
@@ -20,8 +20,8 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="brand-wrapper">
-        <img src="resources/app_icon.png" alt="호주머니 아이콘" class="brand-icon-img">
+      <a href="../index.html" class="brand-wrapper" id="brandWrapper">
+        <img src="resources/app_icon.png" alt="호주머니 아이콘" class="brand-icon-img" id="brandLogoIcon" title="호주머니">
         <div>
           <div class="brand-title">호주머니 <span>Hojumeoni</span></div>
           <div class="brand-sub">BlueField Atelier</div>
@@ -39,6 +39,7 @@
       </nav>
 
       <div class="header-actions">
+        <div id="adminHeaderBadge"></div>
         <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-playstore">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
@@ -309,6 +310,111 @@
     </div>
   </div>
 
+  <!-- Admin PIN Verification Modal (Triggered by 5-tap on Brand Logo) -->
+  <div class="modal-overlay" id="adminPinModal">
+    <div class="modal-container" style="max-width: 380px; text-align: center;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #a5b4fc;">🛡️ 관리자 모드 인증</h3>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="adminPinForm">
+        <div class="modal-body" style="padding: 24px 20px;">
+          <div style="width: 52px; height: 52px; margin: 0 auto 14px; background: rgba(99, 102, 241, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+            🔐
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5;">
+            개발팀 관리자 전용 기능입니다.<br>보안 PIN 번호 4자리를 입력해주세요.
+          </p>
+          <div class="form-group" style="margin-bottom: 8px;">
+            <input type="password" id="adminPinInput" class="form-control" maxlength="4" placeholder="••••" style="text-align: center; font-size: 1.6rem; letter-spacing: 0.6rem; font-family: monospace;" autocomplete="off" required>
+          </div>
+          <p id="adminPinError" style="font-size: 0.8rem; color: #f43f5e; min-height: 20px; margin-top: 6px;"></p>
+        </div>
+        <div class="modal-footer" style="display: flex; gap: 8px; justify-content: stretch;">
+          <button type="button" class="btn btn-secondary" style="flex: 1;" data-close-modal>취소</button>
+          <button type="submit" class="btn btn-primary" style="flex: 1;">확인</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Feedback Reply & Status Modal -->
+  <div class="modal-overlay" id="adminReplyModal">
+    <div class="modal-container" style="max-width: 620px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #93c5fd; display: flex; align-items: center; gap: 8px;">
+          <span>🛡️</span> <span>피드백 답변 & 진행 상태 관리</span>
+        </h3>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="adminReplyForm">
+        <input type="hidden" id="adminTargetFeedbackId" value="">
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <!-- Original Feedback Summary Box -->
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 16px 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="display: flex; gap: 6px; align-items: center;" id="adminModalBadges">
+                <!-- Badges populated by JS -->
+              </div>
+              <span id="adminModalDate" style="font-size: 0.75rem; color: var(--text-dim);"></span>
+            </div>
+            <h4 id="adminModalTitle" style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main); line-height: 1.4;"></h4>
+            <div id="adminModalContent" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; white-space: pre-wrap; max-height: 140px; overflow-y: auto; background: rgba(0,0,0,0.25); padding: 10px 12px; border-radius: 6px;"></div>
+            <div style="margin-top: 10px; font-size: 0.78rem; color: var(--text-dim);">
+              작성자: <strong id="adminModalAuthor" style="color: #cbd5e1;"></strong>
+            </div>
+          </div>
+
+          <!-- Status Selector (5 Stages) -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <label style="font-size: 0.88rem; font-weight: 700; color: #e2e8f0; margin-bottom: 10px; display: block;">
+              진행 상태 변경 <span style="font-size: 0.78rem; font-weight: 400; color: #94a3b8;">(로드맵 및 카드에 실시간 반영됩니다)</span>
+            </label>
+            <div class="status-radio-group">
+              <label class="status-radio-pill">
+                <input type="radio" name="adminStatus" value="received">
+                <span class="status-pill-text status-pill-received">📥 접수됨</span>
+              </label>
+              <label class="status-radio-pill">
+                <input type="radio" name="adminStatus" value="reviewing">
+                <span class="status-pill-text status-pill-reviewing">🔍 검토 중</span>
+              </label>
+              <label class="status-radio-pill">
+                <input type="radio" name="adminStatus" value="in_progress">
+                <span class="status-pill-text status-pill-in_progress">⚙️ 수정 중</span>
+              </label>
+              <label class="status-radio-pill">
+                <input type="radio" name="adminStatus" value="resolved">
+                <span class="status-pill-text status-pill-resolved">🎉 반영 완료</span>
+              </label>
+              <label class="status-radio-pill">
+                <input type="radio" name="adminStatus" value="answered">
+                <span class="status-pill-text status-pill-answered">💬 답변 완료</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Official Admin Reply Input -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="adminModalReplyText" style="font-size: 0.88rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+              <span>🛡️ 개발팀 공식 답변 (선택)</span>
+              <span style="font-size: 0.75rem; color: var(--text-dim); font-weight: 400;">비워두면 이전 답변이 삭제됩니다</span>
+            </label>
+            <textarea id="adminModalReplyText" class="form-control" rows="4" placeholder="사용자에게 전달할 개발팀 공식 답변을 친절하게 작성해주세요..." style="min-height: 100px; line-height: 1.6;"></textarea>
+          </div>
+
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+          <button type="button" class="btn btn-secondary" data-close-modal>취소</button>
+          <button type="submit" class="btn btn-primary" style="padding: 10px 22px;">
+            <span>💾 답변 및 상태 저장하기</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="lightboxModal">
     <img src="" alt="확대 이미지" class="lightbox-img" id="lightboxImg">
@@ -324,6 +430,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261015_2310"></script>
+  <script src="script.js?v=20261016_2020"></script>
 </body>
 </html>
