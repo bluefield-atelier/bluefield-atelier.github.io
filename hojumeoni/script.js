@@ -3,34 +3,13 @@
  */
 
 function initHojumeoni() {
-  const APP_ID = 'hojumeoni';
   const APP_NAME = '호주머니';
-  const STORAGE_KEY = 'bluefield_feedbacks_db_v2';
-
-  const DEFAULT_MOCK_FEEDBACKS = [];
-
-  function getFeedbackList() {
-    let raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    try {
-      let parsed = JSON.parse(raw);
-      // Clean up mock data if any exists
-      if (Array.isArray(parsed) && parsed.some(item => item.id && item.id.startsWith('fb-100'))) {
-        localStorage.removeItem(STORAGE_KEY);
-        return [];
-      }
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (e) {
-      return [];
-    }
-  }
 
   // DOM
   const writeModal = document.getElementById('writeModal');
   const writeForm = document.getElementById('writeForm');
   const btnOpenWrite = document.getElementById('btnOpenWrite');
   const heroBtnFeedback = document.getElementById('heroBtnFeedback');
-  const feedbackGrid = document.getElementById('feedbackGrid');
   const toastContainer = document.getElementById('toastContainer');
 
   // Screenshot Lightbox
@@ -67,19 +46,15 @@ function initHojumeoni() {
 
   document.querySelectorAll('[data-close-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const parentModal = btn.closest('.modal-overlay');
-      if (parentModal) {
-        parentModal.classList.remove('active');
-        unlockBodyScroll();
-      } else {
-        closeModal();
-      }
+      closeModal();
     });
   });
 
-  writeModal.addEventListener('click', (e) => {
-    if (e.target === writeModal) closeModal();
-  });
+  if (writeModal) {
+    writeModal.addEventListener('click', (e) => {
+      if (e.target === writeModal) closeModal();
+    });
+  }
 
   // Check URL query parameters or hash (App Deep Link)
   const params = new URLSearchParams(window.location.search);
@@ -96,172 +71,80 @@ function initHojumeoni() {
     if (vEl) vEl.value = versionParam;
   }
 
-  // Load Feedbacks for Hojumeoni
-  loadHojumeoniFeedbacks();
-
   // Form Submit (Direct Developer Email Submission via FormSubmit)
-  writeForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const title = document.getElementById('formTitle').value.trim();
-    const content = document.getElementById('formContent').value.trim();
-    const author = document.getElementById('formAuthor').value.trim() || '익명의 사용자';
-    const email = document.getElementById('formEmail').value.trim();
-    const catInput = document.querySelector('input[name="category"]:checked');
-    const category = catInput ? catInput.value : 'feature';
-    const appVersion = document.getElementById('formAppVersion') ? document.getElementById('formAppVersion').value : '1.2.4';
-
-    if (!title || !content) {
-      showToast('제목과 내용을 모두 입력해주세요.');
-      return;
-    }
-
-    const categoryNames = {
-      feature: '💡 기능 제안',
-      bug: '🐛 버그 제보',
-      inquiry: '💬 사용 문의',
-      praise: '✨ 응원/칭찬'
-    };
-
-    const submitBtn = document.getElementById('btnSubmitFeedback') || writeForm.querySelector('button[type="submit"]');
-    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>개발팀으로 전달하기 ✉️</span>';
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>메일 전달 중... ⏳</span>';
-    }
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/tedd.devteam@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `[${APP_NAME} 피드백 전달] ${title}`,
-          _cc: "bluefield.works@gmail.com",
-          _template: "table",
-          "앱 이름": APP_NAME,
-          "앱 버전": appVersion || '1.2.4',
-          "분류": categoryNames[category] || category,
-          "작성자": author,
-          "회신 받을 이메일": email || '미입력 (이메일 없음)',
-          "제목": title,
-          "피드백 / 개선 제안 내용": content,
-          "전송 일시": new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
-        })
-      });
-
-      if (response.ok) {
-        showToast('소중한 피드백이 개발팀 메일로 안전하게 전달되었습니다! 감사합니다 ❤️');
-        closeModal();
-        writeForm.reset();
-      } else {
-        throw new Error('전송 응답 오류: ' + response.status);
-      }
-    } catch (err) {
-      console.error('Feedback submit error:', err);
-      showToast('전송 중 일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHtml;
-      }
-    }
-  });
-
-  // Admin PIN & Authentication
-  const ADMIN_PIN = "1209";
-
-  function isAdminAuthenticated() {
-    return sessionStorage.getItem('bf_admin_auth') === 'true' || localStorage.getItem('bf_admin_mode') === 'true';
-  }
-
-  function enableAdminMode() {
-    sessionStorage.setItem('bf_admin_auth', 'true');
-    localStorage.setItem('bf_admin_mode', 'true');
-    updateAdminHeaderUI();
-    loadHojumeoniFeedbacks();
-  }
-
-  function disableAdminMode() {
-    sessionStorage.removeItem('bf_admin_auth');
-    localStorage.removeItem('bf_admin_mode');
-    updateAdminHeaderUI();
-    loadHojumeoniFeedbacks();
-    showToast('관리자 모드가 해제되었습니다.');
-  }
-
-  function updateAdminHeaderUI() {
-    const badgeContainer = document.getElementById('adminHeaderBadge');
-    if (!badgeContainer) return;
-    if (isAdminAuthenticated()) {
-      badgeContainer.innerHTML = `
-        <button class="admin-mode-pill" id="btnExitAdminMode" title="클릭 시 관리자 모드를 종료합니다">
-          <span>🛡️</span> <span>관리자 ON</span> <span style="opacity:0.6; font-size:0.7rem;">(종료)</span>
-        </button>
-      `;
-      const btnExit = document.getElementById('btnExitAdminMode');
-      if (btnExit) {
-        btnExit.onclick = (e) => {
-          e.preventDefault();
-          if (confirm('관리자 모드를 종료하시겠습니까?')) {
-            disableAdminMode();
-          }
-        };
-      }
-    } else {
-      badgeContainer.innerHTML = '';
-    }
-  }
-
-  // Brand Logo Click: 1 click = Refresh page, 5 fast clicks = Hidden Admin PIN Modal
-  const brandWrapper = document.getElementById('brandWrapper') || document.querySelector('.brand-wrapper');
-  if (brandWrapper) {
-    let tapCount = 0;
-    let tapTimer = null;
-    let singleClickTimer = null;
-
-    brandWrapper.addEventListener('click', (e) => {
+  if (writeForm) {
+    writeForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      e.stopPropagation();
-      tapCount++;
 
-      if (tapTimer) clearTimeout(tapTimer);
-      tapTimer = setTimeout(() => {
-        tapCount = 0;
-      }, 2500);
+      const title = document.getElementById('formTitle').value.trim();
+      const content = document.getElementById('formContent').value.trim();
+      const author = document.getElementById('formAuthor').value.trim() || '익명의 사용자';
+      const email = document.getElementById('formEmail').value.trim();
+      const catInput = document.querySelector('input[name="category"]:checked');
+      const category = catInput ? catInput.value : 'feature';
+      const appVersion = document.getElementById('formAppVersion') ? document.getElementById('formAppVersion').value : '1.2.4';
 
-      if (tapCount >= 5) {
-        tapCount = 0;
-        clearTimeout(tapTimer);
-        if (singleClickTimer) clearTimeout(singleClickTimer);
-
-        if (isAdminAuthenticated()) {
-          showToast('🛡️ 이미 관리자 모드로 활성화되어 있습니다.');
-        } else {
-          openAdminPinModal();
-        }
+      if (!title || !content) {
+        showToast('제목과 내용을 모두 입력해주세요.');
         return;
       }
 
-      if (tapCount === 1) {
-        singleClickTimer = setTimeout(() => {
-          if (tapCount === 1) {
-            tapCount = 0;
-            window.location.reload();
-          }
-        }, 350);
+      const categoryNames = {
+        feature: '💡 기능 제안',
+        bug: '🐛 버그 제보',
+        inquiry: '💬 사용 문의',
+        praise: '✨ 응원/칭찬'
+      };
+
+      const submitBtn = document.getElementById('btnSubmitFeedback') || writeForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>개발팀으로 전달하기 ✉️</span>';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>메일 전달 중... ⏳</span>';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/tedd.devteam@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `[${APP_NAME} 피드백 전달] ${title}`,
+            _cc: "bluefield.works@gmail.com",
+            _template: "table",
+            "앱 이름": APP_NAME,
+            "앱 버전": appVersion || '1.2.4',
+            "분류": categoryNames[category] || category,
+            "작성자": author,
+            "회신 받을 이메일": email || '미입력 (이메일 없음)',
+            "제목": title,
+            "피드백 / 개선 제안 내용": content,
+            "전송 일시": new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+          })
+        });
+
+        if (response.ok) {
+          showToast('소중한 피드백이 개발팀 메일로 안전하게 전달되었습니다! 감사합니다 ❤️');
+          closeModal();
+          writeForm.reset();
+        } else {
+          throw new Error('전송 응답 오류: ' + response.status);
+        }
+      } catch (err) {
+        console.error('Feedback submit error:', err);
+        showToast('전송 중 일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
       }
     });
   }
 
-  // Admin PIN Modal Controls
-  const adminPinModal = document.getElementById('adminPinModal');
-  const adminPinForm = document.getElementById('adminPinForm');
-  const adminPinInput = document.getElementById('adminPinInput');
-  const adminPinError = document.getElementById('adminPinError');
-
+  // Scroll locking & modal helpers
   let savedScrollY = 0;
 
   function lockBodyScroll() {
@@ -276,297 +159,45 @@ function initHojumeoni() {
     }
   }
 
-  function openAdminPinModal() {
-    if (!adminPinModal) return;
-    if (adminPinInput) adminPinInput.value = '';
-    if (adminPinError) adminPinError.textContent = '';
-    lockBodyScroll();
-    adminPinModal.classList.add('active');
-    setTimeout(() => {
-      if (adminPinInput) adminPinInput.focus({ preventScroll: true });
-    }, 200);
-  }
-
-  function closeAdminPinModal() {
-    if (!adminPinModal) return;
-    adminPinModal.classList.remove('active');
-    unlockBodyScroll();
-  }
-
-  if (adminPinForm) {
-    adminPinForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const enteredPin = adminPinInput ? adminPinInput.value.trim() : '';
-      if (enteredPin === ADMIN_PIN) {
-        closeAdminPinModal();
-        enableAdminMode();
-        showToast('🛡️ 관리자 모드가 활성화되었습니다!');
-      } else {
-        if (adminPinError) adminPinError.textContent = 'PIN 번호가 일치하지 않습니다.';
-        if (adminPinInput) {
-          adminPinInput.value = '';
-          adminPinInput.focus();
-        }
-      }
-    });
-  }
-
-  if (adminPinModal) {
-    adminPinModal.addEventListener('click', (e) => {
-      if (e.target === adminPinModal) closeAdminPinModal();
-    });
-  }
-
-  // Admin Reply & Status Modal Controls
-  const adminReplyModal = document.getElementById('adminReplyModal');
-  const adminReplyForm = document.getElementById('adminReplyForm');
-
-  function openAdminReplyModal(item) {
-    if (!adminReplyModal) return;
-    document.getElementById('adminTargetFeedbackId').value = item.id;
-    document.getElementById('adminModalTitle').textContent = item.title;
-    document.getElementById('adminModalContent').textContent = item.content;
-    document.getElementById('adminModalAuthor').textContent = item.author || '익명 사용자';
-    document.getElementById('adminModalDate').textContent = item.createdAt ? item.createdAt.split(' ')[0] : '';
-
-    const catMap = {
-      feature: { label: '기능 제안', icon: '💡' },
-      bug: { label: '버그 제보', icon: '🐛' },
-      inquiry: { label: '사용 문의', icon: '💬' },
-      praise: { label: '응원/칭찬', icon: '✨' }
-    };
-    const cat = catMap[item.category] || catMap.feature;
-    const badgesEl = document.getElementById('adminModalBadges');
-    if (badgesEl) {
-      badgesEl.innerHTML = `
-        <span style="font-size: 0.75rem; font-weight: 700; color: #60a5fa; background: rgba(59,130,246,0.12); padding: 3px 8px; border-radius: var(--radius-full);">${cat.icon} ${cat.label}</span>
-        ${getStatusBadge(item.status)}
-      `;
-    }
-
-    const currentStatus = item.status || 'received';
-    const radio = document.querySelector(`input[name="adminStatus"][value="${currentStatus}"]`);
-    if (radio) radio.checked = true;
-
-    const replyInput = document.getElementById('adminModalReplyText');
-    if (replyInput) replyInput.value = item.adminReply || '';
-
-    lockBodyScroll();
-    adminReplyModal.classList.add('active');
-    setTimeout(() => {
-      if (replyInput) replyInput.focus({ preventScroll: true });
-    }, 200);
-  }
-
-  function closeAdminReplyModal() {
-    if (!adminReplyModal) return;
-    adminReplyModal.classList.remove('active');
-    unlockBodyScroll();
-  }
-
-  if (adminReplyForm) {
-    adminReplyForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const targetId = document.getElementById('adminTargetFeedbackId').value;
-      const statusInput = document.querySelector('input[name="adminStatus"]:checked');
-      const newStatus = statusInput ? statusInput.value : 'received';
-      const replyInput = document.getElementById('adminModalReplyText');
-      const newReply = replyInput ? replyInput.value.trim() : '';
-
-      const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      const target = list.find(i => i.id === targetId);
-      if (target) {
-        target.status = newStatus;
-        target.adminReply = newReply || null;
-        target.replyDate = newReply ? new Date().toISOString().split('T')[0] : null;
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-        showToast('피드백 상태 및 답변이 저장되었습니다! 🛡️');
-        closeAdminReplyModal();
-        loadHojumeoniFeedbacks();
-      }
-    });
-  }
-
-  const btnAdminDeleteFeedback = document.getElementById('btnAdminDeleteFeedback');
-  if (btnAdminDeleteFeedback) {
-    btnAdminDeleteFeedback.addEventListener('click', () => {
-      const targetId = document.getElementById('adminTargetFeedbackId').value;
-      if (!targetId) return;
-
-      const list = getFeedbackList();
-      const target = list.find(i => i.id === targetId);
-      const targetTitle = target ? `"${target.title}"` : '이 피드백';
-
-      if (confirm(`${targetTitle}을(를) 정말 삭제하시겠습니까?\n\n삭제된 피드백은 영구적으로 제거되며 복구할 수 없습니다.`)) {
-        const updatedList = list.filter(i => i.id !== targetId);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
-        showToast('피드백이 삭제되었습니다. 🗑️');
-        closeAdminReplyModal();
-        loadHojumeoniFeedbacks();
-      }
-    });
-  }
-
-  if (adminReplyModal) {
-    adminReplyModal.addEventListener('click', (e) => {
-      if (e.target === adminReplyModal) closeAdminReplyModal();
-    });
-  }
-
-  window.adminOpenReplyModal = function(id) {
-    if (!isAdminAuthenticated()) {
-      openAdminPinModal();
-      return;
-    }
-    const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    const target = list.find(i => i.id === id);
-    if (target) {
-      openAdminReplyModal(target);
-    }
-  };
-
-  // URL admin parameter check (e.g. ?admin=1209)
-  if (params.get('admin') === ADMIN_PIN || params.get('admin') === 'true') {
-    enableAdminMode();
-  } else {
-    updateAdminHeaderUI();
-  }
-
-  function getStatusBadge(status) {
-    switch (status) {
-      case 'resolved':
-        return `<span style="font-size:0.72rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.12); padding:2px 7px; border-radius:999px;">● 반영 완료</span>`;
-      case 'in_progress':
-        return `<span style="font-size:0.72rem; font-weight:700; color:#fcd34d; background:rgba(245,158,11,0.15); padding:2px 7px; border-radius:999px;">● 수정 중</span>`;
-      case 'reviewing':
-        return `<span style="font-size:0.72rem; font-weight:700; color:#d8b4fe; background:rgba(168,85,247,0.15); padding:2px 7px; border-radius:999px;">● 검토 중</span>`;
-      case 'answered':
-        return `<span style="font-size:0.72rem; font-weight:700; color:#67e8f9; background:rgba(6,182,212,0.15); padding:2px 7px; border-radius:999px;">● 답변 완료</span>`;
-      default:
-        return `<span style="font-size:0.72rem; font-weight:700; color:#94a3b8; background:rgba(148,163,184,0.12); padding:2px 7px; border-radius:999px;">● 접수됨</span>`;
-    }
-  }
-
-  function loadHojumeoniFeedbacks() {
-    if (!feedbackGrid) return;
-    let list = getFeedbackList();
-    let items = list.filter(item => item.appId === APP_ID);
-
-    if (items.length === 0) {
-      feedbackGrid.innerHTML = `
-        <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px dashed var(--border-glass);">
-          <p style="color: var(--text-muted); margin-bottom: 12px;">아직 등록된 피드백이 없습니다.</p>
-          <button class="btn btn-primary" onclick="document.getElementById('writeModal').classList.add('active')">첫 번째 의견 남기기</button>
-        </div>
-      `;
-      return;
-    }
-
-    const isAdm = isAdminAuthenticated();
-    const catMap = {
-      feature: { label: '기능 제안', icon: '💡' },
-      bug: { label: '버그 제보', icon: '🐛' },
-      inquiry: { label: '사용 문의', icon: '💬' },
-      praise: { label: '응원/칭찬', icon: '✨' }
-    };
-
-    feedbackGrid.innerHTML = items.map(item => {
-      const cat = catMap[item.category] || catMap.feature;
-      return `
-        <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <div style="display:flex; gap:6px; align-items:center;">
-                <span style="font-size: 0.75rem; font-weight: 700; color: #60a5fa; background: rgba(59,130,246,0.12); padding: 3px 8px; border-radius: var(--radius-full);">${cat.icon} ${cat.label}</span>
-                ${getStatusBadge(item.status)}
-              </div>
-              <span style="font-size: 0.75rem; color: var(--text-dim);">${item.createdAt ? item.createdAt.split(' ')[0] : ''}</span>
-            </div>
-            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">${escapeHtml(item.title)}</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; white-space: pre-wrap;">${escapeHtml(item.content)}</p>
-
-            ${item.adminReply ? `
-              <div style="margin-top: 14px; padding: 12px 14px; background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
-                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px; color: #60a5fa; font-weight: 700; font-size: 0.8rem;">
-                  <span>🛡️ BlueField Atelier 개발팀 공식 답변</span>
-                  ${item.replyDate ? `<span style="font-size:0.72rem; color:var(--text-dim); margin-left:auto;">${item.replyDate}</span>` : ''}
-                </div>
-                <div style="white-space: pre-wrap;">${escapeHtml(item.adminReply)}</div>
-              </div>
-            ` : ''}
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 12px; font-size: 0.8rem; color: var(--text-dim);">
-            <div style="display:flex; align-items:center; gap:10px;">
-              <span>작성자: <strong style="color: var(--text-main);">${escapeHtml(item.author)}</strong></span>
-              ${isAdm ? `
-                <button style="background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.35); color:#93c5fd; font-size:0.75rem; font-weight:700; padding:3px 10px; border-radius:4px; cursor:pointer; display:inline-flex; align-items:center; gap:4px; transition:all 0.2s;" onclick="adminOpenReplyModal('${item.id}')">
-                  <span>🛡️</span> <span>관리하기</span>
-                </button>
-              ` : ''}
-            </div>
-            <button style="background:none; border:none; color: var(--text-dim); cursor: pointer; display: flex; align-items: center; gap: 4px;" onclick="likeItem('${item.id}', this)">
-              <span>❤️</span> <span>${item.likes || 0}</span>
-            </button>
-          </div>
-        </div>
-      `;
-    }).join('');
-  }
-
-  window.likeItem = function(id, btn) {
-    const list = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    const target = list.find(i => i.id === id);
-    if (target) {
-      target.likes = (target.likes || 0) + 1;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-      btn.querySelector('span:last-child').textContent = target.likes;
-      showToast('공감했습니다 ❤️');
-    }
-  };
-
   function openModal() {
     lockBodyScroll();
-    writeModal.classList.add('active');
+    if (writeModal) writeModal.classList.add('active');
   }
 
   function closeModal() {
-    writeModal.classList.remove('active');
+    if (writeModal) writeModal.classList.remove('active');
     unlockBodyScroll();
   }
 
-  writeModal.addEventListener('touchmove', (e) => {
-    if (!e.target.closest('.modal-body')) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-
-  const modalBody = writeModal.querySelector('.modal-body');
-  if (modalBody) {
-    modalBody.addEventListener('touchstart', () => {
-      const top = modalBody.scrollTop;
-      const totalScroll = modalBody.scrollHeight;
-      const currentScroll = top + modalBody.offsetHeight;
-      if (top === 0) {
-        modalBody.scrollTop = 1;
-      } else if (currentScroll === totalScroll) {
-        modalBody.scrollTop = top - 1;
+  if (writeModal) {
+    writeModal.addEventListener('touchmove', (e) => {
+      if (!e.target.closest('.modal-body')) {
+        e.preventDefault();
       }
-    }, { passive: true });
+    }, { passive: false });
+
+    const modalBody = writeModal.querySelector('.modal-body');
+    if (modalBody) {
+      modalBody.addEventListener('touchstart', () => {
+        const top = modalBody.scrollTop;
+        const totalScroll = modalBody.scrollHeight;
+        const currentScroll = top + modalBody.offsetHeight;
+        if (top === 0) {
+          modalBody.scrollTop = 1;
+        } else if (currentScroll === totalScroll) {
+          modalBody.scrollTop = top - 1;
+        }
+      }, { passive: true });
+    }
   }
 
   function showToast(msg) {
+    if (!toastContainer) return;
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.innerHTML = `<span>✅</span> <span>${msg}</span>`;
     toastContainer.appendChild(toast);
     setTimeout(() => toast.remove(), 3500);
-  }
-
-  function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 }
 
