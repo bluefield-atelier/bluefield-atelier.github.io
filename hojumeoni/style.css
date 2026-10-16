@@ -553,11 +553,8 @@ body {
   box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-html.modal-open,
 body.modal-open {
-  overflow: hidden !important;
-  height: 100% !important;
-  touch-action: none;
+  overflow: hidden;
 }
 
 /* Write Modal */

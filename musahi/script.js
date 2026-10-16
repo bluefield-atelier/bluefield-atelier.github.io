@@ -52,8 +52,7 @@ function initMusahi() {
       const parentModal = btn.closest('.modal-overlay');
       if (parentModal) {
         parentModal.classList.remove('active');
-        document.documentElement.classList.remove('modal-open');
-        document.body.classList.remove('modal-open');
+        unlockBodyScroll();
       } else {
         closeModal();
       }
@@ -223,23 +222,35 @@ function initMusahi() {
   const adminPinInput = document.getElementById('adminPinInput');
   const adminPinError = document.getElementById('adminPinError');
 
+  let savedScrollY = 0;
+
+  function lockBodyScroll() {
+    savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.classList.add('modal-open');
+  }
+
+  function unlockBodyScroll() {
+    document.body.classList.remove('modal-open');
+    if (typeof savedScrollY === 'number') {
+      window.scrollTo(0, savedScrollY);
+    }
+  }
+
   function openAdminPinModal() {
     if (!adminPinModal) return;
     if (adminPinInput) adminPinInput.value = '';
     if (adminPinError) adminPinError.textContent = '';
+    lockBodyScroll();
     adminPinModal.classList.add('active');
-    document.documentElement.classList.add('modal-open');
-    document.body.classList.add('modal-open');
     setTimeout(() => {
-      if (adminPinInput) adminPinInput.focus();
+      if (adminPinInput) adminPinInput.focus({ preventScroll: true });
     }, 200);
   }
 
   function closeAdminPinModal() {
     if (!adminPinModal) return;
     adminPinModal.classList.remove('active');
-    document.documentElement.classList.remove('modal-open');
-    document.body.classList.remove('modal-open');
+    unlockBodyScroll();
   }
 
   if (adminPinForm) {
@@ -300,19 +311,17 @@ function initMusahi() {
     const replyInput = document.getElementById('adminModalReplyText');
     if (replyInput) replyInput.value = item.adminReply || '';
 
+    lockBodyScroll();
     adminReplyModal.classList.add('active');
-    document.documentElement.classList.add('modal-open');
-    document.body.classList.add('modal-open');
     setTimeout(() => {
-      if (replyInput) replyInput.focus();
+      if (replyInput) replyInput.focus({ preventScroll: true });
     }, 200);
   }
 
   function closeAdminReplyModal() {
     if (!adminReplyModal) return;
     adminReplyModal.classList.remove('active');
-    document.documentElement.classList.remove('modal-open');
-    document.body.classList.remove('modal-open');
+    unlockBodyScroll();
   }
 
   if (adminReplyForm) {
@@ -457,15 +466,13 @@ function initMusahi() {
   };
 
   function openModal() {
+    lockBodyScroll();
     writeModal.classList.add('active');
-    document.documentElement.classList.add('modal-open');
-    document.body.classList.add('modal-open');
   }
 
   function closeModal() {
     writeModal.classList.remove('active');
-    document.documentElement.classList.remove('modal-open');
-    document.body.classList.remove('modal-open');
+    unlockBodyScroll();
   }
 
   writeModal.addEventListener('touchmove', (e) => {
