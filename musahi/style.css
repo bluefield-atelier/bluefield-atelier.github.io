@@ -142,22 +142,31 @@ body {
   color: var(--text-muted);
 }
 
-.nav-links {
+.header-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
-.nav-item {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: color 0.15s;
+.header-actions .btn {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
-.nav-item:hover, .nav-item.active {
-  color: #34d399;
+.btn-hub {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #94a3b8;
+}
+
+.btn-hub:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
 /* Buttons */
@@ -772,7 +781,7 @@ textarea.form-control {
   .brand-text p {
     display: none;
   }
-  .header-actions .btn-playstore {
+  .header-actions .btn {
     display: none; /* 히어로에 다운로드 버튼이 이미 있으므로 헤더 간소화 */
   }
 

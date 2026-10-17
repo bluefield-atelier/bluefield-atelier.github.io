@@ -28,13 +28,11 @@
         </div>
       </a>
 
-      <nav class="nav-menu">
-        <a href="#about" class="nav-link">스튜디오 소개</a>
-        <a href="#apps" class="nav-link">앱 라인업</a>
-      </nav>
-
       <div class="header-actions">
         <a href="https://play.google.com/store/apps/dev?id=9074324001499723435" target="_blank" rel="noopener" class="btn btn-playstore">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+          </svg>
           <span>Google Play ↗</span>
         </a>
       </div>
@@ -104,21 +102,25 @@
           </div>
 
           <div class="flagship-actions">
-            <a href="hojumeoni/index.html" class="btn btn-primary">
-              <span>📖 사용 설명서 & 시연 영상 & 피드백 전달 →</span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-playstore">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
-                <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
-              </svg>
-              <span>Google Play ↗</span>
-            </a>
-            <a href="https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd" target="_blank" rel="noopener" class="btn btn-playstore" title="Chrome 웹스토어 PC 확장프로그램 (Google 검토 중)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
-                <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
-              </svg>
-              <span>Chrome 확장 (PC) ↗</span>
-            </a>
+            <div class="flagship-actions-row">
+              <a href="hojumeoni/index.html" class="btn btn-primary" style="flex: 1;">
+                <span>📖 사용 설명서 & 시연 영상 & 피드백 전달 →</span>
+              </a>
+            </div>
+            <div class="flagship-actions-row">
+              <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-playstore">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+                  <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+                </svg>
+                <span>Google Play ↗</span>
+              </a>
+              <a href="https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd" target="_blank" rel="noopener" class="btn btn-playstore" title="Chrome 웹스토어 PC 확장프로그램 (Google 검토 중)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+                  <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
+                </svg>
+                <span>Chrome 확장 (PC) ↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -151,12 +153,96 @@
           </div>
 
           <div class="flagship-actions">
-            <a href="musahi/index.html" class="btn btn-primary" style="background: linear-gradient(135deg, #059669, #10b981);">
-              <span>📖 사용 설명서 & 시연 영상 & 피드백 전달 →</span>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-playstore">
-              <span>Google Play ↗</span>
-            </a>
+            <div class="flagship-actions-row">
+              <a href="musahi/index.html" class="btn btn-primary" style="flex: 1; background: linear-gradient(135deg, #059669, #10b981);">
+                <span>📖 사용 설명서 & 시연 영상 & 피드백 전달 →</span>
+              </a>
+            </div>
+            <div class="flagship-actions-row">
+              <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-playstore">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+                  <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+                </svg>
+                <span>Google Play ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary App Grid: Waku 일본어 & 상담노트 (한 줄에 2개 나란히) -->
+      <div class="sub-apps-grid-2col">
+        <!-- App: Waku 일본어 -->
+        <div class="compact-app-card">
+          <div class="compact-app-visual">
+            <img src="assets/banner_waku.png" alt="Waku 일본어 대표 배너">
+          </div>
+          <div class="compact-app-content">
+            <div>
+              <div class="compact-app-header">
+                <img src="assets/waku_jpn.webp" alt="Waku 일본어 아이콘" class="compact-app-icon">
+                <div>
+                  <span class="flagship-badge" style="color: #60a5fa; background: rgba(59, 130, 246, 0.12);">GOOGLE PLAY</span>
+                  <h3 class="compact-app-title">Waku 일본어</h3>
+                </div>
+              </div>
+              <p class="compact-app-desc">
+                <strong>필수 단어·한자·회화 3단계 스마트 플래시카드 학습</strong><br>
+                JLPT N5~N1 필수 단어, 한자 및 일상·여행·비즈니스 예문을 3단계 카드 학습과 퀴즈로 마스터하는 모바일 학습 앱입니다. 직관적인 디자인과 100% 오프라인 사전 DB, 원어민 TTS 음성을 지원합니다.
+              </p>
+              <div class="tag-list" style="margin-bottom: 20px;">
+                <span class="tag-pill">#일본어학습</span>
+                <span class="tag-pill">#JLPT</span>
+                <span class="tag-pill">#플래시카드</span>
+                <span class="tag-pill">#오프라인사전</span>
+                <span class="tag-pill">#Android</span>
+              </div>
+            </div>
+            <div class="compact-app-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.waku" target="_blank" rel="noopener" class="btn btn-playstore">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+                  <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+                </svg>
+                <span>Google Play ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- App: 상담노트 -->
+        <div class="compact-app-card">
+          <div class="compact-app-visual">
+            <img src="assets/banner_youthcare.png" alt="상담노트 대표 배너">
+          </div>
+          <div class="compact-app-content">
+            <div>
+              <div class="compact-app-header">
+                <img src="assets/youthcare_icon.png" alt="상담노트 아이콘" class="compact-app-icon">
+                <div>
+                  <span class="flagship-badge" style="color: #f59e0b; background: rgba(245, 158, 11, 0.12);">GOOGLE PLAY</span>
+                  <h3 class="compact-app-title">상담노트</h3>
+                </div>
+              </div>
+              <p class="compact-app-desc">
+                <strong>전문 상담사를 위한 체계적인 상담 일정 및 기록 관리</strong><br>
+                전문 상담사 및 청소년/아동 케어 전문가를 위해 체계적인 일상 스케줄링과 내담자 상담 기록 관리 기능을 안전하고 편리하게 지원하는 비즈니스 생산성 앱입니다.
+              </p>
+              <div class="tag-list" style="margin-bottom: 20px;">
+                <span class="tag-pill">#상담노트</span>
+                <span class="tag-pill">#일정관리</span>
+                <span class="tag-pill">#내담자기록</span>
+                <span class="tag-pill">#비즈니스노트</span>
+                <span class="tag-pill">#Android</span>
+              </div>
+            </div>
+            <div class="compact-app-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.teddapps.youthcarescheduler" target="_blank" rel="noopener" class="btn btn-playstore">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;">
+                  <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+                </svg>
+                <span>Google Play ↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
