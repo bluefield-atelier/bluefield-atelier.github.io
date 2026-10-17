@@ -784,6 +784,14 @@ textarea.form-control {
   .header-actions .btn {
     display: none; /* 히어로에 다운로드 버튼이 이미 있으므로 헤더 간소화 */
   }
+  .header-actions .btn-hub {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 13px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
 
   .hero-section {
     padding: 24px 0 16px;
