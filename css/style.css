@@ -1102,6 +1102,7 @@ textarea.form-control {
   .hero-title { font-size: 1.85rem; }
   .hero-banner-container { height: 160px; }
   .flagship-card { grid-template-columns: 1fr; }
+  .flagship-visual { height: 220px; width: 100%; }
   .flagship-content { padding: 24px 20px; }
   .flagship-title { font-size: 1.25rem; }
   .nav-menu { display: none; }
@@ -1198,18 +1199,29 @@ textarea.form-control {
     word-break: keep-all;
   }
 
-  /* Flagship App Cards: Slim App-Store Style */
+  /* Flagship App Cards: Banner on Top + Content */
   .flagship-card {
     grid-template-columns: 1fr;
-    margin-bottom: 16px;
-    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    border-radius: var(--radius-lg);
     background: rgba(18, 24, 38, 0.92);
+    overflow: hidden;
   }
   .flagship-visual {
-    display: none !important; /* 모바일에서 거대한 배너 이미지 숨김 -> 앱스토어형 슬림 카드 */
+    display: flex !important;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #0d1320;
+  }
+  .flagship-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .flagship-content {
-    padding: 18px 16px;
+    padding: 20px 18px;
     gap: 12px;
   }
   .flagship-header {
@@ -1250,6 +1262,17 @@ textarea.form-control {
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+  .flagship-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .flagship-actions-row .btn {
+    flex: 1;
+    min-width: 130px;
   }
   .flagship-actions .btn {
     width: 100%;
