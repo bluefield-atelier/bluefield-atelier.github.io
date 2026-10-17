@@ -1148,7 +1148,12 @@ textarea.form-control {
     display: none;
   }
   .header-actions .btn-playstore {
-    display: none; /* 상단바 PlayStore 버튼 숨김으로 공간 확보 */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
   #btnOpenWriteModal {
     padding: 7px 12px;
