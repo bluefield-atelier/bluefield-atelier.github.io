@@ -40,7 +40,32 @@ function initHojumeoni() {
     });
   });
 
-  // Modal open/close
+  // Right Vertical Nav Toggle
+  const btnToggleNav = document.getElementById('btnToggleNav');
+  const btnCloseNav = document.getElementById('btnCloseNav');
+  const rightVerticalNav = document.getElementById('rightVerticalNav');
+  const navBackdrop = document.getElementById('navBackdrop');
+
+  function openNav() {
+    if (rightVerticalNav) rightVerticalNav.classList.add('active');
+    if (navBackdrop) navBackdrop.classList.add('active');
+  }
+
+  function closeNav() {
+    if (rightVerticalNav) rightVerticalNav.classList.remove('active');
+    if (navBackdrop) navBackdrop.classList.remove('active');
+  }
+
+  if (btnToggleNav) btnToggleNav.addEventListener('click', openNav);
+  if (btnCloseNav) btnCloseNav.addEventListener('click', closeNav);
+  if (navBackdrop) navBackdrop.addEventListener('click', closeNav);
+
+  document.querySelectorAll('.vertical-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      closeNav();
+    });
+  });
+
   if (btnOpenWrite) btnOpenWrite.addEventListener('click', () => openModal());
   if (heroBtnFeedback) heroBtnFeedback.addEventListener('click', () => openModal());
 
