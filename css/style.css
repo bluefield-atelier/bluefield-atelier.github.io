@@ -232,6 +232,19 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-privacy {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+}
+
+.btn-privacy:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero-section {
   padding: 48px 0 32px;
@@ -1146,6 +1159,14 @@ textarea.form-control {
   }
   .brand-info p {
     display: none;
+  }
+  .header-actions .btn-privacy {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
   .header-actions .btn-playstore {
     display: inline-flex;

@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리방침 (Privacy Policy) | BlueField Atelier</title>
+  <meta name="description" content="BlueField Atelier 대표 앱(호주머니, 무사히, 오늘)의 공식 개인정보처리방침(Privacy Policy) 페이지입니다.">
+  <link rel="icon" type="image/png" href="assets/atelier_logo.png">
+  <link rel="stylesheet" href="css/style.css?v=20261018_2030">
+  <style>
+    .privacy-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 36px 20px 80px 20px;
+    }
+
+    .app-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .app-tab-btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .app-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .app-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .lang-switch-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .lang-tab {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-tab:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-tab.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .privacy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 640px) {
+      .privacy-card {
+        padding: 24px 18px;
+      }
+      .privacy-container {
+        padding: 20px 14px 60px 14px;
+      }
+    }
+
+    .privacy-header {
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .privacy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .privacy-meta-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .policy-section {
+      margin-bottom: 32px;
+    }
+
+    .policy-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .policy-section p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      font-size: 0.94rem;
+    }
+
+    .policy-section ul, .policy-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 6px;
+    }
+
+    .policy-section a {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .contact-box {
+      background: rgba(13, 19, 32, 0.7);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box dt {
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact-box dd {
+      margin-left: 0;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      transition: all var(--transition-fast);
+    }
+
+    .nav-back-link:hover {
+      color: #93c5fd;
+      transform: translateX(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier 로고" class="brand-logo-img">
+        <div class="brand-info">
+          <h1>BlueField Atelier</h1>
+          <p>Mobile Apps & Community</p>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-hub" title="블루필드 아틀리에 메인 허브로 이동">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>메인 허브</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="privacy-container">
+    <a href="index.html" class="nav-back-link">← BlueField Atelier 메인 허브로 돌아가기</a>
+
+    <!-- App Selector Tabs -->
+    <div class="app-selector-bar">
+      <button class="app-tab-btn active" data-app="hojumeoni" onclick="selectApp('hojumeoni')">
+        <span>🧺 호주머니 (Hojumeoni)</span>
+      </button>
+      <button class="app-tab-btn" data-app="musahi" onclick="selectApp('musahi')">
+        <span>🎖️ 무사히 (Musahi)</span>
+      </button>
+      <button class="app-tab-btn" data-app="oneul" onclick="selectApp('oneul')">
+        <span>🎙️ O-NEUL (오늘)</span>
+      </button>
+    </div>
+
+    <!-- Language Switcher Bar -->
+    <div class="lang-switch-bar">
+      <button id="tabKo" class="lang-tab active" onclick="switchLanguage('ko')">🇰🇷 한국어 (Korean)</button>
+      <button id="tabEn" class="lang-tab" onclick="switchLanguage('en')">🌐 English</button>
+    </div>
+
+    <!-- 1. Hojumeoni Articles -->
+    <article id="hojumeoniKo" class="privacy-card app-privacy-content">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">개인정보처리방침 (Privacy Policy)</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">호주머니 (Hojumeoni)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>시행일자: 2026년 9월 20일</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong>(이하 “개발자”)는 <strong>호주머니(Hojumeoni)</strong> 앱(패키지명: <code>com.bluefield.atelier.hojumeoni</code>, 이하 “앱”) 및 개발자가 제공하는 소프트웨어 서비스를 이용하는 사용자의 개인정보와 데이터를 소중히 보호하며, 관련 법령 및 구글 플레이(Google Play), 구글 클라우드(Google Cloud) 정책을 준수합니다.
+                본 개인정보처리방침은 앱이 어떤 정보를 접근하거나 처리하는지, 해당 정보를 어떤 목적으로 사용하는지, 제3자 서비스가 어떤 정보를 처리하는지 설명합니다.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. 앱의 주요 기능</h2>
+                <p>호주머니는 사용자가 다른 앱에서 공유한 다음과 같은 콘텐츠를 저장하고 정리할 수 있도록 제공되는 <strong>개인 콘텐츠 관리 및 아카이빙 앱</strong>입니다.</p>
+                <ul>
+                    <li>웹페이지 및 링크 (URL)</li>
+                    <li>블로그 및 카페 게시글 링크</li>
+                    <li>YouTube 등 영상 서비스 링크</li>
+                    <li>지도 및 장소 링크</li>
+                    <li>이미지 및 사진</li>
+                    <li>동영상 미디어</li>
+                    <li>PDF 및 각종 문서 파일</li>
+                    <li>사용자가 작성한 메모, 태그, 카테고리 및 즐겨찾기 정보</li>
+                </ul>
+                <p>앱은 사용자가 직접 공유하거나 저장하도록 선택한 콘텐츠만을 처리합니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. 앱이 처리하는 정보</h2>
+                <h3>2.1 사용자가 직접 공유한 콘텐츠</h3>
+                <p>사용자가 Android 시스템 공유 기능([공유하기] → [호주머니])을 통해 앱으로 전송한 경우 다음 정보를 처리합니다.</p>
+                <ul>
+                    <li>공유된 URL 및 웹 주소</li>
+                    <li>웹페이지 제목, 설명, 썸네일 미리보기</li>
+                    <li>이미지, 동영상 및 문서 파일 메타데이터 (파일명, 파일 형식, 파일 크기)</li>
+                    <li>공유 출처 정보 및 원본 링크</li>
+                    <li>사용자가 직접 작성한 메모, 태그 및 카테고리 분류</li>
+                </ul>
+                <p>이 정보는 전적으로 사용자가 콘텐츠를 저장, 분류, 검색하고 다시 열람할 수 있도록 지원하는 목적으로만 사용됩니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. 이미지, 동영상 및 파일 처리 (스마트 참조 저장)</h2>
+                <p>사용자가 이미지, 동영상 또는 문서 파일을 호주머니로 공유하는 경우 앱은 기기 저장 공간 낭비를 방지하기 위해 가능한 한 기존 원본 파일을 중복 복사하지 않습니다.</p>
+                <ul>
+                    <li>원본 파일에 지속적으로 접근할 수 있는 경우, Android의 콘텐츠 URI를 안전하게 참조하여 관리합니다.</li>
+                    <li>공유된 URI가 임시 파일이거나 장기 접근이 어려운 경우에 한하여, 콘텐츠 보존을 위해 앱의 비공개 샌드박스 저장공간에 복사하여 안전하게 보관합니다.</li>
+                    <li>호주머니 앱에서 항목을 삭제하더라도 기기 갤러리나 일반 저장공간에 있는 <strong>원본 파일은 임의로 삭제되지 않습니다.</strong></li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. 링크 및 웹 메타데이터 처리</h2>
+                <p>사용자가 웹페이지 링크를 공유하는 경우, 앱은 해당 콘텐츠를 식별하기 위해 공개적으로 접근 가능한 웹 정보에서 페이지 제목, Open Graph 메타데이터, 요약 설명, 썸네일을 확인합니다.</p>
+                <div class="highlight-box">
+                    🔒 <strong>보안 및 프라이버시 준수:</strong><br>
+                    앱은 로그인이 필요하거나 비공개 상태인 웹 콘텐츠에 대한 접근을 우회하지 않으며, 어떠한 웹사이트 계정의 로그인 인증 정보도 수집하거나 저장하지 않습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. 네이버 카페 및 외부 커뮤니티 데이터</h2>
+                <p>호주머니는 네이버 카페, 다음 카페 등 외부 커뮤니티 계정의 로그인 정보나 비밀번호를 절대 수집하지 않습니다. 공유된 게시글의 제목과 공개 Open Graph 정보만을 확인하며, 비공개 카페 글이나 회원 전용 콘텐츠를 우회 수집하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. 로컬 저장 원칙 (Local-First Architecture)</h2>
+                <p>호주머니는 사용자의 프라이버시를 최우선으로 하여 <strong>Local-First(로컬 우선)</strong> 방식으로 동작합니다.</p>
+                <ul>
+                    <li>저장된 콘텐츠, 링크, 카테고리, 태그, 메모, 즐겨찾기, 검색 색인 등 모든 데이터는 기본적으로 <strong>사용자의 기기 내부 비공개 저장소(App Sandbox)</strong>에만 저장됩니다.</li>
+                    <li>개발자의 외부 중앙 서버로 사용자의 개인 보관함 데이터가 전송되거나 수집되지 않습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Google Drive 동기화 및 권한 (Google Drive API)</h2>
+                <p>사용자가 설정에서 Google 계정 연동 및 백업 기능을 직접 활성화한 경우, 앱은 데이터를 안전하게 백업 및 복원하기 위해 Google Drive API를 사용합니다.</p>
+                <div class="highlight-box">
+                    📁 <strong>사용 권한 범위 (Scope): <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    호주머니는 Google Drive의 앱 전용 숨김 저장공간(Application Data Folder) 권한만을 사용합니다. 이 권한은 <strong>호주머니 앱이 생성한 전용 백업 데이터에만 접근</strong>하며, 사용자의 일반 Google Drive 파일(문서, 사진 등) 전체를 열람하거나 수정하는 권한이 절대 아닙니다.
+                </div>
+                <ul>
+                    <li><strong>동기화 항목:</strong> 저장된 콘텐츠 메타데이터, 태그, 메모, 사용자 설정 및 선택된 백업 파일</li>
+                    <li><strong>선택적 사용:</strong> Google Drive 동기화는 전적으로 사용자의 선택 사항이며, 비활성화 상태에서도 앱의 모든 로컬 기능을 완벽하게 이용할 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Google 계정 정보 및 인증</h2>
+                <p>Google Drive 백업을 위해 Google 계정 OAuth 인증을 사용할 수 있습니다. 앱은 Google 표준 보안 인증을 통해 발급되는 토큰만을 사용하며, 사용자의 계정 비밀번호는 일체 수집하거나 보관하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 광고 및 분석 서비스 (Google AdMob)</h2>
+                <p>호주머니는 무료 서비스 제공 및 유지 관리를 위해 <strong>Google AdMob</strong> 광고를 포함할 수 있습니다. Google Mobile Ads SDK는 광고 제공, 성과 측정 및 부정행위 방지를 위해 다음과 같은 기기 정보를 자동 처리할 수 있습니다.</p>
+                <ul>
+                    <li>IP 주소 및 대략적인 네트워크 위치</li>
+                    <li>앱 실행 및 광고 상호작용 진단 정보</li>
+                    <li>Android 광고 ID(AD_ID) 및 기기 식별자</li>
+                </ul>
+                <p>광고 관련 데이터는 Google의 정책 및 개인정보처리방침에 따라 안전하게 처리되며, <strong>개발자는 사용자의 개인정보나 저장된 콘텐츠를 광고 목적으로 제3자에게 판매하지 않습니다.</strong></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. 광고 개인정보 동의 (Google UMP)</h2>
+                <p>앱은 Google User Messaging Platform(UMP)을 적용하여 유럽 경제 지역(EEA), 영국 등 관련 규정이 요구하는 지역의 사용자에게 개인정보 동의 절차를 제공하며, 사용자는 언제든 설정을 통해 동의 내역을 관리할 수 있습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. 제3자 서비스 제공자</h2>
+                <p>앱 기능 구현을 위해 다음과 같은 공인된 제3자 서비스를 활용합니다.</p>
+                <ul>
+                    <li><strong>Google AdMob:</strong> 모바일 광고 제공 및 성과 분석 (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>)</li>
+                    <li><strong>Google User Messaging Platform (UMP):</strong> 개인정보 동의 관리</li>
+                    <li><strong>Google Drive API:</strong> 사용자 선택 기반 앱 전용 데이터 동기화 (<a href="https://developers.google.com/drive/api/guides/api-specific-auth" target="_blank" rel="noopener">Google API 서비스 정책</a>)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>12. 개인정보의 판매 및 공유 금지</h2>
+                <p>BlueField Atelier는 <strong>사용자의 개인정보 및 저장된 콘텐츠(링크, 사진, 동영상, 문서, 메모)를 어떠한 경우에도 판매, 대여 또는 무단 상업적 거래에 이용하지 않습니다.</strong></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>13. 데이터 보관, 관리 및 삭제</h2>
+                <ul>
+                    <li><strong>항목 삭제:</strong> 사용자는 앱 내에서 저장된 모든 콘텐츠를 언제든 개별 또는 일괄 삭제할 수 있습니다.</li>
+                    <li><strong>휴지통:</strong> 삭제된 항목은 휴지통에서 복원하거나 영구 삭제할 수 있습니다.</li>
+                    <li><strong>앱 삭제:</strong> 기기에서 앱을 삭제(제거)할 경우 로컬 앱 샌드박스에 저장된 모든 데이터는 즉시 함께 제거됩니다.</li>
+                    <li><strong>Google Drive 데이터 관리:</strong> Google 계정 설정의 [연결된 앱 관리]에서 호주머니가 저장한 앱 데이터를 언제든 직접 삭제할 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>14. 데이터 보안 조치</h2>
+                <p>앱은 사용자의 데이터를 안전하게 보호하기 위해 Android 표준 샌드박스 격리, 파일 권한 통제 및 모든 외부 API 통신 시 강력한 HTTPS(TLS 암호화) 프로토콜을 사용합니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>15. 아동의 개인정보 보호</h2>
+                <p>호주머니는 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>16. 개인정보처리방침의 변경</h2>
+                <p>법률, 서비스 기능 또는 Google 정책 변경에 따라 본 방침이 개정될 수 있습니다. 중요한 변경 사항이 발생하는 경우 웹사이트 및 앱 내 업데이트 안내를 통해 공지하며, 개정된 방침의 상단에 새로운 시행일을 명시합니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>17. 개인정보 보호책임자 및 문의처</h2>
+                <p>앱의 개인정보 처리와 관련하여 문의사항, 의견 또는 불만 사항이 있으신 경우 아래 연락처로 문의해 주시기 바랍니다.</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>스튜디오 / 개발자명</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>애플리케이션</dt>
+                        <dd>호주머니 (Hojumeoni)</dd>
+                        <dt>패키지명</dt>
+                        <dd><code>com.bluefield.atelier.hojumeoni</code></dd>
+                        <dt>문의 이메일</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>공식 웹사이트</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+    <article id="hojumeoniEn" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">Hojumeoni</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>Effective Date: September 20, 2026</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong> ("Developer", "we", "us") values the privacy of users who use <strong>Hojumeoni</strong> (Package: <code>com.bluefield.atelier.hojumeoni</code>, "App") and our software services. We comply with relevant privacy regulations, Google Play developer policies, and Google Cloud OAuth requirements. This Privacy Policy describes what information is handled, for what purposes it is used, and how third-party services operate.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. Core App Features</h2>
+                <p>Hojumeoni is a <strong>personal content management and smart pocket archive application</strong> designed to help users collect, organize, and search items shared from other apps:</p>
+                <ul>
+                    <li>Webpages and links (URLs)</li>
+                    <li>Blog, article, and social media posts</li>
+                    <li>Video links (YouTube, etc.)</li>
+                    <li>Map and location bookmarks</li>
+                    <li>Images and photos</li>
+                    <li>Videos and media files</li>
+                    <li>PDFs and document files</li>
+                    <li>User-created notes, tags, categories, and favorites</li>
+                </ul>
+                <p>The App only processes content that the user explicitly chooses to share or save.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Information We Process</h2>
+                <p>When you share content into Hojumeoni via the Android system Share Sheet, we process:</p>
+                <ul>
+                    <li>Shared URLs and destination links</li>
+                    <li>Webpage titles, descriptions, and thumbnail previews</li>
+                    <li>File metadata (file name, MIME type, file size)</li>
+                    <li>User-generated notes, tags, and category classifications</li>
+                </ul>
+                <p>This information is processed exclusively to enable local organization, bookmarking, searching, and viewing within the App.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Media and File Handling (Smart Reference)</h2>
+                <p>To preserve device storage efficiency, Hojumeoni avoids duplicating existing files whenever possible:</p>
+                <ul>
+                    <li>If persistent access to the original file is supported, the App maintains a secure reference to the Android Content URI without copying.</li>
+                    <li>If a shared URI is temporary, the App copies the file into its private sandbox storage to ensure long-term preservation.</li>
+                    <li>Deleting items inside Hojumeoni <strong>never deletes original files</strong> from your system gallery or device storage.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Web Metadata and Links</h2>
+                <p>When a webpage link is shared, the App fetches publicly available Open Graph metadata (title, preview image, summary) to generate a helpful bookmark card.</p>
+                <div class="highlight-box">
+                    🔒 <strong>Security & Compliance:</strong><br>
+                    The App does NOT bypass paywalls, private authentication, or collect any login credentials for third-party websites.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Local-First Storage Architecture</h2>
+                <p>Hojumeoni is built on a <strong>Local-First</strong> foundation:</p>
+                <ul>
+                    <li>All saved links, files, tags, notes, categories, and search indexes are stored strictly inside the <strong>App's private local sandbox</strong> on your device.</li>
+                    <li>We do NOT maintain a central server to collect or store your personal archive.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Google Drive Synchronization & Scope Disclosure</h2>
+                <p>If you choose to enable the optional Google Drive backup feature, the App uses the Google Drive API to backup and restore your data.</p>
+                <div class="highlight-box">
+                    📁 <strong>Scope Used: <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    Hojumeoni requests only the <code>drive.appdata</code> scope (Application Data Folder). This grants access strictly to the App's own hidden configuration and backup folder. <strong>The App CANNOT see, access, or modify any other files or folders in your Google Drive.</strong>
+                </div>
+                <ul>
+                    <li><strong>Synchronized Data:</strong> Content metadata, tags, notes, app settings, and selected backup files.</li>
+                    <li><strong>User Control:</strong> Google Drive integration is 100% optional. The App remains fully functional in offline/local-only mode.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Google Account Authentication</h2>
+                <p>Google OAuth authentication is used strictly for Drive API access token authorization. We do not collect, view, or store your Google account password.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Advertising (Google AdMob)</h2>
+                <p>Hojumeoni may display advertisements provided by <strong>Google AdMob</strong> to support free service offerings. The Google Mobile Ads SDK may automatically process diagnostic data (IP address, Advertising ID, app performance) in compliance with Google Privacy Policies.</p>
+                <p><strong>We never sell your personal data, notes, or archived content to third parties or advertisers.</strong></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Third-Party Services</h2>
+                <ul>
+                    <li><strong>Google AdMob:</strong> Ad serving and analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>)</li>
+                    <li><strong>Google User Messaging Platform (UMP):</strong> Privacy consent management</li>
+                    <li><strong>Google Drive API:</strong> Optional user-driven backup (<a href="https://developers.google.com/drive/api/guides/api-specific-auth" target="_blank" rel="noopener">Google API Services Policy</a>)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. Data Retention & Deletion</h2>
+                <ul>
+                    <li><strong>Item Deletion:</strong> You can delete any saved item individually or empty the Trash at any time.</li>
+                    <li><strong>App Uninstall:</strong> Uninstalling the App immediately purges all local sandbox data according to Android OS standards.</li>
+                    <li><strong>Google Drive App Data:</strong> You can manage and delete the App's backup data directly from your Google Account settings (Manage Connected Apps).</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. Developer Contact Information</h2>
+                <p>If you have questions, feedback, or data privacy requests, please contact us at:</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>Studio / Developer</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>Application</dt>
+                        <dd>Hojumeoni (호주머니)</dd>
+                        <dt>Package Name</dt>
+                        <dd><code>com.bluefield.atelier.hojumeoni</code></dd>
+                        <dt>Contact Email</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>Official Website</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+    <!-- 2. Musahi Articles -->
+    <article id="musahiKo" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">개인정보처리방침 (Privacy Policy)</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">🎖️ 무사히 (Musahi)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>시행일자: 2026년 9월 25일</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>무사히 - 오늘도 건강하게, 전역하는 그날까지</strong>(이하 “무사히”)는 이용자의 개인정보를 중요하게 생각하며, 관련 법령과 Google Play 개발자 정책에 따라 개인정보를 안전하게 처리합니다.
+                본 개인정보 처리방침은 무사히 앱(패키지명: <code>com.bluefield.atelier.musahi</code>, 이하 “앱”)에서 어떤 정보가 처리되고 어떻게 보호되는지 안내합니다.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. 기본 운영 원칙 (Local-First)</h2>
+                <p>무사히는 별도의 회원가입이나 자체 로그인을 요구하지 않는 <strong>단말기 로컬 기반(Local-First) 앱</strong>입니다.</p>
+                <ul>
+                    <li>이용자가 입력한 복무 프로필, 일정, 재정 기록 등은 개발자가 운영하는 서버로 전송하거나 저장하지 않으며, 원칙적으로 이용자의 <strong>기기 내부에만 저장</strong>됩니다.</li>
+                    <li>다만 외부 웹페이지 열람, 북마크 제목 확인, 네이버 카페 기능 및 Google ML Kit 사용 과정에서는 해당 외부 서비스와 통신하거나 진단 정보가 처리될 수 있습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. 기기 내부에서 처리하는 정보와 이용 목적</h2>
+                <p>이용자가 직접 입력하거나 앱 기능을 이용하면서 생성한 다음 정보가 기기 내부에서 처리될 수 있습니다.</p>
+                
+                <h3>2.1 복무 프로필 정보</h3>
+                <ul>
+                    <li>성명, 프로필 이미지</li>
+                    <li>입대일 및 전역 예정일</li>
+                    <li>군종 및 계급</li>
+                    <li>입영 부대와 소속 부대 정보</li>
+                    <li>기타 이용자가 직접 입력한 복무 관련 정보</li>
+                </ul>
+                <p><strong>이용 목적:</strong> 복무율, D-Day, 예상 진급일, 예상 전역일 및 개인화된 복무 정보 제공에 사용됩니다.</p>
+
+                <h3>2.2 일정 및 캘린더 정보</h3>
+                <ul>
+                    <li>일정 제목, 날짜 및 시간</li>
+                    <li>장소 및 복귀 장소</li>
+                    <li>일정 상태 및 메모</li>
+                    <li>이미지 또는 텍스트에서 추출한 일정 정보</li>
+                </ul>
+                <p><strong>이용 목적:</strong> 일정 관리, 알림, 홈 화면 위젯 및 일정 공유 기능 제공에 사용됩니다.</p>
+
+                <h3>2.3 재정 기록</h3>
+                <ul>
+                    <li>월급 수령 기록</li>
+                    <li>군 적금 납입 기록 및 적금 계좌별 납입 정보</li>
+                    <li>이용자가 직접 입력한 기타 재정 기록</li>
+                </ul>
+                <p><strong>이용 목적:</strong> 예상 월급, 납입 현황 및 예상 만기 금액 계산에 사용됩니다.</p>
+
+                <h3>2.4 북마크 및 앱 설정</h3>
+                <ul>
+                    <li>북마크 URL, 제목과 메모</li>
+                    <li>즐겨찾기 및 분류 정보</li>
+                    <li>선택한 프로필과 앱 이용 설정</li>
+                </ul>
+                <p><strong>이용 목적:</strong> 북마크 관리 및 앱 설정 유지에 사용됩니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. 정보의 저장 위치와 보유기간</h2>
+                <ul>
+                    <li>이용자가 입력하거나 생성한 정보는 <strong>Room Database, SharedPreferences, DataStore 및 앱 전용 내부 저장소</strong> 등에 저장됩니다.</li>
+                    <li>개발자가 운영하는 별도의 서버에는 해당 정보가 일체 저장되지 않습니다.</li>
+                    <li>기기 내부 정보는 이용자가 직접 삭제하거나 앱 데이터를 초기화하거나 앱을 삭제할 때까지 보관됩니다.</li>
+                    <li>앱 삭제 또는 앱 데이터 초기화 시 앱 전용 내부 저장소의 정보는 영구 삭제되며, 삭제된 정보는 개발자가 복구할 수 없습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. 외부 웹페이지 및 북마크 기능</h2>
+                <p>무사히는 이용자가 선택한 외부 웹페이지를 열거나 북마크 제목을 확인하기 위해 외부 서버와 통신할 수 있습니다. 이 과정에서 다음 정보가 해당 웹사이트 또는 서비스 제공자에게 전달될 수 있습니다.</p>
+                <ul>
+                    <li>접속 요청한 URL 및 IP 주소</li>
+                    <li>기기 및 브라우저에 관한 일반적인 접속 정보</li>
+                    <li>쿠키 및 로그인 세션 정보</li>
+                    <li>해당 서비스 이용 과정에서 이용자가 직접 입력한 정보</li>
+                </ul>
+                <p>외부 웹페이지에서 이루어지는 개인정보 처리는 해당 서비스 제공자의 개인정보 처리방침과 이용약관을 따릅니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. WebView 및 쿠키</h2>
+                <p>무사히는 네이버 카페 등 외부 웹서비스 이용을 위해 앱 내부 WebView를 제공할 수 있습니다.</p>
+                <ul>
+                    <li>WebView에서는 JavaScript, 웹 저장소, 쿠키, 제3자 쿠키, 로그인 세션 유지 기능이 사용될 수 있습니다.</li>
+                    <li>쿠키와 로그인 세션은 이용자의 기기와 해당 웹서비스 제공자 사이의 통신에만 사용됩니다.</li>
+                    <li><strong>무사히 개발자는 이용자의 아이디, 비밀번호 또는 로그인 쿠키를 별도로 수집하거나 개발자 서버에 저장하지 않습니다.</strong></li>
+                    <li>이용자가 앱 데이터를 초기화하거나 앱을 삭제하면 앱 내부 WebView에 저장된 쿠키와 관련 데이터도 즉시 삭제됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Google ML Kit 및 OCR 처리</h2>
+                <p>무사히는 이미지에서 텍스트를 추출하여 일정을 등록할 수 있도록 <strong>Google ML Kit의 OCR(온디바이스 광학문자인식)</strong> 기능을 사용합니다.</p>
+                <div class="highlight-box">
+                    🔒 <strong>온디바이스(On-Device) 로컬 처리 원칙:</strong><br>
+                    OCR 대상 이미지와 이미지에서 추출된 텍스트는 <strong>개발자가 운영하는 서버로 전송되지 않으며, 이미지 분석은 이용자의 기기 내부에서만 처리</strong>됩니다. OCR 대상 원본 이미지와 추출된 텍스트 자체는 Google 서버로도 전송되지 않습니다.
+                </div>
+                <ul>
+                    <li>추출된 텍스트는 이용자가 내용을 확인하고 편집하는 동안 앱에서 처리되며, 이용자가 일정으로 저장한 경우 기기 내부 데이터베이스에 보관됩니다.</li>
+                    <li>Google ML Kit SDK는 서비스 진단, 성능 측정, 유지보수 및 오용 방지 등을 위해 기기 정보(제조사, 모델, OS 버전), 앱 버전, 처리 성능 지표 및 API 구성 정보를 Google에 전송할 수 있습니다. (Google의 개인정보 처리방침 적용)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. 이용자가 직접 실행하는 공유 기능</h2>
+                <p>무사히는 일정이나 부대 방문 정보를 다른 앱으로 공유할 수 있는 기능을 제공합니다.</p>
+                <ul>
+                    <li><strong>공유 포함 항목(선택적):</strong> 일정 제목 및 날짜/시간, 장소 및 복귀 장소, 부대명 및 주소, 이용자가 작성한 메모</li>
+                    <li>공유는 <strong>이용자가 공유 버튼을 직접 선택한 경우에만 실행</strong>됩니다.</li>
+                    <li>공유 전 군사보안상 민감한 정보, 비공개 부대 일정, 내부 시설 정보, 정확한 집결 장소 또는 개인정보가 포함되어 있지 않은지 확인하시기 바랍니다.</li>
+                    <li>공유 이후의 정보 처리는 이용자가 선택한 메신저, 문자 또는 외부 앱의 개인정보 처리방침을 따릅니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. 제3자 제공 및 처리 위탁</h2>
+                <p>무사히 개발자는 이용자가 입력한 복무 프로필, 일정 및 재정 정보를 개발자 서버로 수집하거나 제3자에게 판매하지 않습니다. 앱 이용 과정에서 연계되는 서비스는 다음과 같습니다.</p>
+                <ul>
+                    <li><strong>Google (Google ML Kit):</strong> 온디바이스 OCR 기능 및 SDK 진단 정보 처리 (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>)</li>
+                    <li><strong>네이버 및 네이버 카페:</strong> 웹뷰를 통한 공식 카페 정보 열람 및 게시글 확인</li>
+                    <li><strong>이용자가 직접 선택한 외부 웹사이트:</strong> 북마크 및 가이드 링크 연결</li>
+                    <li><strong>이용자가 선택한 공유 대상 앱:</strong> 일정 및 부대 정보 공유</li>
+                    <li><strong>이용자가 선택한 지도 서비스:</strong> 부대 위치 및 길찾기 안내</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 앱 접근 권한</h2>
+                <p>무사히는 기능 제공에 필요한 최소한의 권한과 시스템 접근 기능을 사용합니다.</p>
+                <ul>
+                    <li><strong>알림 권한 (선택):</strong> D-Day, 전역 예정일 및 주요 일정 알림 제공을 위해 사용합니다. 동의하지 않아도 기본 기능을 이용할 수 있습니다.</li>
+                    <li><strong>정확한 알람 설정 (선택):</strong> 이용자가 지정한 시간에 정확한 일정 알림을 제공하기 위해 사용합니다. 허용하지 않아도 기본 기능은 정상 작동합니다.</li>
+                    <li><strong>사진 선택:</strong> 프로필 이미지를 설정하거나 OCR 기능을 이용할 때 이용자가 직접 선택한 사진에만 접근하며, 전체 사진 보관함에 대한 광범위한 권한을 요구하지 않습니다.</li>
+                    <li><strong>인터넷 접근:</strong> 외부 웹페이지, 북마크 제목 확인, 지도, 네이버 카페 및 ML Kit 진단 통신을 위해 사용합니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. 개인정보의 파기</h2>
+                <ul>
+                    <li>이용자는 앱 내부의 삭제 기능을 사용하여 일정, 프로필, 재정 기록 또는 북마크를 언제든 즉시 삭제할 수 있습니다.</li>
+                    <li>앱 데이터 초기화 또는 앱 삭제(제거) 시 앱 전용 내부 저장소에 보관된 모든 정보가 영구 삭제됩니다.</li>
+                    <li>개발자가 해당 정보를 별도 서버에 보유하지 않으므로, 삭제된 기기 내부 정보를 개발자가 복구하거나 별도로 열람할 수 없습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. 개인정보 보호책임자 및 문의처</h2>
+                <p>무사히 앱의 개인정보 보호, 앱 이용 또는 본 개인정보 처리방침에 관한 문의는 아래 연락처로 접수할 수 있습니다.</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>개발팀명</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>애플리케이션</dt>
+                        <dd>무사히 (Musahi)</dd>
+                        <dt>패키지명</dt>
+                        <dd><code>com.bluefield.atelier.musahi</code></dd>
+                        <dt>문의 이메일</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>공식 웹사이트</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>12. 개인정보 처리방침 변경</h2>
+                <p>본 개인정보 처리방침은 관련 법령, 앱 기능, 외부 서비스 또는 Google Play 정책 변경에 따라 수정될 수 있습니다. 중요한 내용이 변경되는 경우 웹사이트 공지 또는 앱 업데이트 안내를 통해 고지합니다.</p>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px;">
+                    공고 일자: 2026년 9월 25일 | 시행 일자: 2026년 9월 25일
+                </p>
+            </section>
+
+    </article>
+
+    <article id="musahiEn" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">🎖️ Musahi (무사히)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>Effective Date: September 25, 2026</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>Musahi - Healthy Every Day, Safely Until Discharge</strong> ("Musahi", "we", "us") values user privacy and handles personal information securely in compliance with applicable laws and Google Play Developer Policies.
+                This Privacy Policy explains what information is processed by the Musahi app (Package: <code>com.bluefield.atelier.musahi</code>, "App") and how it is safeguarded.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. Core Operating Principles (Local-First)</h2>
+                <p>Musahi is a <strong>device-local (Local-First) application</strong> that does not require user registration or account login.</p>
+                <ul>
+                    <li>Military service profile information, schedules, and financial records entered by the user are stored strictly on the <strong>user's local device</strong> and are never transmitted to or stored on developer-operated servers.</li>
+                    <li>When opening external webpages, resolving bookmark titles, utilizing Naver Cafe features, or using Google ML Kit, communication with external service providers or diagnostic telemetry may occur as described below.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Information Processed Locally and Purpose of Use</h2>
+                <p>The following information created or entered by the user may be processed on the local device:</p>
+
+                <h3>2.1 Service Profile Information</h3>
+                <ul>
+                    <li>Name and profile image</li>
+                    <li>Enlistment date and scheduled discharge date</li>
+                    <li>Branch of service and military rank</li>
+                    <li>Enlistment training camp and assigned unit details</li>
+                    <li>Other service-related details entered by the user</li>
+                </ul>
+                <p><strong>Purpose:</strong> Used solely to compute service completion rate, D-Day milestones, expected promotion dates, discharge projections, and personalized military countdown info.</p>
+
+                <h3>2.2 Schedules & Calendar Records</h3>
+                <ul>
+                    <li>Event title, date, and time</li>
+                    <li>Location and return location</li>
+                    <li>Event status and custom notes</li>
+                    <li>Extracted event details from images or text</li>
+                </ul>
+                <p><strong>Purpose:</strong> Used for schedule management, local notifications, home screen widgets, and user-initiated schedule sharing.</p>
+
+                <h3>2.3 Financial & Savings Records</h3>
+                <ul>
+                    <li>Salary receipt history</li>
+                    <li>Installment savings payments and deposit accounts</li>
+                    <li>Other financial records entered directly by the user</li>
+                </ul>
+                <p><strong>Purpose:</strong> Used to calculate estimated monthly salary, total savings contributions, and maturity projections.</p>
+
+                <h3>2.4 Bookmarks and App Settings</h3>
+                <ul>
+                    <li>Bookmark URLs, titles, and notes</li>
+                    <li>Favorites, categorization tags, and application preferences</li>
+                </ul>
+                <p><strong>Purpose:</strong> Used for managing bookmark links and maintaining personalized app configurations.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Storage Location and Data Retention</h2>
+                <ul>
+                    <li>All data entered or created by the user is stored locally in <strong>Room Database, SharedPreferences, DataStore, and app-specific private sandbox storage</strong>.</li>
+                    <li>No user data is stored on remote developer servers.</li>
+                    <li>Locally stored data is retained until the user deletes it, clears app data, or uninstalls the App.</li>
+                    <li>Upon app uninstall or clearing app data, local sandbox data is permanently removed and cannot be recovered by the developer.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. External Webpages and Bookmark Features</h2>
+                <p>Musahi may connect to external servers when the user opens external websites or resolves bookmark titles. In this process, the following technical data may be processed by the corresponding website or host:</p>
+                <ul>
+                    <li>Requested URL and IP address</li>
+                    <li>General device and browser header information</li>
+                    <li>Cookies and login session tokens</li>
+                    <li>Information entered directly by the user on the third-party website</li>
+                </ul>
+                <p>Data processing on external web services is governed strictly by the respective service provider's privacy policy and terms of service.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. WebView and Cookies</h2>
+                <p>Musahi may provide an in-app WebView for viewing external web services such as community cafes.</p>
+                <ul>
+                    <li>The WebView may utilize JavaScript, local web storage, session cookies, and third-party cookies to maintain active login sessions.</li>
+                    <li>Cookies and authentication tokens remain strictly between the user's device and the external service provider.</li>
+                    <li><strong>The developer does not collect, monitor, or store usernames, passwords, or authentication cookies on developer servers.</strong></li>
+                    <li>Clearing app data or uninstalling the App clears WebView cookies and temporary cache files.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Google ML Kit and OCR Processing</h2>
+                <p>Musahi incorporates <strong>Google ML Kit On-Device Optical Character Recognition (OCR)</strong> to extract text from images (such as duty rosters or event schedules) for convenient calendar registration.</p>
+                <div class="highlight-box">
+                    🔒 <strong>On-Device Local Processing:</strong><br>
+                    OCR target images and extracted text are processed <strong>exclusively on the user's local device</strong>. Neither images nor extracted text are transmitted to developer servers, nor are raw images sent to Google servers.
+                </div>
+                <ul>
+                    <li>Extracted text is processed locally in temporary memory while the user reviews and edits it, and is saved to the local Room database only if the user saves the event.</li>
+                    <li>The Google ML Kit SDK may transmit non-personal telemetry (device model, OS version, package name, API latency and usage metrics) to Google for diagnostic, security, and performance optimization purposes under Google's Privacy Policy.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. User-Initiated Sharing Features</h2>
+                <p>Musahi provides features allowing users to share schedules or unit visit details with third-party applications.</p>
+                <ul>
+                    <li><strong>Share Contents (Optional):</strong> Schedule title, date/time, location, military unit name/address, user-written notes.</li>
+                    <li>Sharing is executed <strong>strictly upon explicit user action</strong> (tapping the Share button).</li>
+                    <li>Users should ensure that sensitive military security details, unannounced operational schedules, internal military base layouts, or confidential rendezvous points are not inadvertently shared.</li>
+                    <li>Subsequent processing of shared content is subject to the privacy policy of the selected messaging or social media application.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Third-Party Service Providers</h2>
+                <p>The developer does not sell, trade, or transfer military service profiles, schedules, or financial data to third parties. Integrated third-party components include:</p>
+                <ul>
+                    <li><strong>Google (Google ML Kit):</strong> On-device text recognition and SDK diagnostic telemetry (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>)</li>
+                    <li><strong>Naver & Naver Cafe:</strong> In-app WebView community browsing</li>
+                    <li><strong>User-Selected Websites:</strong> Informational guides and bookmark links</li>
+                    <li><strong>User-Selected Sharing Apps:</strong> External messengers and communication apps</li>
+                    <li><strong>Mapping Services:</strong> Unit location display and navigation directions</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Application Permissions</h2>
+                <p>Musahi requests only the minimal permissions required for operation:</p>
+                <ul>
+                    <li><strong>Notifications (Optional):</strong> To deliver D-Day alerts, promotion milestone notices, and schedule reminders. The app functions without this permission.</li>
+                    <li><strong>Exact Alarm Scheduling (Optional):</strong> To trigger schedule notifications at precise user-selected times.</li>
+                    <li><strong>Photo Picker:</strong> When selecting a profile image or OCR document, access is limited strictly to user-selected media files without broad storage access.</li>
+                    <li><strong>Internet Access:</strong> Required for external webpage browsing, bookmark metadata resolution, map views, and ML Kit telemetry.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. Data Deletion and Destruction</h2>
+                <ul>
+                    <li>Users can immediately delete any schedule, profile, financial log, or bookmark inside the App.</li>
+                    <li>Uninstalling the App or clearing app data immediately destroys all local database records and settings.</li>
+                    <li>Because data is not stored on remote developer servers, deleted records cannot be viewed, accessed, or restored by the developer.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>11. Privacy Contact Information</h2>
+                <p>For inquiries, questions, or feedback regarding Musahi's privacy practices, please contact:</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>Developer / Team</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>Application</dt>
+                        <dd>Musahi (무사히)</dd>
+                        <dt>Package Name</dt>
+                        <dd><code>com.bluefield.atelier.musahi</code></dd>
+                        <dt>Contact Email</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>Official Website</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>12. Policy Revisions</h2>
+                <p>This Privacy Policy may be updated to reflect changes in legal requirements, application features, or Google Play policies. Material changes will be communicated via website announcements or app update notes.</p>
+                <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px;">
+                    Announced: September 25, 2026 | Effective Date: September 25, 2026
+                </p>
+            </section>
+
+    </article>
+
+    <!-- 3. Oneul Articles -->
+    <article id="oneulKo" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">O-NEUL 개인정보처리방침 (Privacy Policy)</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">O-NEUL (오늘 - AI 음성 일기)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>시행일자: 2026년 9월 20일</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong>(이하 “운영자”)는 <strong>O-NEUL(오늘)</strong> 앱(패키지명: <code>com.bluefield.atelier.oneul</code>, 이하 “앱”)을 이용하는 사용자의 개인정보를 소중히 보호하며, 관련 법령 및 구글 플레이(Google Play), 구글 클라우드(Google Cloud) 정책을 준수합니다.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. 기본 원칙과 수집하는 정보</h2>
+                <p>O-NEUL은 사용자의 일상 기록을 다루는 앱이므로 <strong>기기 내부(로컬) 저장을 원칙</strong>으로 합니다.</p>
+                <ul>
+                    <li>앱 이용을 위한 회원가입이나 로그인을 필수로 요구하지 않습니다.</li>
+                    <li>이름, 주민등록번호, 연락처, 기기 고유식별값 등을 수집하는 별도의 자체 회원 데이터베이스를 운영하지 않습니다.</li>
+                    <li>녹음된 음성 파일, 작성한 일기 내용, 감정 태그, 기억 후보 및 설정 정보는 기본적으로 사용자의 단말기 내부 비공개 저장 영역(Room DB 및 앱 전용 폴더)에만 저장됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. AI 분석과 외부 전송</h2>
+                <p>사용자가 음성 일기 분석, 요약, 기억 정리 등의 AI 기능을 실행할 때, 앱은 처리에 필요한 일기 본문 텍스트, 사용자 요청 메모, 이전 기억 후보 텍스트를 <strong>Google의 Gemini API</strong>로 전송합니다.</p>
+                <ul>
+                    <li>음성 파일 원본은 외부 AI 서버로 직접 전송되지 않으며, 기기 내 음성인식(STT) 또는 텍스트 변환 과정을 거친 텍스트만 전송됩니다.</li>
+                    <li>사용자는 AI 분석 기능을 사용하지 않고 로컬 음성 일기 기능만 독립적으로 이용할 수 있습니다.</li>
+                </ul>
+                <div class="highlight-box">
+                    🤖 <strong>AI 처리 투명성:</strong><br>
+                    사용자는 민감하거나 비밀 유지가 필요한 개인정보를 AI 분석에 입력하지 않도록 유의해 주시기 바라며, AI 전송을 원치 않는 경우 로컬 저장 및 작성 기능만을 자유롭게 이용하실 수 있습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. 사진과 영상 미디어 처리</h2>
+                <ul>
+                    <li>갤러리에서 선택한 사진·영상은 원래 위치에 그대로 유지되며, 앱은 해당 미디어를 표시하기 위한 안전한 URI 연결 정보만을 저장합니다.</li>
+                    <li>앱에서 직접 촬영한 사진은 기기의 <code>Pictures/O-NEUL</code>, 영상은 <code>Movies/O-NEUL</code> 영역에 저장됩니다.</li>
+                    <li>사진과 영상 파일은 AI 분석 서버로 전송되지 않습니다.</li>
+                    <li>일기나 앱 데이터를 삭제하더라도 기기 갤러리의 실제 원본 사진·영상은 삭제되지 않습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. 정보의 보유 및 삭제</h2>
+                <ul>
+                    <li><strong>로컬 데이터 삭제:</strong> 앱 내 설정의 [모든 기록 삭제] 또는 Android 애플리케이션 정보에서 데이터를 즉시 완전 삭제할 수 있습니다.</li>
+                    <li><strong>Google Drive 동기화 데이터 삭제:</strong> 앱 설정 내 [Drive 동기화 데이터 삭제] 기능 또는 Google 계정의 [연결된 앱 관리]에서 언제든 삭제할 수 있습니다.</li>
+                    <li><strong>앱 삭제:</strong> 앱을 기기에서 제거(Uninstall)하면 로컬 데이터베이스 및 음성 파일은 운영체제 정책에 따라 즉시 완전히 파기됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. 백업 및 Google Drive 동기화</h2>
+                <p>사용자가 직접 백업을 실행하면 음성 파일, 일기 내용, AI 결과가 포함된 백업 파일이 생성되며, 사용자가 입력한 비밀번호 기반 AES-GCM 방식으로 강력하게 암호화됩니다.</p>
+                <div class="highlight-box">
+                    📁 <strong>Google Drive Scope: <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    Google Drive 동기화 사용 시 O-NEUL은 앱이 직접 생성한 암호화된 백업 데이터에만 접근하며, 사용자의 일반 Google Drive 파일(문서, 사진 등) 전체를 읽거나 접근하지 않습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. 앱 권한 안내</h2>
+                <ul>
+                    <li><strong>마이크:</strong> 음성 일기 녹음</li>
+                    <li><strong>카메라:</strong> 일기 첨부용 사진/영상 직접 촬영</li>
+                    <li><strong>알림:</strong> 녹음 진행 상태 및 일기 작성 알림</li>
+                    <li><strong>인터넷:</strong> AI 분석 요청 및 Google Drive 동기화 통신</li>
+                    <li><strong>부팅 완료 수신:</strong> 기기 재시작 후 사용자가 설정한 알림 재예약</li>
+                    <li><strong>포그라운드 서비스:</strong> 화면이 꺼지거나 백그라운드 전환 시에도 녹음 유지</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. 광고 및 분석 도구</h2>
+                <p>현재 버전의 O-NEUL에는 광고 SDK, 사용자 행동 추적 SDK가 포함되어 있지 않습니다. 향후 변경 사항이 있을 경우 사전에 본 방침을 개정하고 안내하겠습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. 아동의 개인정보 보호</h2>
+                <p>O-NEUL은 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 운영자 및 문의처</h2>
+                <div class="contact-box">
+                    <dl>
+                        <dt>개발사 / 운영자</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>애플리케이션</dt>
+                        <dd>O-NEUL (오늘 - AI 음성 일기)</dd>
+                        <dt>패키지명</dt>
+                        <dd><code>com.bluefield.atelier.oneul</code></dd>
+                        <dt>문의 이메일</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>공식 웹사이트</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+    <article id="oneulEn" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">O-NEUL Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">O-NEUL (AI Voice Journal)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>Effective Date: September 20, 2026</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong> ("we", "us", "our") operates <strong>O-NEUL</strong> (Package: <code>com.bluefield.atelier.oneul</code>, "the App"). Because O-NEUL is designed to handle personal daily journals and voice recordings, we process your information with care and in compliance with Google Play and Google Cloud policies.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. Core Principle & Information We Collect</h2>
+                <p>O-NEUL operates primarily on an <strong>on-device (local-first) storage model</strong>:</p>
+                <ul>
+                    <li>The App does not require user registration or account creation.</li>
+                    <li>We do not operate a user database that collects names, national ID numbers, contact lists, or persistent device identifiers.</li>
+                    <li>Recorded voice files, journal entries, sentiment tags, memory candidates, and app preferences remain in private app storage (Room database and private files) on your device.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. AI Processing and External Transmission</h2>
+                <p>When you explicitly trigger AI analysis, summarization, or memory extraction, O-NEUL sends the text content of your journal, user prompt notes, and previous memory candidates to <strong>Google's Gemini API</strong>.</p>
+                <ul>
+                    <li>Raw audio files are NOT transmitted directly to AI servers; only transcribed text is sent.</li>
+                    <li>Users who do not wish to transmit data to AI services can continue to use all local recording, playback, writing, and search features without requesting AI organization.</li>
+                </ul>
+                <div class="highlight-box">
+                    🤖 <strong>AI Transparency:</strong><br>
+                    Users should avoid submitting sensitive, confidential, or secret information for AI analysis. For more details, refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API Terms</a>.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Photos and Videos</h2>
+                <ul>
+                    <li>Photos and videos selected from your gallery remain in their original location; the App stores only a reference URI to display them.</li>
+                    <li>Photos taken via the App are stored under <code>Pictures/O-NEUL</code>, and videos under <code>Movies/O-NEUL</code> on your device.</li>
+                    <li>Photos and videos are never sent for AI analysis.</li>
+                    <li>Deleting a journal entry does not delete original photos or videos from your gallery.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Retention and Deletion</h2>
+                <ul>
+                    <li><strong>Local Deletion:</strong> You can delete individual journals, use "Manage my records > Delete all records" in settings, or clear app data in Android system settings.</li>
+                    <li><strong>Google Drive Sync Deletion:</strong> Drive sync data can be deleted through "Delete Drive sync data" in app settings or via Google Account settings.</li>
+                    <li><strong>App Uninstall:</strong> Uninstalling the App removes all local database entries and audio files according to Android OS standards.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Backup, Encryption & Google Drive Sync</h2>
+                <p>When you create a manual backup, files are encrypted using <strong>AES-GCM</strong> with a key derived from your user-provided password.</p>
+                <div class="highlight-box">
+                    📁 <strong>Scope Disclosure: <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    O-NEUL requests access only to its own hidden Application Data Folder in Google Drive. <strong>The App cannot view, modify, or access any other files or folders in your Google Drive.</strong>
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. App Permissions</h2>
+                <ul>
+                    <li><strong>Microphone:</strong> To record voice journals</li>
+                    <li><strong>Camera:</strong> To capture photos/videos when requested by the user</li>
+                    <li><strong>Notifications:</strong> To show recording status and reminders</li>
+                    <li><strong>Internet:</strong> For user-requested AI analysis, Google sign-in, Google Drive sync, and App Check</li>
+                    <li><strong>Receive boot completed:</strong> To reschedule journal reminders after device restart</li>
+                    <li><strong>Foreground service:</strong> To continue recording while the app is in the background</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Advertising & Tracking</h2>
+                <p>The current version of O-NEUL does not include advertising SDKs, Firebase Analytics, Crashlytics, or user-behavior tracking SDKs.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Children's Privacy</h2>
+                <p>O-NEUL is not designed for children under 14 years of age.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Developer & Contact Information</h2>
+                <div class="contact-box">
+                    <dl>
+                        <dt>Developer / Operator</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>Application</dt>
+                        <dd>O-NEUL (AI Voice Journal)</dd>
+                        <dt>Package Name</dt>
+                        <dd><code>com.bluefield.atelier.oneul</code></dd>
+                        <dt>Contact Email</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>Official Website</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px;">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier" style="width: 24px; height: 24px; border-radius: 4px;">
+        <span style="font-weight: 700; color: #fff;">BlueField Atelier</span>
+      </div>
+      <p style="margin-bottom: 8px;">소소하지만 필요한 가치를 정성껏 빚어내는 BlueField Atelier</p>
+      <p style="margin-bottom: 12px;">
+        <a href="index.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">메인 포털</a>
+        <a href="privacy.html" style="color: var(--primary); font-weight: 600; text-decoration: underline; margin: 0 10px;">개인정보처리방침</a>
+      </p>
+      <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentApp = 'hojumeoni';
+    let currentLang = 'ko';
+
+    function renderPolicy() {
+      // Hide all articles
+      document.querySelectorAll('.app-privacy-content').forEach(el => {
+        el.style.display = 'none';
+      });
+
+      // Show current app and lang article
+      const targetId = currentApp + (currentLang === 'ko' ? 'Ko' : 'En');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.style.display = 'block';
+      }
+
+      // Update app tab active states
+      document.querySelectorAll('.app-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-app') === currentApp) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update lang tab active states
+      const tabKo = document.getElementById('tabKo');
+      const tabEn = document.getElementById('tabEn');
+      if (currentLang === 'ko') {
+        tabKo.classList.add('active');
+        tabEn.classList.remove('active');
+        document.documentElement.lang = 'ko';
+      } else {
+        tabKo.classList.remove('active');
+        tabEn.classList.add('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    function selectApp(app) {
+      currentApp = app;
+      const url = new URL(window.location);
+      url.searchParams.set('app', app);
+      history.replaceState(null, '', url.toString());
+      renderPolicy();
+    }
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url.toString());
+      renderPolicy();
+    }
+
+    // Initialize from URL params or hash
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      
+      const appParam = params.get('app') || hash;
+      if (appParam && (appParam === 'musahi' || appParam === 'oneul' || appParam === 'hojumeoni')) {
+        currentApp = appParam;
+      }
+
+      const langParam = params.get('lang');
+      if (langParam && (langParam === 'en' || langParam === 'ko')) {
+        currentLang = langParam;
+      }
+
+      renderPolicy();
+    })();
+  </script>
+</body>
+</html>
