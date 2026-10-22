@@ -245,6 +245,21 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-lang {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #93c5fd;
+  font-weight: 700;
+  padding: 8px 14px;
+}
+
+.btn-lang:hover {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(96, 165, 250, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero-section {
   padding: 48px 0 32px;
@@ -1160,21 +1175,43 @@ textarea.form-control {
   .brand-info p {
     display: none;
   }
-  .header-actions .btn-privacy {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    font-size: 0.78rem;
-    white-space: nowrap;
+  .header-actions {
+    gap: 6px;
   }
+  .header-actions .btn-privacy .btn-text,
+  .header-actions .btn-playstore .btn-text {
+    display: none;
+  }
+  .header-actions .btn-privacy svg,
+  .header-actions .btn-playstore svg {
+    margin-right: 0 !important;
+    width: 17px;
+    height: 17px;
+  }
+  .header-actions .btn-privacy,
   .header-actions .btn-playstore {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    padding: 6px 12px;
-    font-size: 0.78rem;
-    white-space: nowrap;
+    justify-content: center;
+    padding: 7px 9px;
+    min-width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+  }
+  .header-actions .btn-lang {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 9px;
+    font-size: 0.76rem;
+    height: 36px;
+    min-width: 36px;
+    border-radius: var(--radius-sm);
+    gap: 3px;
+  }
+  .header-actions .btn-lang svg {
+    width: 13px;
+    height: 13px;
   }
   #btnOpenWriteModal {
     padding: 7px 12px;
@@ -1312,20 +1349,29 @@ textarea.form-control {
   }
   .flagship-actions-row {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 8px;
     width: 100%;
-    flex-wrap: wrap;
   }
   .flagship-actions-row .btn {
-    flex: 1;
-    min-width: 130px;
+    width: 100%;
+    flex: none;
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 14px;
+    font-size: 0.88rem;
+    white-space: normal;
+    word-break: keep-all;
   }
   .flagship-actions .btn {
     width: 100%;
     justify-content: center;
-    padding: 10px 14px;
+    padding: 11px 14px;
     font-size: 0.88rem;
+    white-space: normal;
+    word-break: keep-all;
   }
 
   /* Control Bar: Compact & Touch-friendly */

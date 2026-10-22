@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musahi - Military Countdown & Service Tracker | BlueField Atelier</title>
+  <meta name="description" content="Stay safe & healthy until discharge day! Essential service countdown, percentage gauge, promotion tracker, and widgets for soldiers, loved ones, and families.">
+  <link rel="icon" type="image/png" href="../assets/musahi_icon.png">
+  <link rel="stylesheet" href="style.css?v=20261022_2205">
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./en.html" class="brand-wrapper" id="brandWrapper" style="user-select: none;" title="Refresh Musahi">
+        <img src="../assets/musahi_icon.png" alt="Musahi App Icon" class="brand-icon-img" id="brandLogoIcon" title="Musahi">
+        <div>
+          <div class="brand-title">Musahi <span>무사히</span></div>
+          <div class="brand-sub">BlueField Atelier</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-playstore" title="Download on Google Play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+          </svg>
+          <span>Google Play</span>
+        </a>
+        <a href="index.html" class="btn btn-lang" title="한국어로 전환 (Switch to Korean)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>KO</span>
+        </a>
+        <a href="../en.html" class="btn btn-hub" title="Go to BlueField Atelier Main">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Main</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span>🎖️ Essential Daily Care App for Soldiers & Families</span>
+      </div>
+      <h1 class="hero-title">Stay Safe & Healthy<br>Until the Finish Line — Musahi</h1>
+      <p class="hero-subtitle">
+        Service days, remaining percentage gauge, exact D-Day calculation, promotion milestones, and leave countdown.<br>
+        Walking beside soldiers, loved ones, and families with warm support every day.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.musahi" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 12px 28px; font-size: 1rem;">
+          <span>Get it Free on Google Play ↗</span>
+        </a>
+        <button id="heroBtnFeedback" class="btn btn-playstore" style="padding: 12px 24px; font-size: 1rem;">
+          <span>💬 Send Feedback / Suggestions</span>
+        </button>
+      </div>
+
+      <!-- App Promo Video Showcase -->
+      <section id="video" class="video-showcase-box">
+        <video class="app-promo-video" controls autoplay loop muted playsinline poster="resources/001_concept.jpg">
+          <source src="resources/musahi.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </section>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section id="screenshots" class="screenshots-section">
+      <div class="section-head">
+        <div class="section-tag">Screenshots</div>
+        <h2 class="section-title">App Preview</h2>
+        <p class="section-subtitle">Click any screenshot to view in full resolution.</p>
+      </div>
+
+      <div class="screenshots-scroll-container">
+        <div class="screenshot-item" data-full="resources/001_concept.jpg">
+          <img src="resources/001_concept.jpg" alt="Musahi Screenshot 1" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/002_concept.jpg">
+          <img src="resources/002_concept.jpg" alt="Musahi Screenshot 2" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/003_concept.jpg">
+          <img src="resources/003_concept.jpg" alt="Musahi Screenshot 3" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/004_concept.jpg">
+          <img src="resources/004_concept.jpg" alt="Musahi Screenshot 4" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/005_concept.jpg">
+          <img src="resources/005_concept.jpg" alt="Musahi Screenshot 5" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/006_promo.jpg">
+          <img src="resources/006_promo.jpg" alt="Musahi Promo 6" class="screenshot-img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="features-section">
+      <div class="section-head">
+        <div class="section-tag">Key Features</div>
+        <h2 class="section-title">3 Core Features of Musahi</h2>
+      </div>
+
+      <div class="feature-cards-grid">
+        <div class="f-card">
+          <div class="f-icon-box">⏱️</div>
+          <h3>Real-time D-Day & Progress Gauge</h3>
+          <p>Enter enlistment date and military branch to instantly calculate total days, days served, remaining days, and a real-time progress percentage down to decimal precision.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">📱</div>
+          <h3>Elegant Home Screen Widgets</h3>
+          <p>Check your countdown and progress percentage directly from your smartphone home screen with clean, stylish widget designs without opening the app.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">🎖️</div>
+          <h3>Rank Promotion Milestones</h3>
+          <p>Automatically calculates promotion dates for Private, Corporal, and Sergeant, celebrating every milestone and boosting motivation during service.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Manual / How-To Guide -->
+    <section id="manual" class="manual-section">
+      <div class="section-head">
+        <div class="section-tag">User Manual</div>
+        <h2 class="section-title">Getting Started with Musahi</h2>
+      </div>
+
+      <div class="manual-grid">
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 01</span>
+          <h4>Select Enlistment Date & Branch</h4>
+          <p>When launching the app, choose the enlistment date and branch (Army, Navy, Air Force, Marine Corps, or Social Service). Total service duration calculates automatically.</p>
+          <div class="tip-box">💡 Tip: Accurately reflects standard service reduction regulations.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 02</span>
+          <h4>Watch Your Progress Daily</h4>
+          <p>Watch your progress bar grow every day and count down the remaining days toward discharge!</p>
+          <div class="tip-box">💡 Tip: D-Day updates automatically each midnight.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 03</span>
+          <h4>Add Home Screen Widgets</h4>
+          <p>Long-press your phone home screen, choose [Widgets] ➜ [Musahi], and place your preferred widget size (2x2, 4x2) onto your desktop.</p>
+          <div class="tip-box">💡 Tip: Disable battery optimization for Musahi to ensure punctual updates.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 04</span>
+          <h4>Track Leaves & Promotion Dates</h4>
+          <p>Keep track of promotion milestones and register countdowns for upcoming leaves and furloughs.</p>
+          <div class="tip-box">💡 Tip: Partners and families can install the app to count down together!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="section-head">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Are service period calculations accurate?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes! Musahi strictly complies with standard regulations across all branches: Army/Marines (18 months), Navy (20 months), Air Force (21 months), and Social Service (21 months).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. What if the home widget does not refresh right at midnight?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            Android battery optimization may delay background widget refreshes on some devices. Go to smartphone [Settings] ➜ [Apps] ➜ [Musahi] ➜ [Battery] and set to 'Unrestricted' for instant updates.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Can partners and family members use Musahi?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            Absolutely! Many partners, parents, and friends use Musahi to count down the days together and send warm encouragement throughout the service.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Feedback & Contact Section -->
+    <section id="feedback" class="feedback-section">
+      <div class="feedback-direct-card" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); padding: 44px 32px; backdrop-filter: blur(16px); text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-glass);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 50%; font-size: 2.2rem; margin-bottom: 20px;">
+          ✉️
+        </div>
+        <div class="section-tag" style="margin-bottom: 8px;">Direct Developer Contact</div>
+        <h2 class="section-title" style="margin-bottom: 12px; font-size: 1.85rem;">Send Feedback to Musahi Developers</h2>
+        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 28px;">
+          Have questions, bug reports, or feature ideas for widgets or calculations?<br>
+          Your message is directly delivered to <strong>tedd.devteam@gmail.com / bluefield.works@gmail.com</strong>.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 32px; text-align: left;">
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">💡</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">Feature Ideas</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">New widget themes, custom milestones, and vacation day trackers.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">🐛</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">Bug Reports</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">Calculation errors or widget delay issues with your device model.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">📬</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">Direct Response</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">We review every message personally to make your journey smoother.</div>
+          </div>
+        </div>
+
+        <button id="btnOpenWrite" class="btn btn-primary" style="padding: 14px 38px; font-size: 1.05rem; box-shadow: 0 4px 24px rgba(99, 102, 241, 0.4);">
+          <span>💬 Send Feedback / Suggestions</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Write Modal -->
+  <div class="modal-overlay" id="writeModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; font-weight: 700;">Send Feedback for Musahi</h3>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="writeForm">
+        <div class="modal-body">
+          <div style="background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.28); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 16px; font-size: 0.82rem; color: #c7d2fe; display: flex; align-items: center; gap: 8px;">
+            <span>✉️</span>
+            <span>Your message will be sent directly to the development team.</span>
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <div class="category-radio-group">
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="feature" checked>
+                <span>💡 Feature</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="bug">
+                <span>🐛 Bug</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="inquiry">
+                <span>💬 Question</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="praise">
+                <span>✨ Cheer</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAuthor">Name / Nickname</label>
+            <input type="text" id="formAuthor" class="form-control" placeholder="e.g. SoldierSupporter" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">Email (Optional, for reply)</label>
+            <input type="email" id="formEmail" class="form-control" placeholder="user@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="formTitle">Subject</label>
+            <input type="text" id="formTitle" class="form-control" placeholder="One-line summary" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formContent">Message</label>
+            <textarea id="formContent" class="form-control" placeholder="Please share your thoughts or bug details." rows="4" required></textarea>
+          </div>
+
+          <input type="hidden" id="formAppVersion" value="2.0.1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-playstore" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmitFeedback">
+            <span>Send to Dev Team ✉️</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <img src="" alt="Enlarged screenshot" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin-bottom: 8px;">BlueField Atelier • Safe & Sound Military Care</p>
+      <p><a href="../en.html" style="color: #34d399; text-decoration: none;">Return to BlueField Atelier Main Hub →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=20261022_2205"></script>
+</body>
+</html>

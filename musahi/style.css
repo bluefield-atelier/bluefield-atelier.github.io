@@ -209,6 +209,21 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-lang {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: #34d399;
+  font-weight: 700;
+  padding: 8px 14px;
+}
+
+.btn-lang:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(52, 211, 153, 0.45);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero-section {
   padding: 50px 0 30px;
@@ -784,11 +799,12 @@ textarea.form-control {
   .header-actions .btn {
     display: none; /* 히어로에 다운로드 버튼이 이미 있으므로 헤더 간소화 */
   }
-  .header-actions .btn-hub {
+  .header-actions .btn-hub,
+  .header-actions .btn-lang {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 6px 13px;
+    padding: 6px 12px;
     font-size: 0.8rem;
     white-space: nowrap;
   }

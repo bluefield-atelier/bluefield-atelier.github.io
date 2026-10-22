@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hojumeoni - User Manual & Feedback | BlueField Atelier</title>
+  <meta name="description" content="Clip into your pocket in 1 second! Smart vault for links, photos, and notes. Official guide, video demo, PC extension guide, and open feedback forum.">
+  <link rel="icon" type="image/png" href="resources/app_icon.png">
+  <link rel="stylesheet" href="style.css?v=20261022_2205">
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./en.html" class="brand-wrapper" id="brandWrapper" style="user-select: none;" title="Refresh Hojumeoni">
+        <img src="resources/app_icon.png" alt="Hojumeoni App Icon" class="brand-icon-img" id="brandLogoIcon" title="Hojumeoni">
+        <div>
+          <div class="brand-title">Hojumeoni <span>호주머니</span></div>
+          <div class="brand-sub">BlueField Atelier</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-playstore" title="Download on Google Play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+          </svg>
+          <span>Google Play</span>
+        </a>
+        <a href="https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd" target="_blank" rel="noopener" class="btn btn-chromestore" title="Chrome Web Store Extension">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
+          </svg>
+          <span>Chrome Extension</span>
+        </a>
+        <a href="index.html" class="btn btn-lang" title="한국어로 전환 (Switch to Korean)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>KO</span>
+        </a>
+        <a href="../en.html" class="btn btn-hub" title="Go to BlueField Atelier Main">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Main</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span>✨ BlueField Atelier Flagship App</span>
+      </div>
+      <h1 class="hero-title">Clip into your pocket in 1 second!<br>Your Smart Pocket for Everything</h1>
+      <p class="hero-subtitle">
+        Save from web browsers, YouTube, Instagram, and Gallery with just one tap.<br>
+        Organize effortlessly with tags, instant search, and safe private Google Drive backup.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.bluefield.atelier.hojumeoni" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.98rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.246 11.248l2.257 2.257-11.458 6.615 9.2-8.872zm2.257-2.124l-2.257 2.257-9.201-8.873 11.458 6.616zm1.189 1.188l3.193 1.843c.895.516.895 1.36 0 1.876l-3.193 1.843-2.128-2.128 2.128-2.634z"/>
+          </svg>
+          <span>Get it on Google Play ↗</span>
+        </a>
+        <a href="https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd" target="_blank" rel="noopener" class="btn btn-chromestore" style="padding: 12px 24px; font-size: 0.98rem; border-color: rgba(96, 165, 250, 0.4); background: rgba(37, 99, 235, 0.12);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
+          </svg>
+          <span>Chrome Extension (PC) ↗</span>
+        </a>
+        <button id="heroBtnFeedback" class="btn btn-playstore" style="padding: 12px 22px; font-size: 0.98rem;">
+          <span>💬 Send Feedback</span>
+        </button>
+      </div>
+
+      <!-- App Promo Video Showcase -->
+      <section id="video" class="video-showcase-box">
+        <video class="app-promo-video" controls autoplay loop muted playsinline poster="resources/001.png">
+          <source src="resources/호주머니_1005_kor.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </section>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section id="screenshots" class="screenshots-section">
+      <div class="section-head">
+        <div class="section-tag">Screenshots</div>
+        <h2 class="section-title">App Preview</h2>
+        <p class="section-subtitle">Click any screenshot to view in full resolution.</p>
+      </div>
+
+      <div class="screenshots-scroll-container">
+        <div class="screenshot-item" data-full="resources/001.png">
+          <img src="resources/001.png" alt="Hojumeoni Screenshot 1" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/002.png">
+          <img src="resources/002.png" alt="Hojumeoni Screenshot 2" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/003.png">
+          <img src="resources/003.png" alt="Hojumeoni Screenshot 3" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/004.png">
+          <img src="resources/004.png" alt="Hojumeoni Screenshot 4" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/005.png">
+          <img src="resources/005.png" alt="Hojumeoni Screenshot 5" class="screenshot-img" loading="lazy">
+        </div>
+        <div class="screenshot-item" data-full="resources/006.png">
+          <img src="resources/006.png" alt="Hojumeoni Screenshot 6" class="screenshot-img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- PC Chrome Extension Showcase -->
+    <section id="extension" class="extension-section">
+      <div class="section-head">
+        <div class="section-tag" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(96, 165, 250, 0.3); color: #60a5fa; display: inline-block; padding: 4px 14px; border-radius: var(--radius-full); margin-bottom: 12px;">PC Chrome Extension</div>
+        <h2 class="section-title">Clip in 1 second on PC too!<br>Hojumeoni Chrome Side Panel Extension</h2>
+        <p class="section-subtitle">
+          Instantly access articles saved on your phone, and clip new web discoveries directly into your vault from the browser's right side panel with one click.
+        </p>
+      </div>
+
+      <div class="extension-showcase-box">
+        <div class="extension-status-banner" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(52, 211, 153, 0.3); color: #6ee7b7;">
+          <span class="status-dot" style="background: #10b981; box-shadow: 0 0 10px #10b981;"></span>
+          <span><strong>Official Chrome Web Store Release</strong> — Install the extension for free and start using it right away.</span>
+        </div>
+
+        <div class="extension-preview-container screenshot-item" data-full="resources/webpage_extension.png" title="Click to view full size" style="margin: 16px 0 24px;">
+          <img src="resources/webpage_extension.png" alt="Hojumeoni PC Chrome Extension in Action" class="extension-preview-img" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 Click to expand image</span>
+          </div>
+        </div>
+
+        <div class="extension-features-grid">
+          <div class="ext-f-item">
+            <div class="ext-f-icon">🖥️</div>
+            <div>
+              <h4>Side Panel Integration</h4>
+              <p>Keep your pocket open on the right edge of your browser while browsing without covering active tabs.</p>
+            </div>
+          </div>
+          <div class="ext-f-item">
+            <div class="ext-f-icon">⚡</div>
+            <div>
+              <h4>One-Click Scraping</h4>
+              <p>Save current page URL, title, and your notes instantly into your designated category with a single click.</p>
+            </div>
+          </div>
+          <div class="ext-f-item">
+            <div class="ext-f-icon">🔄</div>
+            <div>
+              <h4>Real-time Cloud Sync</h4>
+              <p>Automatic sync between your mobile Hojumeoni app and desktop extension via Google Drive.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 28px;">
+          <a href="https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 13px 32px; font-size: 1rem; margin-bottom: 14px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
+            </svg>
+            <span>Open in Chrome Web Store (Free) ↗</span>
+          </a>
+          <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.65; max-width: 720px; margin: 0 auto 12px;">
+            💡 Compatible with all Chromium-based browsers including <strong>Google Chrome, Microsoft Edge, Naver Whale, and Brave</strong> with full feature support.
+          </p>
+          <div style="display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 0.78rem; padding: 3px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; color: #cbd5e1;">Google Chrome</span>
+            <span style="font-size: 0.78rem; padding: 3px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; color: #cbd5e1;">Microsoft Edge</span>
+            <span style="font-size: 0.78rem; padding: 3px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; color: #cbd5e1;">Naver Whale</span>
+            <span style="font-size: 0.78rem; padding: 3px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; color: #cbd5e1;">Brave</span>
+            <span style="font-size: 0.78rem; padding: 3px 10px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(96, 165, 250, 0.35); border-radius: 999px; color: #93c5fd; font-weight: 600;">✓ 100% Chromium Compatible</span>
+          </div>
+        </div>
+
+        <!-- Browser-by-Browser Usage Guide -->
+        <div class="browser-guide-container">
+          <h3 class="browser-guide-title">
+            <span>🌐</span>
+            <span>PC Browser Installation & Search Guide</span>
+          </h3>
+          <p class="browser-guide-subtitle">
+            Search for <strong>'Hojumeoni'</strong> in your desktop browser store to install in seconds.
+          </p>
+
+          <!-- Mobile Notice & Keyword Banner -->
+          <div class="mobile-notice-banner">
+            <div class="mobile-notice-content">
+              <div class="mobile-notice-icon">📱</div>
+              <div class="mobile-notice-text">
+                <div class="mobile-notice-title">
+                  <span>Viewing from a smartphone?</span>
+                  <span class="mobile-notice-badge">Desktop Installation</span>
+                </div>
+                <div class="mobile-notice-desc">
+                  The Hojumeoni extension runs on desktop browsers. When you are on your PC, search <strong class="kw-highlight">Hojumeoni</strong> in the Chrome Web Store. Tap <strong>[Copy PC Store Link]</strong> below to send the link to your messenger or notes for later.
+                </div>
+              </div>
+            </div>
+            <div class="mobile-notice-actions">
+              <button type="button" class="btn-copy-link" id="btnCopyExtensionLink" title="Copy Store Link">
+                <span>📋 Copy PC Store Link</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="browser-grid-4col">
+            <!-- Google Chrome -->
+            <div class="browser-card">
+              <div class="browser-card-head">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color: #60a5fa;" class="browser-card-icon">
+                  <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/>
+                </svg>
+                <span class="browser-card-name">Google Chrome</span>
+                <span class="browser-card-badge">Official</span>
+              </div>
+              <ul class="browser-step-list">
+                <li class="browser-step-item">
+                  <span class="step-num">1</span>
+                  <span>Open <strong>Chrome Web Store</strong> and search for <mark class="search-mark">Hojumeoni</mark> (or click button above).</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">2</span>
+                  <span>Select Hojumeoni and click <strong>[Add to Chrome]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">3</span>
+                  <span>Click the <strong>puzzle (🧩) icon</strong> in the top-right and click the <strong>Pin (📌)</strong> icon next to Hojumeoni.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>Click the <strong>Side Panel (◨)</strong> icon or toolbar pin to keep your vault open while browsing!</span>
+                </li>
+              </ul>
+              <div class="browser-card-tip">
+                💡 <strong>Chrome Tip:</strong> Clicking the pinned icon instantly clips the current webpage title and URL into your vault.
+              </div>
+            </div>
+
+            <!-- Microsoft Edge -->
+            <div class="browser-card">
+              <div class="browser-card-head">
+                <span style="font-size: 1.25rem;" class="browser-card-icon">🌊</span>
+                <span class="browser-card-name">Microsoft Edge</span>
+                <span class="browser-card-badge">100% Compatible</span>
+              </div>
+              <ul class="browser-step-list">
+                <li class="browser-step-item">
+                  <span class="step-num">1</span>
+                  <span>In Edge, click <strong>[…] Menu ➜ [Extensions] ➜ [Manage extensions]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">2</span>
+                  <span>Turn on <strong>'Allow extensions from other stores'</strong> on the bottom left, or click 'Get extensions from Chrome Web Store'.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">3</span>
+                  <span>Search for <mark class="search-mark">Hojumeoni</mark> in the store and click <strong>[Get / Add to Chrome]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>In the extensions menu, click the <strong>Eye (👁️) icon</strong> to show Hojumeoni on the Edge toolbar or sidebar.</span>
+                </li>
+              </ul>
+              <div class="browser-card-tip">
+                💡 <strong>Edge Tip:</strong> Pin Hojumeoni to Edge's vertical sidebar for seamless split-screen multitasking.
+              </div>
+            </div>
+
+            <!-- Naver Whale -->
+            <div class="browser-card">
+              <div class="browser-card-head">
+                <span style="font-size: 1.25rem;" class="browser-card-icon">🐳</span>
+                <span class="browser-card-name">Naver Whale</span>
+                <span class="browser-card-badge">Sidebar Optimized</span>
+              </div>
+              <ul class="browser-step-list">
+                <li class="browser-step-item">
+                  <span class="step-num">1</span>
+                  <span>In Whale, open <strong>[…] Menu ➜ [Extensions] ➜ [Whale / Chrome Web Store]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">2</span>
+                  <span>Search for <mark class="search-mark">Hojumeoni</mark> and click <strong>[Add to Chrome]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">3</span>
+                  <span>Click the <strong>'+' button at the bottom of Whale's right sidebar</strong> and add Hojumeoni to the sidebar.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>Enjoy a distraction-free <strong>sidebar dual view</strong> that never overlaps with active web pages!</span>
+                </li>
+              </ul>
+              <div class="browser-card-tip">
+                💡 <strong>Whale Tip:</strong> Use Whale's auto-hide or pin feature on the sidebar for maximum research productivity.
+              </div>
+            </div>
+
+            <!-- Brave -->
+            <div class="browser-card">
+              <div class="browser-card-head">
+                <span style="font-size: 1.25rem;" class="browser-card-icon">🦁</span>
+                <span class="browser-card-name">Brave Browser</span>
+                <span class="browser-card-badge">Fully Compatible</span>
+              </div>
+              <ul class="browser-step-list">
+                <li class="browser-step-item">
+                  <span class="step-num">1</span>
+                  <span>In Brave, navigate to the <strong>Chrome Web Store</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">2</span>
+                  <span>Search for <mark class="search-mark">Hojumeoni</mark> and click <strong>[Add to Chrome]</strong>.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">3</span>
+                  <span>Click the puzzle (🧩) icon in the URL bar and <strong>Pin (📌)</strong> Hojumeoni.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>Toggle Brave's <strong>Side Panel</strong> icon to keep your archive open while browsing.</span>
+                </li>
+              </ul>
+              <div class="browser-card-tip">
+                💡 <strong>Brave Tip:</strong> Operates strictly locally without transmitting data to external third-party servers.
+              </div>
+            </div>
+          </div>
+
+          <!-- Cross-Platform Sync Tip Box -->
+          <div class="sync-tip-box">
+            🔄 <strong>Real-time Mobile & Desktop Cloud Sync:</strong><br>
+            Connect the same <strong>Google Account</strong> in the desktop extension settings and mobile Hojumeoni app. Articles clipped on PC appear on your phone instantly, and vice versa!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="features-section">
+      <div class="section-head">
+        <div class="section-tag">Key Features</div>
+        <h2 class="section-title">3 Reasons Why Hojumeoni Stands Out</h2>
+      </div>
+
+      <div class="feature-cards-grid">
+        <div class="f-card">
+          <div class="f-icon-box">⚡</div>
+          <h3>1-Second Quick Scraping (Share Sheet)</h3>
+          <p>No need to open the app! Tap 'Share' ➜ 'Hojumeoni' from any web browser or YouTube video to save it into your drawer immediately.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">🔍</div>
+          <h3>Tags & Lightning Search</h3>
+          <p>Even with hundreds of items, finding what you need is instant. Organize by folders and tags, or use lightning-fast search filters.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon-box">☁️</div>
+          <h3>Google Drive Cloud Backup</h3>
+          <p>Switching phones or formatting? Never lose your curated archive. Everything backs up and restores securely to your personal Google Drive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Manual / How-To Guide -->
+    <section id="manual" class="manual-section">
+      <div class="section-head">
+        <div class="section-tag">User Manual</div>
+        <h2 class="section-title">How to Get the Most Out of Hojumeoni</h2>
+      </div>
+
+      <div class="manual-grid">
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 01</span>
+          <h4>Tap [Share] in Any App</h4>
+          <p>When you encounter an interesting link, article, or photo in Chrome, YouTube, Instagram, or Gallery, tap the system <strong>Share icon</strong>.</p>
+          <div class="tip-box">💡 Tip: Long-press Hojumeoni in the share sheet and tap 'Pin to top' to keep it first!</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 02</span>
+          <h4>Save to Pocket in a Flash</h4>
+          <p>A compact saving sheet appears. Edit the title or assign tags (#Recipes, #Tech, etc.), and tap [Save]. Done in 1 second!</p>
+          <div class="tip-box">💡 Tip: Even without specifying a tag, it safely stores in your default inbox.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 03</span>
+          <h4>Find in Seconds with Fast Search</h4>
+          <p>Type keywords or select a tag pill in the top search bar to filter your library in real-time.</p>
+          <div class="tip-box">💡 Tip: Tap tag chips to group related discoveries on a single screen.</div>
+        </div>
+
+        <div class="manual-step-card">
+          <span class="step-badge">STEP 04</span>
+          <h4>Secure Cloud Backup on Google Drive</h4>
+          <p>Link your Google account under [Settings] ➜ [Cloud Backup] to safeguard your entire library with a single tap.</p>
+          <div class="tip-box">💡 Tip: Moving to a new phone? Tap [Restore from Cloud] to recover everything in 1 second.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="section-head">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Can I view saved items offline without an internet connection?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes! Saved notes, text snippets, thumbnails, and photos are stored in local device storage, so you can access them anytime even on airplanes or in offline mode. (Internet is only required when visiting the original external web link).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Is there any limit on the number or storage of saved items?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            There is no artificial limit in Hojumeoni! As long as your device and Google Drive have available storage, you can save thousands of links, images, and notes without restriction.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Is biometric security or PIN lock supported?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes! In the app Settings, you can configure a <strong>4-digit PIN code or fingerprint biometric authentication</strong> to protect your sensitive notes and personal links from unauthorized access.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. What if Hojumeoni is not visible in another app's share list?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p style="margin-bottom: 8px;">Use the <strong>in-app Direct Add (+) button with auto-clipboard detection</strong>!</p>
+            <ul style="padding-left: 18px; margin-bottom: 6px; line-height: 1.6;">
+              <li style="margin-bottom: 4px;">Copy the URL from any restricted browser or app, then open Hojumeoni.</li>
+              <li>Tap the <strong>(+) button</strong> in Hojumeoni to automatically recognize the copied URL and save it with tags immediately.</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 6px;"><em>Tip: Scroll to the end of your system share sheet, tap 'More' or 'Edit', and pin Hojumeoni to the top.</em></p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q. Can I use the extension on Microsoft Edge, Naver Whale, or Brave?</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p style="margin-bottom: 8px;">Yes! Hojumeoni fully supports all Chromium-based desktop browsers including <strong>Microsoft Edge, Naver Whale, and Brave</strong>.</p>
+            <ul style="padding-left: 18px; margin-bottom: 8px; line-height: 1.6;">
+              <li style="margin-bottom: 4px;"><strong>On mobile now?</strong> Open your PC browser later and search for <strong>'Hojumeoni'</strong> in the extension store.</li>
+              <li style="margin-bottom: 4px;"><strong>Microsoft Edge:</strong> Go to Menu (···) ➜ Extensions ➜ Allow extensions from other stores, then search and add Hojumeoni.</li>
+              <li><strong>Naver Whale:</strong> Click '+' at the bottom of Whale's right sidebar to pin Hojumeoni for dual view.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Feedback & Contact Section -->
+    <section id="feedback" class="feedback-section">
+      <div class="feedback-direct-card" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); padding: 44px 32px; backdrop-filter: blur(16px); text-align: center; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-glass);">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 50%; font-size: 2.2rem; margin-bottom: 20px;">
+          ✉️
+        </div>
+        <div class="section-tag" style="margin-bottom: 8px;">Direct Developer Contact</div>
+        <h2 class="section-title" style="margin-bottom: 12px; font-size: 1.85rem;">Contact the Hojumeoni Team Directly</h2>
+        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 650px; margin: 0 auto 28px;">
+          Encountered a bug, have an idea for a new feature, or want to say hello?<br>
+          Your message is sent securely to <strong>tedd.devteam@gmail.com / bluefield.works@gmail.com</strong>.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 32px; text-align: left;">
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">💡</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">Feature Proposals</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">"It would be amazing to have this feature!" We welcome every everyday suggestion.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">🐛</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">Bug Reports</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">Please share your phone model and any details for quick resolution.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-size: 1.4rem; margin-bottom: 8px;">📬</div>
+            <div style="font-weight: 700; color: #f8fafc; margin-bottom: 5px;">General Inquiries</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">Questions regarding account integration, cloud sync, or desktop extensions.</div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btnOpenWrite" style="padding: 14px 36px; font-size: 1.05rem;">
+          <span>✍️ Write a Message to Developers</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Write Feedback Modal -->
+  <div class="modal-overlay" id="writeModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700;">✍️ Send Feedback / Suggestion</h3>
+        <button class="modal-close-btn" data-close-modal title="Close modal">&times;</button>
+      </div>
+      <form id="writeForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Category</label>
+            <div class="category-radio-group">
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="feature" checked>
+                <span>💡 Feature</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="bug">
+                <span>🐛 Bug</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="inquiry">
+                <span>💬 Question</span>
+              </label>
+              <label class="category-radio-label">
+                <input type="radio" name="category" value="praise">
+                <span>✨ Cheer</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formAuthor">Name / Nickname</label>
+            <input type="text" id="formAuthor" class="form-control" placeholder="e.g. HojumeoniUser" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">Email (Optional, for reply)</label>
+            <input type="email" id="formEmail" class="form-control" placeholder="user@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="formTitle">Subject</label>
+            <input type="text" id="formTitle" class="form-control" placeholder="One-line summary" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formContent">Message</label>
+            <textarea id="formContent" class="form-control" placeholder="Please share your thoughts or bug details." rows="4" required></textarea>
+          </div>
+
+          <input type="hidden" id="formAppVersion" value="1.2.4">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-playstore" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btnSubmitFeedback">
+            <span>Send to Dev Team ✉️</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <img src="" alt="Enlarged screenshot" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin-bottom: 8px;">BlueField Atelier • Crafting meaningful & delightful software</p>
+      <p><a href="../en.html" style="color: #60a5fa; text-decoration: none;">Return to BlueField Atelier Main Hub →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=20261022_2205"></script>
+</body>
+</html>
