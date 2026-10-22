@@ -6,7 +6,7 @@
   <title>호주머니 - 사용 설명서 & 피드백 | BlueField Atelier</title>
   <meta name="description" content="어떤 앱에서든 1초 만에 쏙! 링크, 사진, 문서 스마트 보관함 호주머니(Hojumeoni) 앱의 사용 설명서, 시연 영상 및 사용자 의견 게시판입니다.">
   <link rel="icon" type="image/png" href="resources/app_icon.png">
-  <link rel="stylesheet" href="style.css?v=20261022_2131">
+  <link rel="stylesheet" href="style.css?v=20261022_2150">
 </head>
 <body>
 
@@ -190,14 +190,35 @@
         <div class="browser-guide-container">
           <h3 class="browser-guide-title">
             <span>🌐</span>
-            <span>브라우저별 간편 설치 및 사용 가이드</span>
+            <span>PC 브라우저별 검색 및 설치 가이드</span>
           </h3>
           <p class="browser-guide-subtitle">
-            사용하시는 브라우저에 맞춰 10초 만에 설치하고, 브라우저 사이드 패널에서 상시 띄워두고 사용해 보세요.
+            PC 브라우저(Chrome, Edge, Whale 등)의 확장 스토어에서 <strong>'호주머니'</strong>를 검색하시면 바로 설치하실 수 있습니다.
           </p>
 
+          <!-- Mobile Notice & Keyword Banner -->
+          <div class="mobile-notice-banner">
+            <div class="mobile-notice-content">
+              <div class="mobile-notice-icon">📱</div>
+              <div class="mobile-notice-text">
+                <div class="mobile-notice-title">
+                  <span>스마트폰으로 페이지를 보고 계신가요?</span>
+                  <span class="mobile-notice-badge">PC 설치 안내</span>
+                </div>
+                <div class="mobile-notice-desc">
+                  호주머니 PC 확장 프로그램은 PC 브라우저에서 설치해야 합니다. 나중에 PC를 켜신 후 확장 스토어 검색창에 <strong class="kw-highlight">호주머니</strong> (또는 영문 <span class="kw-en">Hojumeoni</span>)를 검색해 보세요. 아래의 <strong>[PC 설치 링크 복사]</strong>를 눌러 카카오톡 '나와의 채팅'이나 메모장에 주소를 보내두시면 편리합니다.
+                </div>
+              </div>
+            </div>
+            <div class="mobile-notice-actions">
+              <button type="button" class="btn-copy-link" id="btnCopyExtensionLink" title="스토어 링크 주소 복사">
+                <span>📋 PC 설치 링크 복사</span>
+              </button>
+            </div>
+          </div>
+
           <div class="browser-grid-4col">
-            <!-- Chrome -->
+            <!-- Google Chrome -->
             <div class="browser-card">
               <div class="browser-card-head">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color: #60a5fa;" class="browser-card-icon">
@@ -209,19 +230,23 @@
               <ul class="browser-step-list">
                 <li class="browser-step-item">
                   <span class="step-num">1</span>
-                  <span>상단 링크 클릭 후 <strong>[Chrome에 추가]</strong> 버튼을 누릅니다.</span>
+                  <span>PC 크롬에서 <strong>Chrome 웹스토어</strong> 접속 후 검색창에 <mark class="search-mark">호주머니</mark>를 검색합니다. (또는 위 링크 버튼 클릭)</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">2</span>
-                  <span>브라우저 우측 상단 <strong>퍼즐(🧩) 아이콘</strong>에서 호주머니 옆 <strong>핀(📌)</strong>을 눌러 고정합니다.</span>
+                  <span>검색 결과에서 호주머니 선택 ➜ <strong>[Chrome에 추가]</strong> 버튼을 누릅니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">3</span>
+                  <span>우측 상단 <strong>퍼즐(🧩)</strong> 아이콘에서 호주머니 옆 <strong>핀(📌)</strong>을 눌러 툴바에 고정합니다.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
                   <span>우측 상단 <strong>사이드 패널(◨)</strong> 아이콘 또는 핀을 누르면 우측에 항상 켜두고 원클릭 스크랩 가능!</span>
                 </li>
               </ul>
               <div class="browser-card-tip">
-                💡 <strong>크롬 꿀팁:</strong> 웹 서핑 중 호주머니 아이콘을 누르면 현재 보고 있는 페이지 제목과 링크가 즉시 자동 등록됩니다.
+                💡 <strong>크롬 꿀팁:</strong> 웹 서핑 중 툴바의 호주머니 아이콘을 클릭하면 현재 보고 있는 페이지 제목과 링크가 즉시 자동 등록됩니다.
               </div>
             </div>
 
@@ -235,19 +260,23 @@
               <ul class="browser-step-list">
                 <li class="browser-step-item">
                   <span class="step-num">1</span>
-                  <span>상단 링크 접속 시 상단에 뜨는 <strong>[다른 스토어의 확장 허용]</strong> 클릭 후 <strong>[다운로드]</strong>를 누릅니다.</span>
+                  <span>PC 엣지 우측 상단 <strong>[…] 메뉴 ➜ [확장] ➜ [확장 관리]</strong>로 들어갑니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">2</span>
-                  <span>우측 상단 <strong>퍼즐(🧩)</strong> 메뉴에서 호주머니의 <strong>'도구 모음에 표시(눈 모양 👁️)'</strong>를 활성화합니다.</span>
+                  <span>좌측 하단의 <strong>'다른 스토어의 확장 허용'</strong> 스위치를 켜거나, <strong>'Chrome 웹스토어에서 확장 다운로드'</strong> 링크를 누릅니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">3</span>
-                  <span>Edge 툴바에서 호주머니를 클릭하여 우측 분할 창으로 띄워두고 멀티태스킹 작업!</span>
+                  <span>웹스토어 검색창에 <mark class="search-mark">호주머니</mark> 검색 후 <strong>[Chrome에 추가(다운로드)]</strong>를 누릅니다.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>우측 상단 퍼즐(🧩) 메뉴에서 <strong>'도구 모음에 표시(눈 모양 👁️)'</strong>를 켜면 Edge 분할 창과 사이드바에서 편리하게 사용 가능!</span>
                 </li>
               </ul>
               <div class="browser-card-tip">
-                💡 <strong>엣지 꿀팁:</strong> Edge 사이드바에 호주머니를 등록해두면 문서 작업이나 영상 시청 중에도 자유롭게 여닫을 수 있습니다.
+                💡 <strong>엣지 꿀팁:</strong> Edge 우측 사이드바에 호주머니를 고정해두면 문서 작업이나 유튜브 시청 중에도 자유롭게 여닫을 수 있습니다.
               </div>
             </div>
 
@@ -261,15 +290,19 @@
               <ul class="browser-step-list">
                 <li class="browser-step-item">
                   <span class="step-num">1</span>
-                  <span>웨일 브라우저로 접속 후 <strong>[Chrome에 추가]</strong>를 누릅니다 (크로미움 기반 100% 호환).</span>
+                  <span>PC 웨일 우측 상단 <strong>[…] 메뉴 ➜ [확장앱] ➜ [웨일 스토어 / Chrome 웹스토어]</strong>로 이동합니다. (크로미움 기반 100% 호환)</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">2</span>
-                  <span>웨일 우측 <strong>사이드바 하단의 '+' 버튼</strong>을 누른 뒤 확장 프로그램 목록에서 호주머니를 추가합니다.</span>
+                  <span>스토어 검색창에 <mark class="search-mark">호주머니</mark> 검색 후 <strong>[Chrome에 추가]</strong>를 누릅니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">3</span>
-                  <span>사이드바에서 호주머니를 클릭하면 웹 서핑 화면을 가리지 않는 완벽한 <strong>사이드 패널 듀얼 뷰</strong> 완성!</span>
+                  <span>웨일 우측 <strong>사이드바 맨 하단의 '+' (추가) 버튼</strong>을 누른 뒤 확장앱 목록에서 <strong>호주머니</strong>를 추가합니다.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
+                  <span>사이드바에서 호주머니를 누르면 웹 서핑 화면을 전혀 가리지 않는 완벽한 <strong>사이드 패널 듀얼 뷰</strong> 완성!</span>
                 </li>
               </ul>
               <div class="browser-card-tip">
@@ -287,14 +320,18 @@
               <ul class="browser-step-list">
                 <li class="browser-step-item">
                   <span class="step-num">1</span>
-                  <span>Brave 브라우저에서 웹스토어 링크 접속 후 <strong>[Chrome에 추가]</strong>를 클릭합니다.</span>
+                  <span>PC Brave 브라우저에서 <strong>Chrome 웹스토어</strong>에 접속합니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">2</span>
-                  <span>주소창 우측 <strong>퍼즐(🧩)</strong> 아이콘에서 호주머니를 <strong>핀(📌)</strong>으로 고정합니다.</span>
+                  <span>스토어 검색창에 <mark class="search-mark">호주머니</mark> 검색 후 <strong>[Chrome에 추가]</strong>를 클릭합니다.</span>
                 </li>
                 <li class="browser-step-item">
                   <span class="step-num">3</span>
+                  <span>주소창 우측 <strong>퍼즐(🧩)</strong> 아이콘에서 호주머니를 <strong>핀(📌)</strong>으로 고정합니다.</span>
+                </li>
+                <li class="browser-step-item">
+                  <span class="step-num">4</span>
                   <span>주소창 우측의 <strong>사이드 패널 토글</strong> 아이콘을 눌러 실시간 보관함 패널을 상시 열어두고 사용하세요.</span>
                 </li>
               </ul>
@@ -436,7 +473,12 @@
             <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer">
-            네! 크롬은 물론 <strong>Microsoft Edge, 네이버 웨일(Whale), Brave</strong> 등 크로미움(Chromium) 기반 모든 브라우저에서 Chrome 웹스토어 링크 하나로 동일하게 바로 설치하여 사용하실 수 있습니다.
+            <p style="margin-bottom: 8px;">네! 크롬은 물론 <strong>Microsoft Edge, 네이버 웨일(Whale), Brave</strong> 등 크로미움(Chromium) 기반 모든 PC 브라우저에서 사용하실 수 있습니다.</p>
+            <ul style="padding-left: 18px; margin-bottom: 8px; line-height: 1.6;">
+              <li style="margin-bottom: 4px;"><strong>모바일에서 보고 계신 경우:</strong> PC를 켜신 후 브라우저 스토어에서 검색어 <strong>'호주머니'</strong>를 검색하시면 쉽게 찾아서 설치할 수 있습니다.</li>
+              <li style="margin-bottom: 4px;"><strong>Microsoft Edge:</strong> 브라우저 메뉴(···) ➜ [확장] ➜ [확장 관리]에서 <em>'다른 스토어의 확장 허용'</em>을 켜시거나 <em>'Chrome 웹스토어에서 확장 다운로드'</em>로 이동하여 '호주머니'를 검색 후 설치하시면 됩니다.</li>
+              <li><strong>네이버 웨일:</strong> 우측 사이드바 하단 '+' 버튼을 눌러 호주머니를 등록하시면 화면을 가리지 않는 완벽한 사이드바 듀얼 뷰로 쓰실 수 있습니다.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -563,6 +605,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261016_2130"></script>
+  <script src="script.js?v=20261022_2150"></script>
 </body>
 </html>

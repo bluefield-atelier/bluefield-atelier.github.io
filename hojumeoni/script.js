@@ -55,6 +55,29 @@ function initHojumeoni() {
     });
   }
 
+  // Copy Extension Link for Mobile / PC Users
+  const btnCopyExtensionLink = document.getElementById('btnCopyExtensionLink');
+  if (btnCopyExtensionLink) {
+    btnCopyExtensionLink.addEventListener('click', async () => {
+      const extensionUrl = 'https://chromewebstore.google.com/detail/gclcnpcigkcdfmfmdjmhfjbflaicoejd';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(extensionUrl);
+        } else {
+          const tempInput = document.createElement('textarea');
+          tempInput.value = extensionUrl;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          tempInput.remove();
+        }
+        showToast('스토어 링크가 복사되었습니다! PC나 나에게 전달해 보세요.');
+      } catch (err) {
+        prompt('아래 링크를 복사하여 PC에서 열어보세요:', extensionUrl);
+      }
+    });
+  }
+
   // Check URL query parameters or hash (App Deep Link)
   const params = new URLSearchParams(window.location.search);
   const hash = window.location.hash;

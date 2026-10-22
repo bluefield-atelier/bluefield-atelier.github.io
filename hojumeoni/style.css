@@ -505,7 +505,118 @@ body {
   font-size: 0.88rem;
   color: #94a3b8;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Mobile Notice Banner for PC Extension */
+.mobile-notice-banner {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.75) 100%);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-notice-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+
+.mobile-notice-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mobile-notice-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #93c5fd;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-notice-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.mobile-notice-desc {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.kw-highlight {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  font-weight: 700;
+}
+
+.kw-en {
+  color: #94a3b8;
+  font-family: monospace;
+  font-size: 0.84rem;
+}
+
+.search-mark {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.mobile-notice-actions {
+  flex-shrink: 0;
+}
+
+.btn-copy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-copy-link:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+}
+
+.btn-copy-link:active {
+  transform: translateY(0);
 }
 
 .browser-grid-4col {
@@ -1214,6 +1325,29 @@ textarea.form-control {
     justify-content: center;
     padding: 12px 14px;
     font-size: 0.95rem;
+  }
+
+  /* Mobile Notice Banner responsive */
+  .mobile-notice-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 14px;
+    gap: 12px;
+  }
+  .mobile-notice-content {
+    gap: 10px;
+  }
+  .mobile-notice-icon {
+    font-size: 1.6rem;
+  }
+  .mobile-notice-actions {
+    margin-top: 4px;
+  }
+  .btn-copy-link {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 0.9rem;
   }
 }
 
