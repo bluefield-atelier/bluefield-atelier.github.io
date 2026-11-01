@@ -1341,7 +1341,7 @@
                 <div class="privacy-meta">
                     <span class="privacy-meta-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">📒 상담노트 (YouthCare Scheduler)</span>
                     <span class="privacy-meta-badge">BlueField Atelier</span>
-                    <span>시행일자: 2026년 8월 9일</span>
+                    <span>시행일자: 2026년 8월 9일 (최종 수정일: 2026년 11월 1일)</span>
                 </div>
             </div>
 
@@ -1439,31 +1439,53 @@
                     <li><strong>알림:</strong> 상담 일정 및 시작·종료 알림 표시 (사용자가 기기 설정에서 거부 또는 철회 가능)</li>
                     <li><strong>정확한 알람:</strong> 사용자가 설정한 시각에 상담 알림 제공 (기기 및 Android 버전에 따라 별도 설정)</li>
                     <li><strong>부팅 완료 알림 수신:</strong> 기기 재시작 후 예약된 상담 알림 복원 (앱 데이터 열람이나 외부 전송 목적으로 사용하지 않음)</li>
+                    <li><strong>네트워크 접근 (인터넷):</strong> Google AdMob 광고를 로드하고 표시하기 위해 사용됩니다.</li>
                     <li><strong>저장공간 읽기·쓰기:</strong> 구형 Android에서 백업 파일 가져오기 및 문서·백업 파일 저장 (Android 버전에 따라 적용되며 최신 버전에서는 시스템 파일 선택기 이용)</li>
                 </ul>
                 <p>권한을 허용하지 않아도 앱의 일부 기능을 제외한 나머지 기능은 사용할 수 있습니다. 권한은 기기 설정의 앱 권한 메뉴에서 변경할 수 있습니다.</p>
             </section>
 
             <section class="policy-section">
-                <h2>8. 개인정보의 안전성 확보 조치</h2>
+                <h2>8. 광고 및 분석 서비스 (Google AdMob)</h2>
+                <p>상담노트는 안정적인 무료 서비스 제공 및 유지 관리를 위해 <strong>Google AdMob</strong> 광고를 포함합니다. Google Mobile Ads SDK는 광고 제공, 성과 측정 및 부정행위 방지를 위해 다음과 같은 비식별 기기 정보를 자동 처리할 수 있습니다.</p>
+                <ul>
+                    <li>IP 주소 및 대략적인 네트워크 위치</li>
+                    <li>앱 실행 및 광고 상호작용 진단 정보</li>
+                    <li>Android 광고 ID(AD_ID / GAID) 및 기기 식별자</li>
+                </ul>
+                <p>광고 관련 데이터는 Google의 정책 및 개인정보처리방침에 따라 안전하게 처리되며, <strong>개발자는 사용자가 작성한 내담자 정보나 상담 기록을 광고 목적으로 제3자에게 판매하거나 전송하지 않습니다.</strong></p>
+                <div class="highlight-box">
+                    🛡️ <strong>상담 데이터 프라이버시 보호:</strong><br>
+                    광고 SDK는 오직 일반적인 모바일 광고 송출을 위해 비식별 기기 정보만을 처리하며, 앱 내부 로컬 DB에 보관된 민감한 상담 일정, 내담자 기록, 메모 등에는 절대 접근할 수 없습니다.
+                </div>
+                <p>관련 정책: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 광고 개인정보 동의 (Google UMP)</h2>
+                <p>앱은 Google User Messaging Platform(UMP)을 적용하여 유럽 경제 지역(EEA), 영국 등 관련 규정이 요구하는 지역의 사용자에게 개인정보 동의 절차를 제공하며, 사용자는 설정을 통해 동의 내역을 관리할 수 있습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. 개인정보의 안전성 확보 조치</h2>
                 <p>개발자는 앱에서 처리되는 정보를 보호하기 위하여 다음 조치를 적용합니다.</p>
                 <ul>
                     <li>앱 데이터를 Android 앱 전용 저장공간에 저장하여 다른 일반 앱의 직접 접근 제한</li>
                     <li>PIN을 Android Keystore 기반 암호화 저장소에 저장</li>
                     <li>PIN 및 기기 생체 인증을 이용한 앱 접근 보호 기능 제공</li>
                     <li>파일 공유 시 Android의 제한된 임시 접근 권한 사용</li>
-                    <li>광고, 사용자 행동 분석 및 추적 SDK를 사용하지 않음</li>
+                    <li>광고 SDK(Google AdMob) 외에 불필요한 사용자 행동 추적 SDK를 사용하지 않음</li>
                 </ul>
                 <p>다만 상담 기록 데이터베이스 자체는 별도의 데이터베이스 암호화가 적용되어 있지 않습니다. 사용자는 기기 화면 잠금과 디스크 암호화를 사용하고, 내보낸 문서 및 백업 파일이 노출되지 않도록 안전한 위치에 보관해야 합니다. 잠금화면 알림에 내담자 이름 등이 표시될 수 있으므로 민감한 환경에서는 기기의 알림 내용 표시 설정도 확인해 주시기 바랍니다.</p>
             </section>
 
             <section class="policy-section">
-                <h2>9. 아동의 개인정보</h2>
+                <h2>11. 아동의 개인정보</h2>
                 <p>앱은 상담 전문가 등 기록 작성자를 위한 도구이며, 아동이 직접 회원가입하거나 자신의 정보를 개발자에게 제출하는 서비스가 아닙니다. 사용자가 아동·청소년 내담자의 정보를 기록하는 경우에는 관련 법령과 소속 기관의 지침에 따라 법정대리인 동의 등 필요한 절차를 이행해야 합니다.</p>
             </section>
 
             <section class="policy-section">
-                <h2>10. 개인정보 보호책임자 및 문의처</h2>
+                <h2>12. 개인정보 보호책임자 및 문의처</h2>
                 <div class="contact-box">
                     <dl>
                         <dt>개발사 / 운영자</dt>
@@ -1486,10 +1508,10 @@
             </section>
 
             <section class="policy-section">
-                <h2>11. 개인정보처리방침의 변경</h2>
+                <h2>13. 개인정보처리방침의 변경</h2>
                 <p>이 방침은 시행일부터 적용됩니다. 앱 기능, 관련 법령 또는 정책 변경으로 내용이 추가·삭제·수정되는 경우 앱 내 안내 또는 개인정보처리방침 게시 페이지를 통해 알리겠습니다. 중요한 변경이 있는 경우에는 적용 전에 알기 쉬운 방법으로 안내하겠습니다.</p>
                 <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px;">
-                    공고일자: 2026년 8월 9일 | 시행일자: 2026년 8월 9일
+                    공고일자: 2026년 8월 9일 | 최종 개정일자: 2026년 11월 1일
                 </p>
             </section>
 
@@ -1502,7 +1524,7 @@
                 <div class="privacy-meta">
                     <span class="privacy-meta-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">📒 Counseling Notes (YouthCare Scheduler)</span>
                     <span class="privacy-meta-badge">BlueField Atelier</span>
-                    <span>Effective Date: August 9, 2026</span>
+                    <span>Effective Date: August 9, 2026 (Last Updated: November 1, 2026)</span>
                 </div>
             </div>
 
@@ -1591,28 +1613,51 @@
                     <li><strong>Notifications:</strong> To display schedule reminders and session start/end alerts.</li>
                     <li><strong>Exact Alarm Scheduling:</strong> To trigger schedule notifications at exact user-set times.</li>
                     <li><strong>Boot Completed Receiver:</strong> To reschedule local notifications after a device reboot.</li>
+                    <li><strong>Network Access (Internet):</strong> To load and display advertisements via Google AdMob.</li>
                     <li><strong>Storage Read/Write:</strong> To import/export backup and document files on legacy Android versions (modern Android versions utilize the system file picker).</li>
                 </ul>
             </section>
 
             <section class="policy-section">
-                <h2>8. Data Security Measures</h2>
+                <h2>8. Advertising & Analytics (Google AdMob)</h2>
+                <p>Counseling Notes displays advertisements provided by <strong>Google AdMob</strong> to support stable and free application maintenance. The Google Mobile Ads SDK may automatically process non-personally identifiable diagnostic and telemetry data:</p>
+                <ul>
+                    <li>IP address and approximate network location</li>
+                    <li>App diagnostic performance and ad interaction metrics</li>
+                    <li>Android Advertising ID (AD_ID / GAID) and device identifiers</li>
+                </ul>
+                <p>Ad-related data is processed securely under Google Privacy Policies. <strong>The Developer never sells or transmits confidential client records or session notes to third parties or advertisers.</strong></p>
+                <div class="highlight-box">
+                    🛡️ <strong>Session Data Privacy Guarantee:</strong><br>
+                    The advertising SDK processes only non-identifying telemetry strictly for serving standard mobile advertisements and has no access to confidential client information or notes stored in the App's local database.
+                </div>
+                <p>Learn more: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Advertising Consent (Google UMP)</h2>
+                <p>The App integrates the Google User Messaging Platform (UMP) SDK to provide privacy consent mechanisms in regions that require it (EEA, UK), allowing users to review or manage their consent preferences.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10. Data Security Measures</h2>
                 <ul>
                     <li>In-app data is isolated within Android's private app sandbox.</li>
                     <li>Security PIN is encrypted using the Android Keystore system.</li>
                     <li>PIN and biometric protection restrict unauthorized app access.</li>
                     <li>File sharing utilizes Android's temporary, scoped content URIs.</li>
-                    <li>No advertising, analytics, or behavioral tracking SDKs are included.</li>
+                    <li>No invasive user behavior tracking or analytics SDKs other than Google AdMob are included.</li>
                 </ul>
+                <p>Please note that the SQLite database itself does not have separate database-level encryption. Users should maintain device screen lock and full-disk encryption, and store exported backup files safely.</p>
             </section>
 
             <section class="policy-section">
-                <h2>9. Children's Privacy</h2>
+                <h2>11. Children's Privacy</h2>
                 <p>The App is a productivity tool for professional practitioners and does not offer direct registration or use by children. When recording records of minors, practitioners must comply with applicable regulations and institutional consent procedures.</p>
             </section>
 
             <section class="policy-section">
-                <h2>10. Developer & Contact Information</h2>
+                <h2>12. Developer & Contact Information</h2>
                 <div class="contact-box">
                     <dl>
                         <dt>Developer / Operator</dt>
@@ -1630,10 +1675,10 @@
             </section>
 
             <section class="policy-section">
-                <h2>11. Revisions</h2>
+                <h2>13. Revisions</h2>
                 <p>This Privacy Policy is effective as of the date specified below. Material revisions will be announced within the App or on the official website prior to implementation.</p>
                 <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px;">
-                    Announced: August 9, 2026 | Effective Date: August 9, 2026
+                    Announced: August 9, 2026 | Last Updated: November 1, 2026
                 </p>
             </section>
 
