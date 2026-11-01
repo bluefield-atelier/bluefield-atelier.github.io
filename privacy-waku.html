@@ -2,12 +2,484 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=privacy.html?app=waku">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>개인정보처리방침 - Waku 일본어 (Waku Japanese) | BlueField Atelier</title>
-  <script>window.location.replace("privacy.html?app=waku");</script>
+  <meta name="description" content="Waku 일본어 (Waku Japanese) 앱의 공식 개인정보처리방침입니다.">
+  <link rel="icon" type="image/png" href="assets/atelier_logo.png">
+  <link rel="stylesheet" href="css/style.css?v=20261018_2030">
+  <style>
+    .privacy-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 36px 20px 80px 20px;
+    }
+
+    .app-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .app-tab-btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .app-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .app-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .lang-switch-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .lang-tab {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-tab:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-tab.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .privacy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 640px) {
+      .privacy-card {
+        padding: 24px 18px;
+      }
+      .privacy-container {
+        padding: 20px 14px 60px 14px;
+      }
+    }
+
+    .privacy-header {
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .privacy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .privacy-meta-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .policy-section {
+      margin-bottom: 32px;
+    }
+
+    .policy-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .policy-section p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      font-size: 0.94rem;
+    }
+
+    .policy-section ul, .policy-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 6px;
+    }
+
+    .policy-section a {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .contact-box {
+      background: rgba(13, 19, 32, 0.7);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box dt {
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact-box dd {
+      margin-left: 0;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      transition: all var(--transition-fast);
+    }
+
+    .nav-back-link:hover {
+      color: #93c5fd;
+      transform: translateX(-3px);
+    }
+  </style>
 </head>
-<body style="background:#090d16; color:#94a3b8; font-family:sans-serif; text-align:center; padding-top:100px;">
-  <p>잠시 후 <a href="privacy.html?app=waku" style="color:#3b82f6;">Waku 일본어 개인정보처리방침</a> 페이지로 이동합니다.</p>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier 로고" class="brand-logo-img">
+        <div class="brand-info">
+          <h1>BlueField Atelier</h1>
+          <p>Mobile Apps & Community</p>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-hub" title="블루필드 아틀리에 메인 허브로 이동">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>메인 허브</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="privacy-container">
+    <a href="index.html" class="nav-back-link">← BlueField Atelier 메인 허브로 돌아가기</a>
+
+    <!-- Language Switcher Bar -->
+    <div class="lang-switch-bar">
+      <button id="tabKo" class="lang-tab active" onclick="switchLanguage('ko')">🇰🇷 한국어 (Korean)</button>
+      <button id="tabEn" class="lang-tab" onclick="switchLanguage('en')">🌐 English</button>
+    </div>
+
+    <!-- Article Content -->
+<article id="wakuKo" class="privacy-card app-privacy-content">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">개인정보 처리방침 (Privacy Policy)</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3);">🇯🇵 Waku 일본어 (Waku Japanese)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>최종 수정일: 2026년 10월 9일</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                본 개인정보 처리방침은 <strong>Waku 일본어</strong> (패키지명: <code>com.bluefield.atelier.waku</code>, 이하 “앱”)이 이용자의 개인정보를 어떻게 처리하고 보호하는지 안내합니다. 최종 수정일: <strong>2026년 10월 9일</strong>
+            </p>
+
+            <section class="policy-section">
+                <h2>1. 개인정보의 수집 및 이용 목적</h2>
+                <p>본 앱은 별도의 회원가입이나 로그인 없이 모든 학습 기능을 이용할 수 있습니다. 개발자는 사용자의 개인식별정보(이름, 이메일, 전화번호 등)를 서버로 수집하거나 보관하지 않습니다.</p>
+                <div class="highlight-box">
+                    💡 <strong>로컬 기기 내 저장:</strong> 단어 학습 진도, 암기 완료 상태, 음원 및 알림 설정 등은 오직 이용자의 기기 내부(Local DB)에만 안전하게 저장되며 외부로 유출되지 않습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. 제3자 서비스 및 자동 수집 정보</h2>
+                <p>본 앱은 원활한 무료 서비스 제공을 위해 신뢰할 수 있는 제3자 광고 플랫폼을 사용합니다. 해당 플랫폼에 의해 비식별 기기 정보가 수집될 수 있습니다.</p>
+                <ul>
+                    <li><strong>Google AdMob (Google LLC)</strong>
+                        <ul>
+                            <li>수집 항목: 광고 ID(GAID), 기기 식별자, IP 주소, 앱 내 광고 반응 및 상호작용 데이터, 진단 정보</li>
+                            <li>수집 목적: 맞춤형/비맞춤형 광고 송출, 광고 성과 측정 및 부정 클릭 방지</li>
+                            <li>관련 방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. 앱 접근 권한 (Permissions)</h2>
+                <p>본 앱은 필수적인 기능 수행을 위해 다음 권한만을 사용합니다:</p>
+                <ul>
+                    <li><strong>알림 (POST_NOTIFICATIONS)</strong>: 사용자가 직접 설정한 일일 학습 리마인더 알림을 발송하기 위해 사용됩니다.</li>
+                    <li><strong>진동 (VIBRATE)</strong>: 플래시카드 스와이프 및 퀴즈 상호작용 시 햅틱 피드백을 제공하기 위해 사용됩니다.</li>
+                    <li><strong>네트워크 접근 (INTERNET, ACCESS_NETWORK_STATE)</strong>: Google AdMob 광고를 로드하고 표시하기 위해 사용됩니다.</li>
+                    <li><strong>부팅 완료 수신 (RECEIVE_BOOT_COMPLETED)</strong>: 기기를 재부팅했을 때 사용자가 지정해 둔 학습 알람을 정상 재등록하기 위해 사용됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. 개인정보의 보유 및 파기</h2>
+                <p>모든 데이터는 이용자의 기기에만 로컬로 저장되므로, <strong>앱을 삭제하거나 기기 설정에서 앱 데이터를 삭제하면 모든 기록이 즉시 영구 파기</strong>됩니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. 아동의 개인정보 보호</h2>
+                <p>본 앱은 만 13세 미만(또는 거주 관할 구역에 따른 법정 연령) 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. 문의처</h2>
+                <p>개인정보 처리방침 또는 앱 이용과 관련하여 문의사항이 있으신 경우 아래 연락처로 문의해 주시기 바랍니다.</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>개발/운영</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>애플리케이션</dt>
+                        <dd>Waku 일본어 (Waku Japanese)</dd>
+                        <dt>패키지명</dt>
+                        <dd><code>com.bluefield.atelier.waku</code></dd>
+                        <dt>문의 이메일</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>공식 웹사이트</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+
+    </article>
+
+<article id="wakuEn" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge" style="background: rgba(99, 102, 241, 0.15); color: #818cf8; border-color: rgba(99, 102, 241, 0.3);">🇯🇵 Waku Japanese (Waku 일본어)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>Last Updated: October 9, 2026</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                This Privacy Policy describes how <strong>Waku Japanese</strong> (Package: <code>com.bluefield.atelier.waku</code>, "we", "us", or "our") handles and protects your information. Last updated: <strong>October 9, 2026</strong>
+            </p>
+
+            <section class="policy-section">
+                <h2>1. Information Collection and Storage</h2>
+                <p>Waku Japanese does not require user registration or account creation. We do not collect, transmit, or store any personally identifiable information (such as your name, email address, or phone number) on external servers.</p>
+                <div class="highlight-box">
+                    💡 <strong>Stored On-Device:</strong> All learning progress, mastery records, and personalized settings are stored locally on your device only.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Third-Party Services</h2>
+                <p>We use third-party advertising partners to provide free services. These partners may collect non-personally identifiable diagnostic and usage information:</p>
+                <ul>
+                    <li><strong>Google AdMob (Google LLC)</strong>
+                        <ul>
+                            <li>Data Collected: Advertising ID (GAID), device identifiers, IP address, interaction data, and diagnostic data</li>
+                            <li>Purpose: Displaying personalized/non-personalized ads, analytics, and fraud prevention</li>
+                            <li>Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Device Permissions</h2>
+                <p>The app only requests permissions that are strictly necessary for its features:</p>
+                <ul>
+                    <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: To deliver daily study reminders set by the user.</li>
+                    <li><strong>Vibrate (VIBRATE)</strong>: To provide haptic feedback during card interactions.</li>
+                    <li><strong>Network Access (INTERNET, ACCESS_NETWORK_STATE)</strong>: To load advertisements via Google AdMob.</li>
+                    <li><strong>Boot Completed (RECEIVE_BOOT_COMPLETED)</strong>: To restore scheduled local reminders after a device restart.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Data Retention and Deletion</h2>
+                <p>Because all data is stored exclusively on your device, uninstalling the app or clearing application data in device settings will permanently delete all records.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Children's Privacy</h2>
+                <p>Waku Japanese does not knowingly collect any personal information from children under the age of 13.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions or feedback regarding this Privacy Policy, please feel free to contact us:</p>
+                <div class="contact-box">
+                    <dl>
+                        <dt>Developer</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>Application</dt>
+                        <dd>Waku Japanese (Waku 일본어)</dd>
+                        <dt>Package Name</dt>
+                        <dd><code>com.bluefield.atelier.waku</code></dd>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>Official Website</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px;">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier" style="width: 24px; height: 24px; border-radius: 4px;">
+        <span style="font-weight: 700; color: #fff;">BlueField Atelier</span>
+      </div>
+      <p style="margin-bottom: 8px;">소소하지만 필요한 가치를 정성껏 빚어내는 BlueField Atelier</p>
+      <p style="margin-bottom: 12px;">
+        <a href="index.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">메인 포털</a>
+        <a href="privacy.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">통합 개인정보처리방침</a>
+      </p>
+      <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'ko';
+
+    function renderPolicy() {
+      const koEl = document.getElementById('wakuKo');
+      const enEl = document.getElementById('wakuEn');
+      const tabKo = document.getElementById('tabKo');
+      const tabEn = document.getElementById('tabEn');
+
+      if (currentLang === 'ko') {
+        if (koEl) koEl.style.display = 'block';
+        if (enEl) enEl.style.display = 'none';
+        tabKo.classList.add('active');
+        tabEn.classList.remove('active');
+        document.documentElement.lang = 'ko';
+      } else {
+        if (koEl) koEl.style.display = 'none';
+        if (enEl) enEl.style.display = 'block';
+        tabKo.classList.remove('active');
+        tabEn.classList.add('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url.toString());
+      renderPolicy();
+    }
+
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      const langParam = params.get('lang');
+      if (langParam === 'en' || langParam === 'ko') {
+        currentLang = langParam;
+      }
+      renderPolicy();
+    })();
+  </script>
 </body>
 </html>
-

@@ -2,11 +2,542 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=privacy.html?app=oneul">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>개인정보처리방침 - 오늘 (O-NEUL) | BlueField Atelier</title>
-  <script>window.location.replace("privacy.html?app=oneul");</script>
+  <meta name="description" content="오늘 (O-NEUL) 앱의 공식 개인정보처리방침입니다.">
+  <link rel="icon" type="image/png" href="assets/atelier_logo.png">
+  <link rel="stylesheet" href="css/style.css?v=20261018_2030">
+  <style>
+    .privacy-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 36px 20px 80px 20px;
+    }
+
+    .app-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .app-tab-btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .app-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .app-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .lang-switch-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .lang-tab {
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-tab:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-tab.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .privacy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 640px) {
+      .privacy-card {
+        padding: 24px 18px;
+      }
+      .privacy-container {
+        padding: 20px 14px 60px 14px;
+      }
+    }
+
+    .privacy-header {
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .privacy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .privacy-meta-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .policy-section {
+      margin-bottom: 32px;
+    }
+
+    .policy-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .policy-section p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      font-size: 0.94rem;
+    }
+
+    .policy-section ul, .policy-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 6px;
+    }
+
+    .policy-section a {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .contact-box {
+      background: rgba(13, 19, 32, 0.7);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box dt {
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact-box dd {
+      margin-left: 0;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      transition: all var(--transition-fast);
+    }
+
+    .nav-back-link:hover {
+      color: #93c5fd;
+      transform: translateX(-3px);
+    }
+  </style>
 </head>
-<body style="background:#090d16; color:#94a3b8; font-family:sans-serif; text-align:center; padding-top:100px;">
-  <p>잠시 후 <a href="privacy.html?app=oneul" style="color:#3b82f6;">오늘 개인정보처리방침</a> 페이지로 이동합니다.</p>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow-layer">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier 로고" class="brand-logo-img">
+        <div class="brand-info">
+          <h1>BlueField Atelier</h1>
+          <p>Mobile Apps & Community</p>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-hub" title="블루필드 아틀리에 메인 허브로 이동">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>메인 허브</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="privacy-container">
+    <a href="index.html" class="nav-back-link">← BlueField Atelier 메인 허브로 돌아가기</a>
+
+    <!-- Language Switcher Bar -->
+    <div class="lang-switch-bar">
+      <button id="tabKo" class="lang-tab active" onclick="switchLanguage('ko')">🇰🇷 한국어 (Korean)</button>
+      <button id="tabEn" class="lang-tab" onclick="switchLanguage('en')">🌐 English</button>
+    </div>
+
+    <!-- Article Content -->
+<article id="oneulKo" class="privacy-card app-privacy-content">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">O-NEUL 개인정보처리방침 (Privacy Policy)</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">O-NEUL (오늘 - AI 음성 일기)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>시행일자: 2026년 9월 20일</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong>(이하 “운영자”)는 <strong>O-NEUL(오늘)</strong> 앱(패키지명: <code>com.bluefield.atelier.oneul</code>, 이하 “앱”)을 이용하는 사용자의 개인정보를 소중히 보호하며, 관련 법령 및 구글 플레이(Google Play), 구글 클라우드(Google Cloud) 정책을 준수합니다.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. 기본 원칙과 수집하는 정보</h2>
+                <p>O-NEUL은 사용자의 일상 기록을 다루는 앱이므로 <strong>기기 내부(로컬) 저장을 원칙</strong>으로 합니다.</p>
+                <ul>
+                    <li>앱 이용을 위한 회원가입이나 로그인을 필수로 요구하지 않습니다.</li>
+                    <li>이름, 주민등록번호, 연락처, 기기 고유식별값 등을 수집하는 별도의 자체 회원 데이터베이스를 운영하지 않습니다.</li>
+                    <li>녹음된 음성 파일, 작성한 일기 내용, 감정 태그, 기억 후보 및 설정 정보는 기본적으로 사용자의 단말기 내부 비공개 저장 영역(Room DB 및 앱 전용 폴더)에만 저장됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. AI 분석과 외부 전송</h2>
+                <p>사용자가 음성 일기 분석, 요약, 기억 정리 등의 AI 기능을 실행할 때, 앱은 처리에 필요한 일기 본문 텍스트, 사용자 요청 메모, 이전 기억 후보 텍스트를 <strong>Google의 Gemini API</strong>로 전송합니다.</p>
+                <ul>
+                    <li>음성 파일 원본은 외부 AI 서버로 직접 전송되지 않으며, 기기 내 음성인식(STT) 또는 텍스트 변환 과정을 거친 텍스트만 전송됩니다.</li>
+                    <li>사용자는 AI 분석 기능을 사용하지 않고 로컬 음성 일기 기능만 독립적으로 이용할 수 있습니다.</li>
+                </ul>
+                <div class="highlight-box">
+                    🤖 <strong>AI 처리 투명성:</strong><br>
+                    사용자는 민감하거나 비밀 유지가 필요한 개인정보를 AI 분석에 입력하지 않도록 유의해 주시기 바라며, AI 전송을 원치 않는 경우 로컬 저장 및 작성 기능만을 자유롭게 이용하실 수 있습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. 사진과 영상 미디어 처리</h2>
+                <ul>
+                    <li>갤러리에서 선택한 사진·영상은 원래 위치에 그대로 유지되며, 앱은 해당 미디어를 표시하기 위한 안전한 URI 연결 정보만을 저장합니다.</li>
+                    <li>앱에서 직접 촬영한 사진은 기기의 <code>Pictures/O-NEUL</code>, 영상은 <code>Movies/O-NEUL</code> 영역에 저장됩니다.</li>
+                    <li>사진과 영상 파일은 AI 분석 서버로 전송되지 않습니다.</li>
+                    <li>일기나 앱 데이터를 삭제하더라도 기기 갤러리의 실제 원본 사진·영상은 삭제되지 않습니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. 정보의 보유 및 삭제</h2>
+                <ul>
+                    <li><strong>로컬 데이터 삭제:</strong> 앱 내 설정의 [모든 기록 삭제] 또는 Android 애플리케이션 정보에서 데이터를 즉시 완전 삭제할 수 있습니다.</li>
+                    <li><strong>Google Drive 동기화 데이터 삭제:</strong> 앱 설정 내 [Drive 동기화 데이터 삭제] 기능 또는 Google 계정의 [연결된 앱 관리]에서 언제든 삭제할 수 있습니다.</li>
+                    <li><strong>앱 삭제:</strong> 앱을 기기에서 제거(Uninstall)하면 로컬 데이터베이스 및 음성 파일은 운영체제 정책에 따라 즉시 완전히 파기됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. 백업 및 Google Drive 동기화</h2>
+                <p>사용자가 직접 백업을 실행하면 음성 파일, 일기 내용, AI 결과가 포함된 백업 파일이 생성되며, 사용자가 입력한 비밀번호 기반 AES-GCM 방식으로 강력하게 암호화됩니다.</p>
+                <div class="highlight-box">
+                    📁 <strong>Google Drive Scope: <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    Google Drive 동기화 사용 시 O-NEUL은 앱이 직접 생성한 암호화된 백업 데이터에만 접근하며, 사용자의 일반 Google Drive 파일(문서, 사진 등) 전체를 읽거나 접근하지 않습니다.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. 앱 권한 안내</h2>
+                <ul>
+                    <li><strong>마이크:</strong> 음성 일기 녹음</li>
+                    <li><strong>카메라:</strong> 일기 첨부용 사진/영상 직접 촬영</li>
+                    <li><strong>알림:</strong> 녹음 진행 상태 및 일기 작성 알림</li>
+                    <li><strong>인터넷:</strong> AI 분석 요청 및 Google Drive 동기화 통신</li>
+                    <li><strong>부팅 완료 수신:</strong> 기기 재시작 후 사용자가 설정한 알림 재예약</li>
+                    <li><strong>포그라운드 서비스:</strong> 화면이 꺼지거나 백그라운드 전환 시에도 녹음 유지</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. 광고 및 분석 도구</h2>
+                <p>현재 버전의 O-NEUL에는 광고 SDK, 사용자 행동 추적 SDK가 포함되어 있지 않습니다. 향후 변경 사항이 있을 경우 사전에 본 방침을 개정하고 안내하겠습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. 아동의 개인정보 보호</h2>
+                <p>O-NEUL은 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. 운영자 및 문의처</h2>
+                <div class="contact-box">
+                    <dl>
+                        <dt>개발사 / 운영자</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>애플리케이션</dt>
+                        <dd>O-NEUL (오늘 - AI 음성 일기)</dd>
+                        <dt>패키지명</dt>
+                        <dd><code>com.bluefield.atelier.oneul</code></dd>
+                        <dt>문의 이메일</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>공식 웹사이트</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+<article id="oneulEn" class="privacy-card app-privacy-content" style="display: none;">
+
+            <div class="privacy-header">
+                <h1 style="font-size: 1.85rem; font-weight: 800; color: var(--text-main);">O-NEUL Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span class="privacy-meta-badge">O-NEUL (AI Voice Journal)</span>
+                    <span class="privacy-meta-badge">BlueField Atelier</span>
+                    <span>Effective Date: September 20, 2026</span>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 1.5rem;">
+                <strong>BlueField Atelier</strong> ("we", "us", "our") operates <strong>O-NEUL</strong> (Package: <code>com.bluefield.atelier.oneul</code>, "the App"). Because O-NEUL is designed to handle personal daily journals and voice recordings, we process your information with care and in compliance with Google Play and Google Cloud policies.
+            </p>
+
+            <section class="policy-section">
+                <h2>1. Core Principle & Information We Collect</h2>
+                <p>O-NEUL operates primarily on an <strong>on-device (local-first) storage model</strong>:</p>
+                <ul>
+                    <li>The App does not require user registration or account creation.</li>
+                    <li>We do not operate a user database that collects names, national ID numbers, contact lists, or persistent device identifiers.</li>
+                    <li>Recorded voice files, journal entries, sentiment tags, memory candidates, and app preferences remain in private app storage (Room database and private files) on your device.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. AI Processing and External Transmission</h2>
+                <p>When you explicitly trigger AI analysis, summarization, or memory extraction, O-NEUL sends the text content of your journal, user prompt notes, and previous memory candidates to <strong>Google's Gemini API</strong>.</p>
+                <ul>
+                    <li>Raw audio files are NOT transmitted directly to AI servers; only transcribed text is sent.</li>
+                    <li>Users who do not wish to transmit data to AI services can continue to use all local recording, playback, writing, and search features without requesting AI organization.</li>
+                </ul>
+                <div class="highlight-box">
+                    🤖 <strong>AI Transparency:</strong><br>
+                    Users should avoid submitting sensitive, confidential, or secret information for AI analysis. For more details, refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API Terms</a>.
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Photos and Videos</h2>
+                <ul>
+                    <li>Photos and videos selected from your gallery remain in their original location; the App stores only a reference URI to display them.</li>
+                    <li>Photos taken via the App are stored under <code>Pictures/O-NEUL</code>, and videos under <code>Movies/O-NEUL</code> on your device.</li>
+                    <li>Photos and videos are never sent for AI analysis.</li>
+                    <li>Deleting a journal entry does not delete original photos or videos from your gallery.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Retention and Deletion</h2>
+                <ul>
+                    <li><strong>Local Deletion:</strong> You can delete individual journals, use "Manage my records > Delete all records" in settings, or clear app data in Android system settings.</li>
+                    <li><strong>Google Drive Sync Deletion:</strong> Drive sync data can be deleted through "Delete Drive sync data" in app settings or via Google Account settings.</li>
+                    <li><strong>App Uninstall:</strong> Uninstalling the App removes all local database entries and audio files according to Android OS standards.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Backup, Encryption & Google Drive Sync</h2>
+                <p>When you create a manual backup, files are encrypted using <strong>AES-GCM</strong> with a key derived from your user-provided password.</p>
+                <div class="highlight-box">
+                    📁 <strong>Scope Disclosure: <code>https://www.googleapis.com/auth/drive.appdata</code></strong><br>
+                    O-NEUL requests access only to its own hidden Application Data Folder in Google Drive. <strong>The App cannot view, modify, or access any other files or folders in your Google Drive.</strong>
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>6. App Permissions</h2>
+                <ul>
+                    <li><strong>Microphone:</strong> To record voice journals</li>
+                    <li><strong>Camera:</strong> To capture photos/videos when requested by the user</li>
+                    <li><strong>Notifications:</strong> To show recording status and reminders</li>
+                    <li><strong>Internet:</strong> For user-requested AI analysis, Google sign-in, Google Drive sync, and App Check</li>
+                    <li><strong>Receive boot completed:</strong> To reschedule journal reminders after device restart</li>
+                    <li><strong>Foreground service:</strong> To continue recording while the app is in the background</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>7. Advertising & Tracking</h2>
+                <p>The current version of O-NEUL does not include advertising SDKs, Firebase Analytics, Crashlytics, or user-behavior tracking SDKs.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>8. Children's Privacy</h2>
+                <p>O-NEUL is not designed for children under 14 years of age.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9. Developer & Contact Information</h2>
+                <div class="contact-box">
+                    <dl>
+                        <dt>Developer / Operator</dt>
+                        <dd>BlueField Atelier</dd>
+                        <dt>Application</dt>
+                        <dd>O-NEUL (AI Voice Journal)</dd>
+                        <dt>Package Name</dt>
+                        <dd><code>com.bluefield.atelier.oneul</code></dd>
+                        <dt>Contact Email</dt>
+                        <dd><a href="mailto:bluefield.works@gmail.com" style="color:var(--primary); font-weight:600;">bluefield.works@gmail.com</a></dd>
+                        <dt>Official Website</dt>
+                        <dd><a href="https://bluefield-atelier.github.io/" style="color:var(--primary);">https://bluefield-atelier.github.io/</a></dd>
+                    </dl>
+                </div>
+            </section>
+        
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px;">
+        <img src="assets/atelier_logo.png" alt="BlueField Atelier" style="width: 24px; height: 24px; border-radius: 4px;">
+        <span style="font-weight: 700; color: #fff;">BlueField Atelier</span>
+      </div>
+      <p style="margin-bottom: 8px;">소소하지만 필요한 가치를 정성껏 빚어내는 BlueField Atelier</p>
+      <p style="margin-bottom: 12px;">
+        <a href="index.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">메인 포털</a>
+        <a href="privacy.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">통합 개인정보처리방침</a>
+      </p>
+      <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'ko';
+
+    function renderPolicy() {
+      const koEl = document.getElementById('oneulKo');
+      const enEl = document.getElementById('oneulEn');
+      const tabKo = document.getElementById('tabKo');
+      const tabEn = document.getElementById('tabEn');
+
+      if (currentLang === 'ko') {
+        if (koEl) koEl.style.display = 'block';
+        if (enEl) enEl.style.display = 'none';
+        tabKo.classList.add('active');
+        tabEn.classList.remove('active');
+        document.documentElement.lang = 'ko';
+      } else {
+        if (koEl) koEl.style.display = 'none';
+        if (enEl) enEl.style.display = 'block';
+        tabKo.classList.remove('active');
+        tabEn.classList.add('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url.toString());
+      renderPolicy();
+    }
+
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      const langParam = params.get('lang');
+      if (langParam === 'en' || langParam === 'ko') {
+        currentLang = langParam;
+      }
+      renderPolicy();
+    })();
+  </script>
 </body>
 </html>
