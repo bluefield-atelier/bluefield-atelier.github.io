@@ -548,7 +548,7 @@ def build_standalone_pages():
       <p style="margin-bottom: 8px;">소소하지만 필요한 가치를 정성껏 빚어내는 BlueField Atelier</p>
       <p style="margin-bottom: 12px;">
         <a href="index.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">메인 포털</a>
-        <a href="privacy.html" style="color: #94a3b8; text-decoration: none; margin: 0 10px;">통합 개인정보처리방침</a>
+        
       </p>
       <p style="font-size: 0.78rem; color: #64748b;">© 2026 BlueField Atelier. All rights reserved.</p>
     </div>
@@ -610,3 +610,4 @@ if __name__ == "__main__":
     build_combined_page()
     build_standalone_pages()
     print("Done! All privacy pages successfully built and synchronized.")
+
